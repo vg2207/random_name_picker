@@ -417,8 +417,8 @@ if user_input_excel is not None:
                        'Garmin Watch (by GE)', 'Smart TV 32 inch Xiaomi',
                        'Air Purifier']
             })
-            st.session_state.df1 = pd.concat([st.session_state.df1, new_row])
-            st.sidebar.write(st.session_state.df1)
+        st.session_state.df1 = pd.concat([st.session_state.df1, new_row])
+        st.sidebar.write(st.session_state.df1)
 
         if button_clicked_6 :
             st.session_state.df1 = pd.DataFrame(data)
