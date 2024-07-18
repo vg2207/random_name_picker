@@ -428,7 +428,7 @@ if user_input_excel is not None:
             st.sidebar.markdown(f"Random seed = {st.session_state.user_input_seed}")
     
     
-            df2 = df1.copy().reset_index(drop=True)
+            df2 = pd.concat([df1, new_row])
             
             st.session_state.df2 = df2
             # df2 = st.session_state.df2
