@@ -388,13 +388,13 @@ if user_input_excel is not None:
         df1 = st.session_state.df1
 
 
-        # col_5, col_6, col_7 = st.columns(3)
+        col_5, col_6, col_7 = st.columns(3)
         # with col_5 :
         #     button_clicked_5 = st.button("Save", type="secondary", use_container_width=True)
         # with col_6 :
         #     button_clicked_6 = st.button("Resets", type="secondary", use_container_width=True)
-        # with col_7 :
-        #     button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
+        with col_7 :
+            button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
 
         # if button_clicked_5 :
         new_row = pd.DataFrame(
@@ -424,19 +424,19 @@ if user_input_excel is not None:
 
 
 
-
-        st.session_state.user_input_seed = user_input_seed
-
-        st.sidebar.markdown(f"Random seed = {st.session_state.user_input_seed}")
-
-
-        df2 = st.session_state.df1.copy().reset_index(drop=True)
-        
-        st.session_state.df2 = df2
-        # df2 = st.session_state.df2
-
-        st.sidebar.write(st.session_state.df2)
-        # df2.to_csv('winner_parameter.csv')
+        if button_clicked_7 :
+            st.session_state.user_input_seed = user_input_seed
+    
+            st.sidebar.markdown(f"Random seed = {st.session_state.user_input_seed}")
+    
+    
+            df2 = st.session_state.df1.copy().reset_index(drop=True)
+            
+            st.session_state.df2 = df2
+            # df2 = st.session_state.df2
+    
+            st.sidebar.write(st.session_state.df2)
+            # df2.to_csv('winner_parameter.csv')
 
             
 
