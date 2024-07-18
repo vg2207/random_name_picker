@@ -420,7 +420,7 @@ if user_input_excel is not None:
         st.session_state.df1 = pd.concat([st.session_state.df1, new_row])
         st.write(st.session_state.df1)
 
-        st.session_state.df1 = pd.DataFrame(data)
+        # st.session_state.df1 = pd.DataFrame(data)
 
 
 
