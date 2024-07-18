@@ -337,7 +337,7 @@ if user_input_excel is not None:
         upper_col = ['NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)', 'Nama Lengkap']
         df = lowerify_and_upperify_cols(df, lower_col, upper_col)
         df = remove_duplicate(df, drop_col='NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)')
-        df = df.loc[(df['Level'] != 'Director') | (df['Level'] != 'BOC')]
+        df = df.loc[(df['Level'] != 'Director') & (df['Level'] != 'BOC')]
     elif user_input_excel.name.endswith('.xlsx'):
         df=pd.read_excel(user_input_excel)
         st.sidebar.success('File Uploaded Successfully!')
@@ -346,7 +346,7 @@ if user_input_excel is not None:
         upper_col = ['NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)', 'Nama Lengkap']
         df = lowerify_and_upperify_cols(df, lower_col, upper_col)
         df = remove_duplicate(df, drop_col='NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)')
-        df = df.loc[(df['Level'] != 'Director')]
+        df = df.loc[(df['Level'] != 'Director') & (df['Level'] != 'BOC')]
     else:
         st.sidebar.warning('You need to upload a csv or an excel file')
     
