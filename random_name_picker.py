@@ -375,17 +375,7 @@ if user_input_excel is not None:
         #         user_input_prize = st.text_input("Insert Prize")
 
 
-        data = {
-        "Number of Winner(s)": [],
-        "Prize": []
-        }
-
-
-        if 'df1' not in st.session_state:
-            df1 = pd.DataFrame(data)
-            st.session_state.df1 = df1
-
-        df1 = st.session_state.df1
+        
 
 
         col_5, col_6, col_7 = st.columns(3)
@@ -417,7 +407,15 @@ if user_input_excel is not None:
                        'Garmin Watch (by GE)', 'Smart TV 32 inch Xiaomi',
                        'Air Purifier']
             })
-        st.session_state.df1 = pd.concat([st.session_state.df1, new_row])
+
+        data = {
+        "Number of Winner(s)": [],
+        "Prize": []
+        }
+
+        df1 = pd.DataFrame(data)
+
+
         # st.write(st.session_state.df1)
 
         # st.session_state.df1 = pd.DataFrame(data)
@@ -430,7 +428,7 @@ if user_input_excel is not None:
             st.sidebar.markdown(f"Random seed = {st.session_state.user_input_seed}")
     
     
-        df2 = st.session_state.df1.copy().reset_index(drop=True)
+        df2 = df1.copy().reset_index(drop=True)
         
         st.session_state.df2 = df2
         # df2 = st.session_state.df2
