@@ -366,13 +366,13 @@ if user_input_excel is not None:
 
         with st.container():
             user_input_seed = st.number_input("Pick random seed number", 1)
-        col_1, col_2 = st.columns(2)
-        with st.container():
-            with col_1:
-                user_input_winner = st.number_input("Pick number of winner(s)", 1, len(df))
-        with st.container():
-            with col_2:
-                user_input_prize = st.text_input("Insert Prize")
+        # col_1, col_2 = st.columns(2)
+        # with st.container():
+        #     with col_1:
+        #         user_input_winner = st.number_input("Pick number of winner(s)", 1, len(df))
+        # with st.container():
+        #     with col_2:
+        #         user_input_prize = st.text_input("Insert Prize")
 
 
         data = {
@@ -388,16 +388,35 @@ if user_input_excel is not None:
         df1 = st.session_state.df1
 
 
-        col_5, col_6, col_7 = st.columns(3)
-        with col_5 :
-            button_clicked_5 = st.button("Save", type="secondary", use_container_width=True)
-        with col_6 :
-            button_clicked_6 = st.button("Resets", type="secondary", use_container_width=True)
-        with col_7 :
-            button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
+        # col_5, col_6, col_7 = st.columns(3)
+        # with col_5 :
+        #     button_clicked_5 = st.button("Save", type="secondary", use_container_width=True)
+        # with col_6 :
+        #     button_clicked_6 = st.button("Resets", type="secondary", use_container_width=True)
+        # with col_7 :
+        #     button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
 
-        if button_clicked_5 :
-            new_row = pd.DataFrame({"Number of Winner(s)": [user_input_winner],"Prize": [user_input_prize]})
+        # if button_clicked_5 :
+            new_row = pd.DataFrame(
+                {"Number of Winner(s)": [100, 100,
+                                         14, 10,
+                                         20, 5,
+                                         1, 1,
+                                         1, 75,
+                                         50, 30,
+                                         5, 3,
+                                         3, 1,
+                                         1],
+                 "Prize": ['Goodiebag: Fibercreme dan Rich Creme', 'Voucher Indomaret Rp 50.000',
+                           'Hydrogen Tumbler', 'Massage Pillow',
+                           'Blender Juicer', 'Free Scaling Voucher - Audy Dental',
+                           'Lock n lock container', 'Cosmos Mixer',
+                           'One Set Oxone Knife', 'Voucher Indomaret Rp 100.000',
+                           'Voucher Indomaret Rp 150.000', 'Voucher product pureve: Rp 500.000',
+                           'Xiaomi Smart Band 8', 'Traveloka voucher Rp 500.000',
+                           'Garmin Watch (by GE)', 'Smart TV 32 inch Xiaomi',
+                           'Air Purifier']
+                })
             st.session_state.df1 = pd.concat([st.session_state.df1, new_row])
             st.sidebar.write(st.session_state.df1)
 
