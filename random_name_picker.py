@@ -348,14 +348,6 @@ if user_input_excel is not None:
     else:
         st.sidebar.warning('You need to upload a csv or an excel file')
     
-    # with st.sidebar:
-    # selected_main_menu = option_menu(menu_title = None, #"Main Menu"
-    #                 options = ["Settings", "Run Apps"],
-    #                 icons = ["gear", "caret-right-square"],
-    #                 menu_icon = "cast",
-    #                 default_index = 0,
-    #                 orientation = "horizontal"
-    #             )
         
 
     ## --- TAB 
@@ -388,12 +380,12 @@ if user_input_excel is not None:
 
         # if button_clicked_5 :
         new_row = pd.DataFrame(
-            {"Number of Winner(s)": [100, 100,
-                                     14, 10,
-                                     20, 5,
+            {"Number of Winner(s)": [1, 1,
+                                     14, 1,
+                                     2, 5,
                                      1, 1,
-                                     1, 75,
-                                     50, 30,
+                                     1, 7,
+                                     5, 3,
                                      5, 3,
                                      3, 1,
                                      1],
