@@ -438,7 +438,7 @@ if user_input_excel is not None:
 
             if len(df) < st.session_state.df2['Number of Winner(s)'].sum() :
                 st.write('Jumlah peserta lebih sedikit daripada jumlah hadiah')
-            elif len(df) == st.session_state.df2['Number of Winner(s)'].sum()) :
+            elif len(df) == st.session_state.df2['Number of Winner(s)'].sum() :
                 st.write('Jumlah peserta sama dengan jumlah hadiah')
             else :
                 st.write('Apps ready to run')
