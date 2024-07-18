@@ -436,9 +436,9 @@ if user_input_excel is not None:
             st.write(st.session_state.df2)
             # df2.to_csv('winner_parameter.csv')
 
-            if len(df) < len(st.session_state.df2) :
+            if len(df) < st.session_state.df2['Number of Winner(s)'].sum() :
                 st.write('Jumlah peserta lebih sedikit daripada jumlah hadiah')
-            elif len(df) == len(st.session_state.df2) :
+            elif len(df) == st.session_state.df2['Number of Winner(s)'].sum()) :
                 st.write('Jumlah peserta sama dengan jumlah hadiah')
             else :
                 st.write('Apps ready to run')
