@@ -428,13 +428,13 @@ if user_input_excel is not None:
             st.sidebar.markdown(f"Random seed = {st.session_state.user_input_seed}")
     
     
-        df2 = df1.copy().reset_index(drop=True)
-        
-        st.session_state.df2 = df2
-        # df2 = st.session_state.df2
-
-        st.write(st.session_state.df2)
-        # df2.to_csv('winner_parameter.csv')
+            df2 = df1.copy().reset_index(drop=True)
+            
+            st.session_state.df2 = df2
+            # df2 = st.session_state.df2
+    
+            st.write(st.session_state.df2)
+            # df2.to_csv('winner_parameter.csv')
 
             
 
