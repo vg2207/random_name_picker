@@ -346,7 +346,7 @@ if user_input_excel is not None:
         upper_col = ['NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)', 'Nama Lengkap']
         df = lowerify_and_upperify_cols(df, lower_col, upper_col)
         df = remove_duplicate(df, drop_col='NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)')
-        df = df.loc[(df['Level'] != 'Director') | (df['Level'] != 'BOC')]
+        df = df.loc[(df['Level'] != 'Director')]
     else:
         st.sidebar.warning('You need to upload a csv or an excel file')
     
