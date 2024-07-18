@@ -461,7 +461,14 @@ if user_input_excel is not None:
             df3 = df.copy()
             winners_name_all = []
 
+            df_ltl_only = df2.loc[df2['Company'] == 'LTL']
             random.seed(st.session_state.user_input_seed)
+            
+            df_ltl_only_winner = random.sample(df_ltl_only,3)
+            st.write(df_ltl_only_winner)
+            df_remaining = df2.loc[df2['Company'] == 'LTL']
+
+            random.seed(st.session_state.user_input_seed+1)
             for i in range(len(df2)):
                 winners_row = random.sample(range(len(df3)),int(df2["Number of Winner(s)"][i]))
                 winners_name = df3.iloc[winners_row]
