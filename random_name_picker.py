@@ -418,7 +418,7 @@ if user_input_excel is not None:
                        'Air Purifier']
             })
         st.session_state.df1 = pd.concat([st.session_state.df1, new_row])
-        st.write(st.session_state.df1)
+        # st.write(st.session_state.df1)
 
         # st.session_state.df1 = pd.DataFrame(data)
 
@@ -430,13 +430,13 @@ if user_input_excel is not None:
             st.sidebar.markdown(f"Random seed = {st.session_state.user_input_seed}")
     
     
-            df2 = st.session_state.df1.copy().reset_index(drop=True)
-            
-            st.session_state.df2 = df2
-            # df2 = st.session_state.df2
-    
-            st.sidebar.write(st.session_state.df2)
-            # df2.to_csv('winner_parameter.csv')
+        df2 = st.session_state.df1.copy().reset_index(drop=True)
+        
+        st.session_state.df2 = df2
+        # df2 = st.session_state.df2
+
+        st.write(st.session_state.df2)
+        # df2.to_csv('winner_parameter.csv')
 
             
 
