@@ -350,7 +350,7 @@ if user_input_excel is not None:
     else:
         st.sidebar.warning('You need to upload a csv or an excel file')
     
-        
+    st.sidebar.write(df)
 
     ## --- TAB 
 
