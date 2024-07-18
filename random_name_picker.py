@@ -383,22 +383,22 @@ if user_input_excel is not None:
         # if button_clicked_5 :
         new_row = pd.DataFrame(
             {"Number of Winner(s)": [1, 1,
-                                     14, 1,
-                                     2, 5,
-                                     1, 1,
-                                     1, 7,
-                                     5, 3,
-                                     5, 3,
-                                     3, 1,
+                                     # 14, 1,
+                                     # 2, 5,
+                                     # 1, 1,
+                                     # 1, 7,
+                                     # 5, 3,
+                                     # 5, 3,
+                                     # 3, 1,
                                      1],
              "Prize": ['Goodiebag: Fibercreme dan Rich Creme', 'Voucher Indomaret Rp 50.000',
-                       'Hydrogen Tumbler', 'Massage Pillow',
-                       'Blender Juicer', 'Free Scaling Voucher - Audy Dental',
-                       'Lock n lock container', 'Cosmos Mixer',
-                       'One Set Oxone Knife', 'Voucher Indomaret Rp 100.000',
-                       'Voucher Indomaret Rp 150.000', 'Voucher product pureve: Rp 500.000',
-                       'Xiaomi Smart Band 8', 'Traveloka voucher Rp 500.000',
-                       'Garmin Watch (by GE)', 'Smart TV 32 inch Xiaomi',
+                       # 'Hydrogen Tumbler', 'Massage Pillow',
+                       # 'Blender Juicer', 'Free Scaling Voucher - Audy Dental',
+                       # 'Lock n lock container', 'Cosmos Mixer',
+                       # 'One Set Oxone Knife', 'Voucher Indomaret Rp 100.000',
+                       # 'Voucher Indomaret Rp 150.000', 'Voucher product pureve: Rp 500.000',
+                       # 'Xiaomi Smart Band 8', 'Traveloka voucher Rp 500.000',
+                       # 'Garmin Watch (by GE)', 'Smart TV 32 inch Xiaomi',
                        'Air Purifier']
             })
 
@@ -468,133 +468,133 @@ if user_input_excel is not None:
             st.write(df_ltl_only_winner)
             # df_remaining = df2.loc[df2['Company'] == 'LTL']
 
-            # random.seed(st.session_state.user_input_seed+1)
-            # for i in range(len(df2)):
-            #     winners_row = random.sample(range(len(df3)),int(df2["Number of Winner(s)"][i]))
-            #     winners_name = df3.iloc[winners_row]
-            #     prize = df2["Prize"][i]
-            #     # st.markdown(f'won {prize}')
-            #     # st.write(winners_name)
-            #     df3 = df3.drop(winners_row).reset_index(drop=True)
-            #     # st.write(df3)
-            #     winners_name_all.append(winners_name)
+            random.seed(st.session_state.user_input_seed+1)
+            for i in range(len(df2)):
+                winners_row = random.sample(range(len(df3)),int(df2["Number of Winner(s)"][i]))
+                winners_name = df3.iloc[winners_row]
+                prize = df2["Prize"][i]
+                # st.markdown(f'won {prize}')
+                # st.write(winners_name)
+                df3 = df3.drop(winners_row).reset_index(drop=True)
+                # st.write(df3)
+                winners_name_all.append(winners_name)
 
 
-            # output = BytesIO()
+            output = BytesIO()
 
-            # with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
-            #     for i in range(len(df2)) :
-            #         # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
-            #         sheetname = 'Round ' + str(int(i+1))
-            #         winners_data = winners_name_all[i].reset_index(drop=True)
-            #         winners_data.index = winners_data.index + 1
-            #         winners = winners_data.to_excel(writer, sheet_name=sheetname)
+            with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
+                for i in range(len(df2)) :
+                    # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
+                    sheetname = 'Round ' + str(int(i+1))
+                    winners_data = winners_name_all[i].reset_index(drop=True)
+                    winners_data.index = winners_data.index + 1
+                    winners = winners_data.to_excel(writer, sheet_name=sheetname)
                     
 
-            # # col_3, col_4, col_8 = st.columns([1,1,1])
-            # col_3, col_4 = st.columns([1,1])
-            # with col_3 :
-            #     button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
-            # with col_4 :
-            #     button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
-            # # with col_8 :
-            # #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
-            # button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
+            # col_3, col_4, col_8 = st.columns([1,1,1])
+            col_3, col_4 = st.columns([1,1])
+            with col_3 :
+                button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
+            with col_4 :
+                button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
+            # with col_8 :
+            #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
+            button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
 
             
 
-            # if button_clicked: 
+            if button_clicked: 
                 
-            #     if st.session_state.count <= len(df2) :
-            #         with st.empty():
-            #             while t :
-            #                 if t > 0 :
-            #                     with st.empty():
-            #                         name_show = df.iloc[random.randint(1, len(df)) - 1]
+                if st.session_state.count <= len(df2) :
+                    with st.empty():
+                        while t :
+                            if t > 0 :
+                                with st.empty():
+                                    name_show = df.iloc[random.randint(1, len(df)) - 1]
                                     
-            #                         st.markdown(f"<h1 style='text-align: center;'>{str(name_show['Nama Lengkap'])}</h1>", unsafe_allow_html=True)
-            #                     time.sleep(0.1)
-            #                     t -= 1
-            #                     st.empty()
-            #         row_number_to_show = st.session_state.count - 1
-            #         data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
-            #         data_to_show.index += 1
-            #         prize_to_choose = st.session_state.df2.copy()
-            #         prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
-            #         st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
+                                    st.markdown(f"<h1 style='text-align: center;'>{str(name_show['Nama Lengkap'])}</h1>", unsafe_allow_html=True)
+                                time.sleep(0.1)
+                                t -= 1
+                                st.empty()
+                    row_number_to_show = st.session_state.count - 1
+                    data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
+                    data_to_show.index += 1
+                    prize_to_choose = st.session_state.df2.copy()
+                    prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
+                    st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
 
-            #         with st.container():
-            #             st.dataframe(data_to_show[["ID Karyawan", "Nama Lengkap", "Perusahaan"]], use_container_width=True)
+                    with st.container():
+                        st.dataframe(data_to_show[["ID Karyawan", "Nama Lengkap", "Perusahaan"]], use_container_width=True)
 
-            #         # for m in range(len(data_to_show)) :
-            #         #     st.text_area("", 
-            #         #     f"""
-            #         #     {str(data_to_show.loc[m+1, 'ID Karyawan'])}
-            #         #     {str(data_to_show.loc[m+1, 'Nama Lengkap'])}
-            #         #     {str(data_to_show.loc[m+1, 'Perusahaan'])}""",
-            #         #     height = 150)
-            #         # # for m in range(len(data_to_show)//5) :
-            #         # # acol1, acol2, acol3, acol4, acol5 = st.columns(1)
-            #         # with st.container() :
+                    # for m in range(len(data_to_show)) :
+                    #     st.text_area("", 
+                    #     f"""
+                    #     {str(data_to_show.loc[m+1, 'ID Karyawan'])}
+                    #     {str(data_to_show.loc[m+1, 'Nama Lengkap'])}
+                    #     {str(data_to_show.loc[m+1, 'Perusahaan'])}""",
+                    #     height = 150)
+                    # # for m in range(len(data_to_show)//5) :
+                    # # acol1, acol2, acol3, acol4, acol5 = st.columns(1)
+                    # with st.container() :
                         
-            #         #     st.markdown("""
-            #         #     <html>
-            #         #     <head>
-            #         #     <style>
-            #         #     .grid-container {
-            #         #     display: grid;
-            #         #     grid-template-columns: auto auto auto auto auto;
-            #         #     background-color: #2196F3;
-            #         #     padding: 10px;
-            #         #     }
+                    #     st.markdown("""
+                    #     <html>
+                    #     <head>
+                    #     <style>
+                    #     .grid-container {
+                    #     display: grid;
+                    #     grid-template-columns: auto auto auto auto auto;
+                    #     background-color: #2196F3;
+                    #     padding: 10px;
+                    #     }
 
-            #         #     .grid-item {
-            #         #     background-color: rgba(255, 255, 255, 0.8);
-            #         #     border: 1px solid rgba(0, 0, 0, 0.8);
-            #         #     padding: 20px;
-            #         #     font-size: auto;
-            #         #     text-align: center;
-            #         #     }
-            #         #     </style>
-            #         #     </head>
-            #         #     <body>
+                    #     .grid-item {
+                    #     background-color: rgba(255, 255, 255, 0.8);
+                    #     border: 1px solid rgba(0, 0, 0, 0.8);
+                    #     padding: 20px;
+                    #     font-size: auto;
+                    #     text-align: center;
+                    #     }
+                    #     </style>
+                    #     </head>
+                    #     <body>
 
-            #         #     <div class="grid-container">
-            #         #     <div class="grid-item">{{ data_to_show.loc[1,'Nama Lengkap'] }}</div>
-            #         #     <div class="grid-item">2</div>
-            #         #     <div class="grid-item">3</div>  
-            #         #     <div class="grid-item">4</div>
-            #         #     <div class="grid-item">5</div>
-            #         #     <div class="grid-item">6</div>  
-            #         #     <div class="grid-item">7</div>
-            #         #     <div class="grid-item">8</div>
-            #         #     <div class="grid-item">9</div>
-            #         #     <div class="grid-item">10</div>  
-            #         #     <div class="grid-item">{}</div>
-            #         #     <div class="grid-item">12</div>
-            #         #     <div class="grid-item">13</div>  
-            #         #     <div class="grid-item">14</div>
-            #         #     <div class="grid-item">15</div>
-            #         #     <div class="grid-item">16</div>  
-            #         #     <div class="grid-item">17</div>
-            #         #     <div class="grid-item">18</div>
-            #         #     <div class="grid-item">19</div>
-            #         #     <div class="grid-item">20</div>
-            #         #     </div>
+                    #     <div class="grid-container">
+                    #     <div class="grid-item">{{ data_to_show.loc[1,'Nama Lengkap'] }}</div>
+                    #     <div class="grid-item">2</div>
+                    #     <div class="grid-item">3</div>  
+                    #     <div class="grid-item">4</div>
+                    #     <div class="grid-item">5</div>
+                    #     <div class="grid-item">6</div>  
+                    #     <div class="grid-item">7</div>
+                    #     <div class="grid-item">8</div>
+                    #     <div class="grid-item">9</div>
+                    #     <div class="grid-item">10</div>  
+                    #     <div class="grid-item">{}</div>
+                    #     <div class="grid-item">12</div>
+                    #     <div class="grid-item">13</div>  
+                    #     <div class="grid-item">14</div>
+                    #     <div class="grid-item">15</div>
+                    #     <div class="grid-item">16</div>  
+                    #     <div class="grid-item">17</div>
+                    #     <div class="grid-item">18</div>
+                    #     <div class="grid-item">19</div>
+                    #     <div class="grid-item">20</div>
+                    #     </div>
 
-            #         #     </body>
-            #         #     </html>
+                    #     </body>
+                    #     </html>
 
-            #         #     """, unsafe_allow_html=True)
+                    #     """, unsafe_allow_html=True)
                         
 
-            #     else :
-            #         with st.empty():
-            #             st.markdown(f"<h1 style='text-align: center;'>CONGRATS TO ALL THE WINNERS!</h1>", unsafe_allow_html=True)
+                else :
+                    with st.empty():
+                        st.markdown(f"<h1 style='text-align: center;'>CONGRATS TO ALL THE WINNERS!</h1>", unsafe_allow_html=True)
 
                 
-            #     # st.write('Count = ', st.session_state.count)
-            #     st.balloons()
+                # st.write('Count = ', st.session_state.count)
+                st.balloons()
         except :
             st.error('You need to submit the number of winners and prize')
         
