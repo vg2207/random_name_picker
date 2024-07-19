@@ -524,8 +524,8 @@ if user_input_excel is not None:
             button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
 
             
-            if button_cliked_9 :
-                st.empty()
+            # if button_cliked_9 :
+            #     st.empty()
             if button_clicked: 
                 
                 if st.session_state.count <= len(df2) :
