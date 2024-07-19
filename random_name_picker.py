@@ -544,17 +544,14 @@ if user_input_excel is not None:
                                 t -= 1
                                 st.empty()
                     row_number_to_show = st.session_state.count - 1
-                    data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
+                    data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True).rename(columns = {'NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)' : 'NIK'}, inplace=True)
                     data_to_show.index += 1
                     # prize_to_choose = st.session_state.df2.copy()
                     # prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
                     # st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
 
                     with st.container():
-                        st.dataframe(data_to_show[["NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)", 
-                                                   "Nama Lengkap", 
-                                                   "Company"]].rename(columns = {'NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)' : 'NIK'}, inplace=True), 
-                                     use_container_width=True)
+                        st.dataframe(data_to_show[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
 
                     # for m in range(len(data_to_show)) :
                     #     st.text_area("", 
