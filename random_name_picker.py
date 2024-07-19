@@ -373,13 +373,12 @@ if user_input_excel is not None:
 
 
         # col_5, col_6, col_7 = st.columns(3)
-        col_7 = st.columns(1)
         # with col_5 :
         #     button_clicked_5 = st.button("Save", type="secondary", use_container_width=True)
         # with col_6 :
         #     button_clicked_6 = st.button("Resets", type="secondary", use_container_width=True)
-        with col_7 :
-            button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
+        # with col_7 :
+        button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
 
         # if button_clicked_5 :
         new_row = pd.DataFrame(
