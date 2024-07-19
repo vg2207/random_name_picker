@@ -463,17 +463,17 @@ if user_input_excel is not None:
             st.write(df_all_participant)
             # winners_name_all = []
 
-            df_ltl_only = df_all_participant.loc[df_all_participant['Company'] == 'LTL']
-            # st.write(df_ltl_only)
+            df_ltl_only = df_all_participant.loc[df_all_participant['Company'] == 'LTL'].reset_index(drop=True)
+            st.write(df_ltl_only)
             df_remaining_non_ltl = df_all_participant.loc[df_all_participant['Company'] != 'LTL'].reset_index(drop=True)
-            # st.write(df_remaining_non_ltl)
+            st.write(df_remaining_non_ltl)
             random.seed(st.session_state.user_input_seed)
             
             df_ltl_only_winner_row = random.sample(range(len(df_ltl_only)),3)
             df_ltl_only_winner = df_ltl_only.iloc[df_ltl_only_winner_row].reset_index(drop=True)
             st.write(df_ltl_only_winner)
             df_remaining_ltl = df_ltl_only.drop(df_ltl_only_winner_row).reset_index(drop=True)
-            # st.write(df_remaining_ltl)
+            st.write(df_remaining_ltl)
             
             df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).reset_index(drop=True)
             st.write(df_remaining_participant)
