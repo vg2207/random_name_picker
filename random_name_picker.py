@@ -547,7 +547,7 @@ if user_input_excel is not None:
                     st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
 
                     with st.container():
-                        st.dataframe(data_to_show[["ID Karyawan", "Nama Lengkap", "Perusahaan"]], use_container_width=True)
+                        st.dataframe(data_to_show[["NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)", "Nama Lengkap", "Company"]], use_container_width=True)
 
                     # for m in range(len(data_to_show)) :
                     #     st.text_area("", 
