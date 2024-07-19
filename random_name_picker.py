@@ -503,7 +503,7 @@ if user_input_excel is not None:
             output = BytesIO()
 
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
-                for i in range(len(df2)-7) :
+                for i in range(10) :
                     # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
                     sheetname = 'Round ' + str(int(i+1))
                     winners_data = winners_name_all[i].reset_index(drop=True)
@@ -511,10 +511,10 @@ if user_input_excel is not None:
                     winners = winners_data.to_excel(writer, sheet_name=sheetname)
 
             with pd.ExcelWriter(output2, engine='xlsxwriter') as writer: 
-                for i in range(len(df2)-7) :
-                    # sheetname = 'Round ' + str(int(i+1+7)) + ' - Winner ' + str(df2.loc[i+7, 'Prize'])
-                    sheetname = 'Round ' + str(int(i+1+7))
-                    winners_data = winners_name_all[i+7].reset_index(drop=True)
+                for i in range(len(df2)-10) :
+                    # sheetname = 'Round ' + str(int(i+1+10)) + ' - Winner ' + str(df2.loc[i+10, 'Prize'])
+                    sheetname = 'Round ' + str(int(i+1+10))
+                    winners_data = winners_name_all[i+10].reset_index(drop=True)
                     winners_data.index = winners_data.index + 1
                     winners = winners_data.to_excel(writer, sheet_name=sheetname)
                     
