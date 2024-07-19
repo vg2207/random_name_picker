@@ -529,6 +529,10 @@ if user_input_excel is not None:
             if button_clicked: 
                 
                 if st.session_state.count <= len(df2) :
+                    prize_to_choose = st.session_state.df2.copy()
+                    prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
+                    st.markdown(f"<h2 style='text-align: center;'>Pemenang Hadiah berupa </h2>", unsafe_allow_html=True)
+                    st.markdown(f"<h1 style='text-align: center;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
                     with st.empty():
                         while t :
                             if t > 0 :
@@ -542,9 +546,9 @@ if user_input_excel is not None:
                     row_number_to_show = st.session_state.count - 1
                     data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
                     data_to_show.index += 1
-                    prize_to_choose = st.session_state.df2.copy()
-                    prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
-                    st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
+                    # prize_to_choose = st.session_state.df2.copy()
+                    # prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
+                    # st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
 
                     with st.container():
                         st.dataframe(data_to_show[["NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)", "Nama Lengkap", "Company"]], use_container_width=True)
