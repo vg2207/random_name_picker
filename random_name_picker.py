@@ -510,13 +510,13 @@ if user_input_excel is not None:
                     winners_data.index = winners_data.index + 1
                     winners = winners_data.to_excel(writer, sheet_name=sheetname)
 
-            with pd.ExcelWriter(output2, engine='xlsxwriter') as writer: 
-                for i in range(len(df2)-10) :
-                    # sheetname = 'Round ' + str(int(i+1+10)) + ' - Winner ' + str(df2.loc[i+10, 'Prize'])
-                    sheetname = 'Round ' + str(int(i+1+10))
-                    winners_data = winners_name_all[i+10].reset_index(drop=True)
-                    winners_data.index = winners_data.index + 1
-                    winners = winners_data.to_excel(writer, sheet_name=sheetname)
+            # with pd.ExcelWriter(output2, engine='xlsxwriter') as writer: 
+            #     for i in range(len(df2)-10) :
+            #         # sheetname = 'Round ' + str(int(i+1+10)) + ' - Winner ' + str(df2.loc[i+10, 'Prize'])
+            #         sheetname = 'Round ' + str(int(i+1+10))
+            #         winners_data = winners_name_all[i+10].reset_index(drop=True)
+            #         winners_data.index = winners_data.index + 1
+            #         winners = winners_data.to_excel(writer, sheet_name=sheetname)
                     
 
             col_3, col_9, col_4 = st.columns([1,1,1])
@@ -530,7 +530,7 @@ if user_input_excel is not None:
             # with col_8 :
             #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
             button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners 1', type="secondary", data=output1.getvalue(),file_name='winners1.xlsx')
-            button_clicked_10 = st.sidebar.download_button(label=':cloud: Download winners 2', type="secondary", data=output2.getvalue(),file_name='winners2.xlsx')
+            # button_clicked_10 = st.sidebar.download_button(label=':cloud: Download winners 2', type="secondary", data=output2.getvalue(),file_name='winners2.xlsx')
 
             
             # if button_cliked_9 :
