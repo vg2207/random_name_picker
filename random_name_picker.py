@@ -359,7 +359,7 @@ if user_input_excel is not None:
     # if selected_main_menu == "Settings" :
 
         with st.container():
-            user_input_seed = st.number_input("Pick random seed number", 1)
+            user_input_seed = st.number_input("Pick random seed number")
         # col_1, col_2 = st.columns(2)
         # with st.container():
         #     with col_1:
