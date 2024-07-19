@@ -395,7 +395,7 @@ if user_input_excel is not None:
                        'Hydrogen Tumbler', 'Massage Pillow',
                        'Blender Juicer', 'Free Scaling Voucher - Audy Dental',
                        'Lock n lock container', 'Cosmos Mixer',
-                       'One Set Oxone Knife', 'Voucher Indomaret Rp 100.000',
+                       # 'One Set Oxone Knife', 'Voucher Indomaret Rp 100.000',
                        # 'Voucher Indomaret Rp 150.000', 'Voucher product pureve: Rp 500.000',
                        # 'Xiaomi Smart Band 8', 'Traveloka voucher Rp 500.000',
                        # 'Garmin Watch (by GE)', 'Smart TV 32 inch Xiaomi',
