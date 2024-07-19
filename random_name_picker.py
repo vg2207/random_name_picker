@@ -483,12 +483,13 @@ if user_input_excel is not None:
             for i in range(len(df2)):
                 
                 winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
+                st.write(winners_row)
                 winners_name = df_remaining_participant.iloc[winners_row]
                 prize = df2["Prize"][i]
-                # st.markdown(f'won {prize}')
-                # st.write(winners_name)
+                st.markdown(f'won {prize}')
+                st.write(winners_name)
                 df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
-                # st.write(df3)
+                st.write(df_remaining_participant)
                 winners_name_all.append(winners_name)
                 # else :
                 #     winners_row = random.sample(range(len(df_ltl_only_winner)),int(df2["Number of Winner(s)"][i]))
