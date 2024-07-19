@@ -479,27 +479,37 @@ if user_input_excel is not None:
             df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
             st.write(df_remaining_participant)
 
-            # random.seed(st.session_state.user_input_seed+1)
-            # for i in range(len(df2)):
-            #     winners_row = random.sample(range(len(df3)),int(df2["Number of Winner(s)"][i]))
-            #     winners_name = df3.iloc[winners_row]
-            #     prize = df2["Prize"][i]
-            #     # st.markdown(f'won {prize}')
-            #     # st.write(winners_name)
-            #     df3 = df3.drop(winners_row).reset_index(drop=True)
-            #     # st.write(df3)
-            #     winners_name_all.append(winners_name)
+            random.seed(st.session_state.user_input_seed)
+            for i in range(len(df2)):
+                if i == 0 or i == 2 :
+                    winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
+                    winners_name = df_remaining_participant.iloc[winners_row]
+                    prize = df2["Prize"][i]
+                    # st.markdown(f'won {prize}')
+                    # st.write(winners_name)
+                    df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
+                    # st.write(df3)
+                    winners_name_all.append(winners_name)
+                else :
+                    winners_row = random.sample(range(len(df_ltl_only_winner)),int(df2["Number of Winner(s)"][i]))
+                    winners_name = df_ltl_only_winner.iloc[winners_row]
+                    prize = df2["Prize"][i]
+                    # st.markdown(f'won {prize}')
+                    # st.write(winners_name)
+                    df_remaining_participant = df_ltl_only_winner.drop(winners_row).reset_index(drop=True)
+                    # st.write(df3)
+                    winners_name_all.append(winners_name)
 
 
-            # output = BytesIO()
+            output = BytesIO()
 
-            # with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
-            #     for i in range(len(df2)) :
-            #         # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
-            #         sheetname = 'Round ' + str(int(i+1))
-            #         winners_data = winners_name_all[i].reset_index(drop=True)
-            #         winners_data.index = winners_data.index + 1
-            #         winners = winners_data.to_excel(writer, sheet_name=sheetname)
+            with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
+                for i in range(len(df2)) :
+                    # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
+                    sheetname = 'Round ' + str(int(i+1))
+                    winners_data = winners_name_all[i].reset_index(drop=True)
+                    winners_data.index = winners_data.index + 1
+                    winners = winners_data.to_excel(writer, sheet_name=sheetname)
                     
 
             # # col_3, col_4, col_8 = st.columns([1,1,1])
@@ -510,7 +520,7 @@ if user_input_excel is not None:
             #     button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
             # # with col_8 :
             # #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
-            # button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
+            button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
 
             
 
