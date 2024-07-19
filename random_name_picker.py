@@ -502,8 +502,8 @@ if user_input_excel is not None:
 
             output = BytesIO()
 
-            with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
-                for i in range(4) :
+            with pd.ExcelWriter(output1, engine='xlsxwriter') as writer: 
+                for i in range(10) :
                     # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
                     sheetname = 'Round ' + str(int(i+1))
                     winners_data = winners_name_all[i].reset_index(drop=True)
