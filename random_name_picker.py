@@ -511,8 +511,8 @@ if user_input_excel is not None:
                     winners = winners_data.to_excel(writer, sheet_name=sheetname)
                     
 
-            # col_3, col_9, col_4 = st.columns([1,1,1])
-            col_3, col_4 = st.columns([1,1])
+            col_3, col_9, col_4 = st.columns([1,1,1])
+            # col_3, col_4 = st.columns([1,1])
             with col_3 :
                 button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
             with col_9 :
