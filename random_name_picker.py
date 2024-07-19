@@ -483,7 +483,7 @@ if user_input_excel is not None:
 
             random.seed(st.session_state.user_input_seed)
             for i in range(len(df2)):
-                if i <= 1 or i == 6 :
+                if i <= 1 :
                     winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
                     winners_name = df_remaining_participant.iloc[winners_row]
                     prize = df2["Prize"][i]
