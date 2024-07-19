@@ -459,7 +459,8 @@ if user_input_excel is not None:
             df2 = st.session_state.df2
             st.write(df2)
             t = 30
-            # df3 = df.copy()
+            df3 = df.copy()
+            st.write(df3)
             # winners_name_all = []
 
             # df_ltl_only = df2.loc[df2['Company'] == 'LTL']
