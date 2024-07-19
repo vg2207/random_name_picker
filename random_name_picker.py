@@ -467,7 +467,8 @@ if user_input_excel is not None:
             st.write(df_ltl_only)
             random.seed(st.session_state.user_input_seed)
             
-            df_ltl_only_winner = random.sample(df_ltl_only,3)
+            df_ltl_only_winner_row = random.sample(range(len(df_ltl_only)),3)
+            df_ltl_only_winner = df_ltl_only.iloc[df_ltl_only_winner_row]
             st.write(df_ltl_only_winner)
             # df_remaining = df2.loc[df2['Company'] == 'LTL']
 
