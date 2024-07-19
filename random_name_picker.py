@@ -474,7 +474,8 @@ if user_input_excel is not None:
             st.write(df_ltl_only_winner)
             df_remaining_ltl = df_ltl_only.drop(df_ltl_only_winner_row).reset_index(drop=True)
             st.write(df_remaining_ltl)
-            
+
+            random.seed(st.session_state.user_input_seed)
             df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1).reset_index(drop=True)
             st.write(df_remaining_participant)
 
