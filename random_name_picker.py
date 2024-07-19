@@ -502,7 +502,7 @@ if user_input_excel is not None:
 
             output = BytesIO()
 
-            with pd.ExcelWriter(output1, engine='xlsxwriter') as writer: 
+            with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
                 for i in range(len(df2)) :
                     # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
                     sheetname = 'Round ' + str(int(i+1))
@@ -529,7 +529,7 @@ if user_input_excel is not None:
                 button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
             # with col_8 :
             #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
-            button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners 1', type="secondary", data=output1.getvalue(),file_name='winners1.xlsx')
+            button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners1.xlsx')
             # button_clicked_10 = st.sidebar.download_button(label=':cloud: Download winners 2', type="secondary", data=output2.getvalue(),file_name='winners2.xlsx')
 
             
