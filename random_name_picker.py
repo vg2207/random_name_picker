@@ -465,6 +465,8 @@ if user_input_excel is not None:
 
             df_ltl_only = df_all_participant.loc[df_all_participant['Company'] == 'LTL'].reset_index(drop=True)
             st.write(df_ltl_only)
+            df_remaining_non_ltl = df_all_participant.loc[df_all_participant['Company'] != 'LTL']
+            st.write(df_remaining_non_ltl)
             random.seed(st.session_state.user_input_seed)
             
             df_ltl_only_winner_row = random.sample(range(len(df_ltl_only)),3)
@@ -472,6 +474,8 @@ if user_input_excel is not None:
             st.write(df_ltl_only_winner)
             df_remaining_ltl = df_ltl_only.drop(df_ltl_only_winner_row)
             st.write(df_remaining_ltl)
+            
+            df_remaining_participant = pd.concat([df_remaining_ltl, new_row])
 
             # random.seed(st.session_state.user_input_seed+1)
             # for i in range(len(df2)):
