@@ -457,16 +457,17 @@ if user_input_excel is not None:
         
         try :
             df2 = st.session_state.df2
+            st.write(df2)
             t = 30
             # df3 = df.copy()
             # winners_name_all = []
 
-            df_ltl_only = df2.loc[df2['Company'] == 'LTL']
-            st.write(df_ltl_only)
-            random.seed(st.session_state.user_input_seed)
+            # df_ltl_only = df2.loc[df2['Company'] == 'LTL']
+            # st.write(df_ltl_only)
+            # random.seed(st.session_state.user_input_seed)
             
-            df_ltl_only_winner = random.sample(df_ltl_only,3)
-            st.write(df_ltl_only_winner)
+            # df_ltl_only_winner = random.sample(df_ltl_only,3)
+            # st.write(df_ltl_only_winner)
             # df_remaining = df2.loc[df2['Company'] == 'LTL']
 
             # random.seed(st.session_state.user_input_seed+1)
