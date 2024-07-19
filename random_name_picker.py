@@ -481,7 +481,7 @@ if user_input_excel is not None:
 
             random.seed(st.session_state.user_input_seed)
             for i in range(len(df2)):
-                if i == 1 or i == 3 :
+                if i == 0 and i == 2 :
                     winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
                     st.write(winners_row)
                     winners_name = df_remaining_participant.iloc[winners_row]
@@ -498,7 +498,7 @@ if user_input_excel is not None:
                     # st.markdown(f'won {prize}')
                     # st.write(winners_name)
                     df_remaining_participant = df_ltl_only_winner.drop(winners_row).reset_index(drop=True)
-                    # st.write(df3)
+                    st.write(df_remaining_participant)
                     winners_name_all.append(winners_name)
 
 
@@ -521,7 +521,7 @@ if user_input_excel is not None:
             #     button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
             # # with col_8 :
             # #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
-            # button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
+            button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
 
             
 
