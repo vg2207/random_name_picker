@@ -498,8 +498,8 @@ if user_input_excel is not None:
                     # st.write(df_ltl_only_winner)
                     winners_name_all.append(winners_name)
 
-            # st.write(df_ltl_only_winner)
-            # st.write(df_remaining_participant)
+            st.write(df_ltl_only_winner)
+            st.write(df_remaining_participant)
 
 
             output = BytesIO()
