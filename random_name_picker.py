@@ -544,7 +544,8 @@ if user_input_excel is not None:
                                 t -= 1
                                 st.empty()
                     row_number_to_show = st.session_state.count - 1
-                    data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True).rename(columns = {'NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)' : 'NIK'}, inplace=True)
+                    data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
+                    data_to_show = data_to_show.rename(columns = {"NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)" : "NIK"}, inplace=True)
                     data_to_show.index += 1
                     # prize_to_choose = st.session_state.df2.copy()
                     # prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
