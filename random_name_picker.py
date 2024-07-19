@@ -383,20 +383,20 @@ if user_input_excel is not None:
         # if button_clicked_5 :
         new_row = pd.DataFrame(
             {"Number of Winner(s)": [90, 100,
-                                     # 14, 10,
-                                     # 20, 5,
-                                     # 1, 1,
-                                     # 1, 75,
+                                     14, 10,
+                                     20, 5,
+                                     1, 1,
+                                     1, 75,
                                      50, 30,
                                      5, 3,
                                      3, 1,
                                      1
                                     ],
              "Prize": ['Goodiebag Fibercreme dan Rich Creme', 'Voucher Indomaret Rp 50.000', 
-                       # 'Hydrogen Tumbler', 'Massage Pillow',
-                       # 'Blender Juicer', 'Free Scaling Voucher Audy Dental',
-                       # 'Lock n lock container', 'Cosmos Mixer',
-                       # 'One Set Oxone Knife', 'Voucher Indomaret Rp 100.000',
+                       'Hydrogen Tumbler', 'Massage Pillow',
+                       'Blender Juicer', 'Free Scaling Voucher Audy Dental',
+                       'Lock n lock container', 'Cosmos Mixer',
+                       'One Set Oxone Knife', 'Voucher Indomaret Rp 100.000',
                        'Voucher Indomaret Rp 150.000', 'Voucher product pureve Rp 500.000',
                        'Xiaomi Smart Band 8', 'Traveloka voucher Rp 500.000',
                        'Garmin Watch (by GE)', 'Smart TV 32 inch Xiaomi',
@@ -473,13 +473,13 @@ if user_input_excel is not None:
             random.seed(st.session_state.user_input_seed)
             df_ltl_only_winner_row = random.sample(range(len(df_ltl_only)), 190)
             df_ltl_only_winner = df_ltl_only.iloc[df_ltl_only_winner_row].reset_index(drop=True)
-            # st.write(df_ltl_only_winner)
+            st.write(df_ltl_only_winner)
             df_remaining_ltl = df_ltl_only.drop(df_ltl_only_winner_row).reset_index(drop=True)
             # st.write(df_remaining_ltl)
 
             # random.seed(st.session_state.user_input_seed)
             df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
-            # st.write(df_remaining_participant)
+            st.write(df_remaining_participant)
 
             random.seed(st.session_state.user_input_seed)
             for i in range(len(df2)):
