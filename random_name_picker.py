@@ -387,19 +387,21 @@ if user_input_excel is not None:
                                      20, 5,
                                      1, 1,
                                      1, 75,
-                                     # 50, 30,
-                                     # 5, 3,
-                                     # 3, 1,
-                                     1],
+                                     50, 30,
+                                     5, 3,
+                                     3, 1,
+                                     1
+                                    ],
              "Prize": ['Goodiebag Fibercreme dan Rich Creme', 'Voucher Indomaret Rp 50.000', 
                        'Hydrogen Tumbler', 'Massage Pillow',
                        'Blender Juicer', 'Free Scaling Voucher - Audy Dental',
                        'Lock n lock container', 'Cosmos Mixer',
                        'One Set Oxone Knife', 'Voucher Indomaret Rp 100.000',
-                       # 'Voucher Indomaret Rp 150.000', 'Voucher product pureve: Rp 500.000',
-                       # 'Xiaomi Smart Band 8', 'Traveloka voucher Rp 500.000',
-                       # 'Garmin Watch (by GE)', 'Smart TV 32 inch Xiaomi',
-                       'Air Purifier']
+                       'Voucher Indomaret Rp 150.000', 'Voucher product pureve: Rp 500.000',
+                       'Xiaomi Smart Band 8', 'Traveloka voucher Rp 500.000',
+                       'Garmin Watch (by GE)', 'Smart TV 32 inch Xiaomi',
+                       'Air Purifier'
+                      ]
             })
 
         data = {
@@ -503,20 +505,20 @@ if user_input_excel is not None:
             output = BytesIO()
 
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
-                for i in range(len(df2)) :
+                for i in range(10) :
                     # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
                     sheetname = 'Round ' + str(int(i+1))
                     winners_data = winners_name_all[i].reset_index(drop=True)
                     winners_data.index = winners_data.index + 1
                     winners = winners_data.to_excel(writer, sheet_name=sheetname)
 
-            # with pd.ExcelWriter(output2, engine='xlsxwriter') as writer: 
-            #     for i in range(len(df2)-10) :
-            #         # sheetname = 'Round ' + str(int(i+1+10)) + ' - Winner ' + str(df2.loc[i+10, 'Prize'])
-            #         sheetname = 'Round ' + str(int(i+1+10))
-            #         winners_data = winners_name_all[i+10].reset_index(drop=True)
-            #         winners_data.index = winners_data.index + 1
-            #         winners = winners_data.to_excel(writer, sheet_name=sheetname)
+            with pd.ExcelWriter(output2, engine='xlsxwriter') as writer: 
+                for i in range(7) :
+                    # sheetname = 'Round ' + str(int(i+1+10)) + ' - Winner ' + str(df2.loc[i+10, 'Prize'])
+                    sheetname = 'Round ' + str(int(i+1+10))
+                    winners_data = winners_name_all[i+10].reset_index(drop=True)
+                    winners_data.index = winners_data.index + 1
+                    winners = winners_data.to_excel(writer, sheet_name=sheetname)
                     
 
             col_3, col_9, col_4 = st.columns([1,1,1])
@@ -530,7 +532,7 @@ if user_input_excel is not None:
             # with col_8 :
             #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
             button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners1.xlsx')
-            # button_clicked_10 = st.sidebar.download_button(label=':cloud: Download winners 2', type="secondary", data=output2.getvalue(),file_name='winners2.xlsx')
+            button_clicked_10 = st.sidebar.download_button(label=':cloud: Download winners 2', type="secondary", data=output2.getvalue(),file_name='winners2.xlsx')
 
             
             # if button_cliked_9 :
