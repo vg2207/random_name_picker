@@ -286,8 +286,9 @@ if user_input_excel is not None:
                                 mins, secs = divmod(t1, 60)
                                 timer = t1
                                 st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
-                                time.sleep(0.1)
+                                time.sleep(1)
                                 t1 -= 1
+                                st.empty()
                     else :
                         with st.empty():
                             while t :
