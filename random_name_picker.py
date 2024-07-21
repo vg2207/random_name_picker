@@ -281,7 +281,15 @@ if user_input_excel is not None:
                                     st.empty()
                     else :
                         with st.empty():
-                            st.markdown(f"<h1 style='text-align: center;'><br>{str(name_show['Nama Lengkap'])}</h1>", unsafe_allow_html=True)
+                            while t :
+                                if t > 0 :
+                                    with st.empty():
+                                        name_show = df.iloc[random.randint(1, len(df)) - 1]
+                                        
+                                        st.markdown(f"<h1 style='text-align: center;'><br>{str(name_show['Nama Lengkap'])}</h1>", unsafe_allow_html=True)
+                                    time.sleep(0.1)
+                                    t -= 1
+                                    st.empty()
     
                     row_number_to_show = st.session_state.count - 1
                     data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
