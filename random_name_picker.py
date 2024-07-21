@@ -322,7 +322,7 @@ def remove_duplicate(data, drop_col) :
 
 st.set_page_config(layout="wide")
 
-col_A, col_B, col_C = st.columns([1,3,1], vertical_alignment="center")
+col_A, col_B, col_C = st.columns([1,3,1], vertical_alignment=["center", "center", "center"])
 with col_A :
     logo = Image.open('assets_logo/Logo Lautan Luas.png')
     st.image(logo)
