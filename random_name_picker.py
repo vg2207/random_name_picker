@@ -321,7 +321,14 @@ def remove_duplicate(data, drop_col) :
 
 st.set_page_config(layout="wide")
 
-
+col_A, col_B, col_C = st.columns([1,3,1])
+    with col_A :
+        logo = Image.open('assets_logo/Logo Lautan Luas.png')
+        st.image(logo)
+    with col_B:
+        st.markdown(f"<h1 style='text-align: center;'>Undian Ulang Tahun ke 73<br>PT Lautan Luas Tbk.</h1>", unsafe_allow_html=True)
+        
+        
 
 
 
