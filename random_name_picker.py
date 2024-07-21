@@ -53,6 +53,7 @@ if user_input_excel is not None:
         df = lowerify_and_upperify_cols(df, lower_col, upper_col)
         df = remove_duplicate(df, drop_col='NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)')
         df = df.loc[(df['Level'] != 'Director') & (df['Level'] != 'BOC')].reset_index(drop=True)
+        df.rename(columns = {"NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)":"NIK"}, inplace = True)
     elif user_input_excel.name.endswith('.xlsx'):
         df=pd.read_excel(user_input_excel)
         st.sidebar.success('File Uploaded Successfully!')
@@ -62,6 +63,7 @@ if user_input_excel is not None:
         df = lowerify_and_upperify_cols(df, lower_col, upper_col)
         df = remove_duplicate(df, drop_col='NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)')
         df = df.loc[(df['Level'] != 'Director') & (df['Level'] != 'BOC')].reset_index(drop=True)
+        df.rename(columns = {"NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)":"NIK"}, inplace = True)
     else:
         st.sidebar.warning('You need to upload a csv or an excel file')
     
@@ -293,7 +295,6 @@ if user_input_excel is not None:
     
                     row_number_to_show = st.session_state.count - 1
                     data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
-                    data_to_show.rename(columns = {"NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)":"NIK"}, inplace = True)
                     # data_to_show = data_to_show.columns.str.replace("NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)", "NIK")
                     data_to_show.index += 1
                     # prize_to_choose = st.session_state.df2.copy()
