@@ -544,7 +544,7 @@ if user_input_excel is not None:
                         background-color: #00FF00;
                         color: black;
                     }""",
-                ):
+                )
                 button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
             with col_9 :
                 button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
