@@ -242,7 +242,15 @@ if user_input_excel is not None:
                 ):
                     button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
             with col_9 :
-                button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
+                with stylable_container(
+                    "grey",
+                    css_styles="""
+                    button {
+                        background-color: #86a3be;
+                        color: white;
+                    }""",
+                ):
+                    button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
             with col_4 :
                 button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
             # with col_8 :
