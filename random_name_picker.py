@@ -304,6 +304,7 @@ import random
 from io import BytesIO
 import xlsxwriter
 from streamlit_option_menu import option_menu 
+from PIL import Image
 
 
 def lowerify_and_upperify_cols(data, lower, upper) :
