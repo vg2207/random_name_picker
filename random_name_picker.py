@@ -270,7 +270,7 @@ if user_input_excel is not None:
                     # st.markdown(f"<h2 style='text-align: center;'>Pemenang Hadiah berupa </h2>", unsafe_allow_html=True)
                     st.markdown(f"<h1 style='text-align: center; color: #0349b3;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
                     time.sleep(1)
-                    if st.session_state.count <= 12 :
+                    if st.session_state.count <= 14 :
                         with st.empty():
                             while t :
                                 if t > 0 :
@@ -295,7 +295,6 @@ if user_input_excel is not None:
     
                     row_number_to_show = st.session_state.count - 1
                     data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
-                    # data_to_show = data_to_show.columns.str.replace("NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)", "NIK")
                     data_to_show.index += 1
                     # prize_to_choose = st.session_state.df2.copy()
                     # prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
