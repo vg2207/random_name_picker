@@ -233,7 +233,7 @@ if user_input_excel is not None:
             # col_3, col_4 = st.columns([1,1])
             with col_3 :
                 with stylable_container(
-                    "green",
+                    "blue",
                     css_styles="""
                     button {
                         background-color: #0349b3;
@@ -258,7 +258,7 @@ if user_input_excel is not None:
                     prize_to_choose = st.session_state.df2.copy()
                     prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
                     # st.markdown(f"<h2 style='text-align: center;'>Pemenang Hadiah berupa </h2>", unsafe_allow_html=True)
-                    st.markdown(f"<h1 style='text-align: center;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
+                    st.markdown(f"<h1 style='text-align: center; color: #0349b3;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
                     time.sleep(2)
                     with st.empty():
                         while t :
