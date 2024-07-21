@@ -303,8 +303,10 @@ import time
 import random
 from io import BytesIO
 import xlsxwriter
-from streamlit_option_menu import option_menu 
+# from streamlit_option_menu import option_menu 
 from PIL import Image
+from streamlit_extras.stylable_container import stylable_container
+
 
 
 def lowerify_and_upperify_cols(data, lower, upper) :
@@ -535,6 +537,14 @@ if user_input_excel is not None:
                 # color:#ffffff;
                 # }
                 # </style>""", unsafe_allow_html=True)
+                with stylable_container(
+                    "green",
+                    css_styles="""
+                    button {
+                        background-color: #00FF00;
+                        color: black;
+                    }""",
+                ):
                 button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
             with col_9 :
                 button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
