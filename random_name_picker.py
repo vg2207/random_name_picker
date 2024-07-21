@@ -529,12 +529,12 @@ if user_input_excel is not None:
             col_3, col_9, col_4 = st.columns([1,1,1])
             # col_3, col_4 = st.columns([1,1])
             with col_3 :
-                m = st.markdown("""<style>
-                div.stButton > button:first-child {
-                background-color: #0099ff;
-                color:#ffffff;
-                }
-                </style>""", unsafe_allow_html=True)
+                # m = st.markdown("""<style>
+                # div.stButton > button:first-child {
+                # background-color: #0099ff;
+                # color:#ffffff;
+                # }
+                # </style>""", unsafe_allow_html=True)
                 button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
             with col_9 :
                 button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
