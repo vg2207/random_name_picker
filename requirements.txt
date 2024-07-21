@@ -3,3 +3,4 @@ pandas==1.4.3
 XlsxWriter==3.1.2
 streamlit-option-menu
 openpyxl
+streamlit-extras
