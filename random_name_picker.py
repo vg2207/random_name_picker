@@ -281,6 +281,10 @@ if user_input_excel is not None:
                         </style>
                         """, unsafe_allow_html=True)
                         t1 = 5
+                        st.markdown('<p class="big-font">READY ?</p>', unsafe_allow_html=True)
+
+                        time.sleep(1)
+                        
                         while t1:
                             mins, secs = divmod(t1, 60)
                             timer = t1
