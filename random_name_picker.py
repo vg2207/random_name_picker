@@ -270,8 +270,20 @@ if user_input_excel is not None:
                     # st.markdown(f"<h2 style='text-align: center;'>Pemenang Hadiah berupa </h2>", unsafe_allow_html=True)
                     st.markdown(f"<h1 style='text-align: center; color: #0349b3;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
                     time.sleep(1)
-                    if st.session_state.count <= 1 :
+                    if st.session_state.count <= 14 :
+                        with st.empty():
+                            while t :
+                                if t > 0 :
+                                    with st.empty():
+                                        name_show = df.iloc[random.randint(1, len(df)) - 1]
+                                        
+                                        st.markdown(f"<h1 style='text-align: center;'><br>{str(name_show['Nama Lengkap'])}</h1>", unsafe_allow_html=True)
+                                    time.sleep(0.1)
+                                    t -= 1
+                                    st.empty()
                         
+                        
+                    else :
                         st.markdown("""
                         <style>
                         .big-font {
@@ -289,17 +301,7 @@ if user_input_excel is not None:
                                 time.sleep(1)
                                 t1 -= 1
                                 st.empty()
-                    else :
-                        with st.empty():
-                            while t :
-                                if t > 0 :
-                                    with st.empty():
-                                        name_show = df.iloc[random.randint(1, len(df)) - 1]
-                                        
-                                        st.markdown(f"<h1 style='text-align: center;'><br>{str(name_show['Nama Lengkap'])}</h1>", unsafe_allow_html=True)
-                                    time.sleep(0.1)
-                                    t -= 1
-                                    st.empty()
+                        
     
                     row_number_to_show = st.session_state.count - 1
                     data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
