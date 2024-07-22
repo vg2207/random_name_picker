@@ -375,9 +375,9 @@ if user_input_excel is not None:
                     #     """, unsafe_allow_html=True)
                         
 
-            else :
-                with st.empty():
-                    st.markdown(f"<h1 style='text-align: center;'>CONGRATS TO ALL THE WINNERS!</h1>", unsafe_allow_html=True)
+                else :
+                    with st.empty():
+                        st.markdown(f"<h1 style='text-align: center;'>CONGRATS TO ALL THE WINNERS!</h1>", unsafe_allow_html=True)
 
             
             # st.write('Count = ', st.session_state.count)
