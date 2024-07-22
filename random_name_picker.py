@@ -280,7 +280,7 @@ if user_input_excel is not None:
                             while t :
                                 if t > 0 :
                                     with st.empty():
-                                        random.seed(st.session_state.count)
+                                        random.seed(st.session_state.count+t)
                                         name_show = df.iloc[random.randint(1, len(df)) - 1]
                                         
                                         st.markdown(f"<h1 style='text-align: center;'><br>{str(name_show['Nama Lengkap'])}</h1>", unsafe_allow_html=True)
