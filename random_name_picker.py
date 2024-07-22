@@ -76,7 +76,7 @@ if user_input_excel is not None:
     # if selected_main_menu == "Settings" :
 
         with st.container():
-            user_input_seed = st.sidebar.number_input("Pick random seed number", 1)
+            user_input_seed = st.number_input("Pick random seed number", 1)
         # col_1, col_2 = st.columns(2)
         # with st.container():
         #     with col_1:
@@ -95,7 +95,7 @@ if user_input_excel is not None:
         # with col_6 :
         #     button_clicked_6 = st.button("Resets", type="secondary", use_container_width=True)
         # with col_7 :
-        button_clicked_7 = st.sidebar.button("Submit", type="primary", use_container_width=True)
+        button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
     
         # if button_clicked_5 :
         new_row = pd.DataFrame(
@@ -138,7 +138,7 @@ if user_input_excel is not None:
         if button_clicked_7 :
             st.session_state.user_input_seed = user_input_seed
     
-            st.sidebar.markdown(f"Random seed = {st.session_state.user_input_seed}")
+            st.markdown(f"Random seed = {st.session_state.user_input_seed}")
     
     
             df2 = pd.concat([df1, new_row])
@@ -146,18 +146,18 @@ if user_input_excel is not None:
             st.session_state.df2 = df2
             # df2 = st.session_state.df2
     
-            st.sidebar.write(st.session_state.df2)
+            st.write(st.session_state.df2)
             # df2.to_csv('winner_parameter.csv')
     
-            st.sidebar.write('Jumlah peserta = ' + str(len(df)))
-            st.sidebar.write('Jumlah hadiah = ' + str(int(st.session_state.df2['Number of Winner(s)'].sum())))
+            st.write('Jumlah peserta = ' + str(len(df)))
+            st.write('Jumlah hadiah = ' + str(int(st.session_state.df2['Number of Winner(s)'].sum())))
             
             if len(df) < st.session_state.df2['Number of Winner(s)'].sum() :
-                st.sidebar.write('Jumlah peserta lebih sedikit daripada jumlah hadiah')
+                st.write('Jumlah peserta lebih sedikit daripada jumlah hadiah')
             elif len(df) == st.session_state.df2['Number of Winner(s)'].sum() :
-                st.sidebar.write('Jumlah peserta sama dengan jumlah hadiah')
+                st.write('Jumlah peserta sama dengan jumlah hadiah')
             else :
-                st.sidebar.write('Apps ready to run')
+                st.write('Apps ready to run')
 
         
 
