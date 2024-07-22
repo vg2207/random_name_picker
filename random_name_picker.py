@@ -263,117 +263,117 @@ if user_input_excel is not None:
         # if button_cliked_9 :
         #     st.empty()
         if button_clicked: 
-            
-            if st.session_state.count <= len(df2) :
-                prize_to_choose = st.session_state.df2.copy()
-                prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
-                # st.markdown(f"<h2 style='text-align: center;'>Pemenang Hadiah berupa </h2>", unsafe_allow_html=True)
-                st.markdown(f"<h1 style='text-align: center; color: #0349b3;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
-                time.sleep(1)
-                if st.session_state.count <= 14 :
-                    with st.empty():
-                        while t :
-                            if t > 0 :
-                                with st.empty():
-                                    name_show = df.iloc[random.randint(1, len(df)) - 1]
-                                    
-                                    st.markdown(f"<h1 style='text-align: center;'><br>{str(name_show['Nama Lengkap'])}</h1>", unsafe_allow_html=True)
-                                time.sleep(0.1)
-                                t -= 1
+            with st.empty()
+                if st.session_state.count <= len(df2) :
+                    prize_to_choose = st.session_state.df2.copy()
+                    prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
+                    # st.markdown(f"<h2 style='text-align: center;'>Pemenang Hadiah berupa </h2>", unsafe_allow_html=True)
+                    st.markdown(f"<h1 style='text-align: center; color: #0349b3;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
+                    time.sleep(1)
+                    if st.session_state.count <= 14 :
+                        with st.empty():
+                            while t :
+                                if t > 0 :
+                                    with st.empty():
+                                        name_show = df.iloc[random.randint(1, len(df)) - 1]
+                                        
+                                        st.markdown(f"<h1 style='text-align: center;'><br>{str(name_show['Nama Lengkap'])}</h1>", unsafe_allow_html=True)
+                                    time.sleep(0.1)
+                                    t -= 1
+                                    st.empty()
+                        
+                        
+                    else :
+                        st.markdown("""
+                        <style>
+                        .big-font {
+                            font-size:200px !important;
+                            text-align: center;
+                            }
+                        </style>
+                        """, unsafe_allow_html=True)
+                        t1 = 5
+                        with st.empty():
+                            while t1:
+                                mins, secs = divmod(t1, 60)
+                                timer = t1
+                                st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
+                                time.sleep(1)
+                                t1 -= 1
                                 st.empty()
-                    
-                    
-                else :
-                    st.markdown("""
-                    <style>
-                    .big-font {
-                        font-size:200px !important;
-                        text-align: center;
-                        }
-                    </style>
-                    """, unsafe_allow_html=True)
-                    t1 = 5
-                    with st.empty():
-                        while t1:
-                            mins, secs = divmod(t1, 60)
-                            timer = t1
-                            st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
-                            time.sleep(1)
-                            t1 -= 1
-                            st.empty()
-                    
-
-                row_number_to_show = st.session_state.count - 1
-                data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
-                data_to_show.index += 1
-                # prize_to_choose = st.session_state.df2.copy()
-                # prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
-                # st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
-
-                with st.container():
-                    st.dataframe(data_to_show[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
-
-                # for m in range(len(data_to_show)) :
-                #     st.text_area("", 
-                #     f"""
-                #     {str(data_to_show.loc[m+1, 'ID Karyawan'])}
-                #     {str(data_to_show.loc[m+1, 'Nama Lengkap'])}
-                #     {str(data_to_show.loc[m+1, 'Perusahaan'])}""",
-                #     height = 150)
-                # # for m in range(len(data_to_show)//5) :
-                # # acol1, acol2, acol3, acol4, acol5 = st.columns(1)
-                # with st.container() :
-                    
-                #     st.markdown("""
-                #     <html>
-                #     <head>
-                #     <style>
-                #     .grid-container {
-                #     display: grid;
-                #     grid-template-columns: auto auto auto auto auto;
-                #     background-color: #2196F3;
-                #     padding: 10px;
-                #     }
-
-                #     .grid-item {
-                #     background-color: rgba(255, 255, 255, 0.8);
-                #     border: 1px solid rgba(0, 0, 0, 0.8);
-                #     padding: 20px;
-                #     font-size: auto;
-                #     text-align: center;
-                #     }
-                #     </style>
-                #     </head>
-                #     <body>
-
-                #     <div class="grid-container">
-                #     <div class="grid-item">{{ data_to_show.loc[1,'Nama Lengkap'] }}</div>
-                #     <div class="grid-item">2</div>
-                #     <div class="grid-item">3</div>  
-                #     <div class="grid-item">4</div>
-                #     <div class="grid-item">5</div>
-                #     <div class="grid-item">6</div>  
-                #     <div class="grid-item">7</div>
-                #     <div class="grid-item">8</div>
-                #     <div class="grid-item">9</div>
-                #     <div class="grid-item">10</div>  
-                #     <div class="grid-item">{}</div>
-                #     <div class="grid-item">12</div>
-                #     <div class="grid-item">13</div>  
-                #     <div class="grid-item">14</div>
-                #     <div class="grid-item">15</div>
-                #     <div class="grid-item">16</div>  
-                #     <div class="grid-item">17</div>
-                #     <div class="grid-item">18</div>
-                #     <div class="grid-item">19</div>
-                #     <div class="grid-item">20</div>
-                #     </div>
-
-                #     </body>
-                #     </html>
-
-                #     """, unsafe_allow_html=True)
-                    
+                        
+    
+                    row_number_to_show = st.session_state.count - 1
+                    data_to_show = winners_name_all[row_number_to_show].reset_index(drop=True)
+                    data_to_show.index += 1
+                    # prize_to_choose = st.session_state.df2.copy()
+                    # prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
+                    # st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
+    
+                    with st.container():
+                        st.dataframe(data_to_show[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
+    
+                    # for m in range(len(data_to_show)) :
+                    #     st.text_area("", 
+                    #     f"""
+                    #     {str(data_to_show.loc[m+1, 'ID Karyawan'])}
+                    #     {str(data_to_show.loc[m+1, 'Nama Lengkap'])}
+                    #     {str(data_to_show.loc[m+1, 'Perusahaan'])}""",
+                    #     height = 150)
+                    # # for m in range(len(data_to_show)//5) :
+                    # # acol1, acol2, acol3, acol4, acol5 = st.columns(1)
+                    # with st.container() :
+                        
+                    #     st.markdown("""
+                    #     <html>
+                    #     <head>
+                    #     <style>
+                    #     .grid-container {
+                    #     display: grid;
+                    #     grid-template-columns: auto auto auto auto auto;
+                    #     background-color: #2196F3;
+                    #     padding: 10px;
+                    #     }
+    
+                    #     .grid-item {
+                    #     background-color: rgba(255, 255, 255, 0.8);
+                    #     border: 1px solid rgba(0, 0, 0, 0.8);
+                    #     padding: 20px;
+                    #     font-size: auto;
+                    #     text-align: center;
+                    #     }
+                    #     </style>
+                    #     </head>
+                    #     <body>
+    
+                    #     <div class="grid-container">
+                    #     <div class="grid-item">{{ data_to_show.loc[1,'Nama Lengkap'] }}</div>
+                    #     <div class="grid-item">2</div>
+                    #     <div class="grid-item">3</div>  
+                    #     <div class="grid-item">4</div>
+                    #     <div class="grid-item">5</div>
+                    #     <div class="grid-item">6</div>  
+                    #     <div class="grid-item">7</div>
+                    #     <div class="grid-item">8</div>
+                    #     <div class="grid-item">9</div>
+                    #     <div class="grid-item">10</div>  
+                    #     <div class="grid-item">{}</div>
+                    #     <div class="grid-item">12</div>
+                    #     <div class="grid-item">13</div>  
+                    #     <div class="grid-item">14</div>
+                    #     <div class="grid-item">15</div>
+                    #     <div class="grid-item">16</div>  
+                    #     <div class="grid-item">17</div>
+                    #     <div class="grid-item">18</div>
+                    #     <div class="grid-item">19</div>
+                    #     <div class="grid-item">20</div>
+                    #     </div>
+    
+                    #     </body>
+                    #     </html>
+    
+                    #     """, unsafe_allow_html=True)
+                        
 
             else :
                 with st.empty():
