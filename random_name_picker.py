@@ -146,7 +146,7 @@ if user_input_excel is not None:
         st.session_state.df2 = df2
         # df2 = st.session_state.df2
 
-        st.write(st.session_state.df2)
+        st.sidebar.write(st.session_state.df2)
         # df2.to_csv('winner_parameter.csv')
 
         st.sidebar.write('Jumlah peserta = ' + str(len(df)))
