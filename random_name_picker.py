@@ -95,7 +95,7 @@ if user_input_excel is not None:
     # with col_6 :
     #     button_clicked_6 = st.button("Resets", type="secondary", use_container_width=True)
     # with col_7 :
-    button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
+    button_clicked_7 = st.sidebar.button("Submit", type="primary", use_container_width=True)
 
     # if button_clicked_5 :
     new_row = pd.DataFrame(
@@ -149,15 +149,15 @@ if user_input_excel is not None:
         st.write(st.session_state.df2)
         # df2.to_csv('winner_parameter.csv')
 
-        st.write('Jumlah peserta = ' + str(len(df)))
-        st.write('Jumlah hadiah = ' + str(int(st.session_state.df2['Number of Winner(s)'].sum())))
+        st.sidebar.write('Jumlah peserta = ' + str(len(df)))
+        st.sidebar.write('Jumlah hadiah = ' + str(int(st.session_state.df2['Number of Winner(s)'].sum())))
         
         if len(df) < st.session_state.df2['Number of Winner(s)'].sum() :
-            st.write('Jumlah peserta lebih sedikit daripada jumlah hadiah')
+            st.sidebar.write('Jumlah peserta lebih sedikit daripada jumlah hadiah')
         elif len(df) == st.session_state.df2['Number of Winner(s)'].sum() :
-            st.write('Jumlah peserta sama dengan jumlah hadiah')
+            st.sidebar.write('Jumlah peserta sama dengan jumlah hadiah')
         else :
-            st.write('Apps ready to run')
+            st.sidebar.write('Apps ready to run')
 
         
 
