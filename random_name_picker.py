@@ -263,7 +263,7 @@ if user_input_excel is not None:
         # if button_cliked_9 :
         #     st.empty()
         if button_clicked: 
-            with st.empty()
+            with st.empty():
                 if st.session_state.count <= len(df2) :
                     prize_to_choose = st.session_state.df2.copy()
                     prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
