@@ -76,6 +76,8 @@ if user_input_excel is not None:
     # if selected_main_menu == "Settings" :
 
         with st.container():
+            
+            
             user_input_seed = st.number_input("Pick random seed number", 1)
         # col_1, col_2 = st.columns(2)
         # with st.container():
@@ -95,6 +97,14 @@ if user_input_excel is not None:
         # with col_6 :
         #     button_clicked_6 = st.button("Resets", type="secondary", use_container_width=True)
         # with col_7 :
+        with stylable_container(
+            "blue",
+            css_styles="""
+            button {
+                background-color: #0349b3;
+                color: white;
+            }""",
+        ):
         button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
     
         # if button_clicked_5 :
