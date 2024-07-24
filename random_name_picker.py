@@ -471,9 +471,10 @@ if user_input_excel is not None:
                 ):
                     button_clicked_22 = st.button("Reset ", type="secondary", use_container_width=True, on_click=reset_counter_2)
             
-            
 
-            st.write(substitute_winners_name_all.index)
+
+
+            
             if button_clicked_20: 
     
                 if st.session_state.count_2 <= len(substitute_winners_name_all) :                    
@@ -500,7 +501,7 @@ if user_input_excel is not None:
                     st.write(substitute_winners_name_all)
                     row_number_to_show_substitute = st.session_state.count_2 - 1
                     st.write(row_number_to_show_substitute)
-                    st.write(substitute_winners_name_all[row_number_to_show_substitute].copy())
+                    st.write(substitute_winners_name_all[[row_number_to_show_substitute])
                     # data_to_show_substitute = pd.DataFrame(substitute_winners_name_all[row_number_to_show_substitute]).reset_index(drop=True)
                     # # st.write(substitute_winners_name_all[row_number_to_show_substitute])
                     # data_to_show_substitute.index += 1
