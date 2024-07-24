@@ -427,93 +427,91 @@ if user_input_excel is not None:
                 df_substitute_winner_row = random.sample(range(len(df_remain)), 1)
                 df_substitute_winner = df_remain.iloc[df_substitute_winner_row].reset_index(drop=True)
                 df_remain = df_remain.drop(df_substitute_winner_row).reset_index(drop=True)
-                # st.write(df_ltl_only_winner)
+
                 substitute_winners_name_all.append(df_substitute_winner)
     
             st.write(substitute_winners_name_all)
-            # # st.write(df_remaining_participant)
+
     
     
-            # output_2 = BytesIO()
+            output_2 = BytesIO()
     
-            # with pd.ExcelWriter(output_2, engine='xlsxwriter') as writer: 
-            #     for i in range(len(df_remain)) :
-            #         sheetname = 'Hadiah Substitute' + str(int(i+1))
-            #         substitute_winners_data = substitute_winners_name_all[i].reset_index(drop=True)
-            #         substitute_winners_data.index = substitute_winners_data.index + 1
-            #         substitute_winners = substitute_winners_data.to_excel(writer, sheet_name=sheetname)
+            with pd.ExcelWriter(output_2, engine='xlsxwriter') as writer: 
+                for i in range(len(substitute_winners_name_all)) :
+                    sheetname = 'Hadiah Substitute' + str(int(i+1))
+                    substitute_winners_data = substitute_winners_name_all[i].reset_index(drop=True)
+                    substitute_winners_data.index = substitute_winners_data.index + 1
+                    substitute_winners = substitute_winners_data.to_excel(writer, sheet_name=sheetname)
     
                     
 
-            # col_20, col_21, col_22 = st.columns([1,1,1])
-            # with col_20 :
-            #     with stylable_container(
-            #         "blue",
-            #         css_styles="""
-            #         button {
-            #             background-color: #0349b3;
-            #             color: white;
-            #         }""",
-            #     ):
-            #         button_clicked_20 = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter_2)
-            # with col_21 :
-            #     button_clicked_21 = st.button("Clear", type="secondary", use_container_width=True)
-            # with col_22 :
-            #     with stylable_container(
-            #         "grey",
-            #         css_styles="""
-            #         button {
-            #             background-color: #86a3be;
-            #             color: white;
-            #         }""",
-            #     ):
-            #         button_clicked_22 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter_2)
-            # # with col_8 :
-            # #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
-            # button_clicked_23 = st.sidebar.download_button(label=':cloud: Download winners substitute', type="secondary", data=output_2.getvalue(),file_name='winners_substitute.xlsx')
+            col_20, col_21, col_22 = st.columns([1,1,1])
+            with col_20 :
+                with stylable_container(
+                    "blue",
+                    css_styles="""
+                    button {
+                        background-color: #0349b3;
+                        color: white;
+                    }""",
+                ):
+                    button_clicked_20 = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter_2)
+            with col_21 :
+                button_clicked_21 = st.button("Clear", type="secondary", use_container_width=True)
+            with col_22 :
+                with stylable_container(
+                    "grey",
+                    css_styles="""
+                    button {
+                        background-color: #86a3be;
+                        color: white;
+                    }""",
+                ):
+                    button_clicked_22 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter_2)
+            button_clicked_23 = st.sidebar.download_button(label=':cloud: Download winners substitute', type="secondary", data=output_2.getvalue(),file_name='winners_substitute.xlsx')
     
             
 
-            # if button_clicked_20: 
+            if button_clicked_20: 
     
-            #     if st.session_state.count1 <= len(df_remain) :                    
+                if st.session_state.count1 <= len(df_remain) :                    
                     
-            #         st.markdown("""
-            #         <style>
-            #         .big-font {
-            #             font-size:200px !important;
-            #             text-align: center;
-            #             }
-            #         </style>
-            #         """, unsafe_allow_html=True)
-            #         t10 = 5
-            #         with st.empty():
-            #             while t10:
-            #                 mins, secs = divmod(t10, 60)
-            #                 timer = t10
-            #                 with st.container():
-            #                     st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
-            #                 time.sleep(1)
-            #                 t10 -= 1
-            #                 st.empty()
+                    st.markdown("""
+                    <style>
+                    .big-font {
+                        font-size:200px !important;
+                        text-align: center;
+                        }
+                    </style>
+                    """, unsafe_allow_html=True)
+                    t10 = 5
+                    with st.empty():
+                        while t10:
+                            mins, secs = divmod(t10, 60)
+                            timer = t10
+                            with st.container():
+                                st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
+                            time.sleep(1)
+                            t10 -= 1
+                            st.empty()
                     
     
-            #         row_number_to_show = st.session_state.count1 - 1
-            #         data_to_show = substitute_winners_name_all[row_number_to_show].reset_index(drop=True)
-            #         data_to_show.index += 1
+                    row_number_to_show = st.session_state.count1 - 1
+                    data_to_show = substitute_winners_name_all[row_number_to_show].reset_index(drop=True)
+                    data_to_show.index += 1
 
-            #         with st.container():
-            #             st.dataframe(data_to_show[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
+                    with st.container():
+                        st.dataframe(data_to_show[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
     
                   
     
-            #     else :
-            #         with st.empty():
-            #             st.markdown(f"<h1 style='text-align: center;'>CONGRATS TO ALL THE WINNERS!</h1>", unsafe_allow_html=True)
+                else :
+                    with st.empty():
+                        st.markdown(f"<h1 style='text-align: center;'>CONGRATS TO ALL THE WINNERS!</h1>", unsafe_allow_html=True)
     
             
-            #     # st.write('Count = ', st.session_state.count)
-            #     st.balloons()
+                # st.write('Count = ', st.session_state.count)
+                st.balloons()
         except :
             st.error('You need to submit the number of winners and prize')
 
