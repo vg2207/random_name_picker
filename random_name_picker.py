@@ -414,25 +414,23 @@ if user_input_excel is not None:
         
         try :
             df_remain_all = st.session_state.df_remaining_participant.copy().reset_index(drop=True)
-            # st.write(df_remain_all)
+            st.write(df_remain_all)
 
             df_remain = df_remain_all.loc[df_remain_all['Company'] == 'LTL'].reset_index(drop=True)
             st.write(df_remain)
             
-            # random.seed(st.session_state.user_input_seed)
-            
 
-            # substitute_winners_name_all = []
+            substitute_winners_name_all = []
             
-            # random.seed(st.session_state.user_input_seed)
-            # for i in range(len(df_remain)):
-            #     df_substitute_winner_row = random.sample(range(len(df_remain)), 1)
-            #     df_substitute_winner = df_remain.iloc[df_substitute_winner_row].reset_index(drop=True)
-            #     df_remain = df_remain.drop(df_substitute_winner_row).reset_index(drop=True)
-            #     # st.write(df_ltl_only_winner)
-            #     substitute_winners_name_all.append(df_substitute_winner)
+            random.seed(st.session_state.user_input_seed)
+            for i in range(len(df_remain)):
+                df_substitute_winner_row = random.sample(range(len(df_remain)), 1)
+                df_substitute_winner = df_remain.iloc[df_substitute_winner_row].reset_index(drop=True)
+                df_remain = df_remain.drop(df_substitute_winner_row).reset_index(drop=True)
+                # st.write(df_ltl_only_winner)
+                substitute_winners_name_all.append(df_substitute_winner)
     
-            # # st.write(df_ltl_only_winner)
+            st.write(substitute_winners_name_all)
             # # st.write(df_remaining_participant)
     
     
