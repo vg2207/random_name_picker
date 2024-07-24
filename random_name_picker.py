@@ -510,7 +510,7 @@ if user_input_excel is not None:
                 
 
                 with st.container():
-                    st.dataframe(data_to_show_substitute[["NIK", "Nama Lengkap","Company"]].reset_index(inplace=True), use_container_width=True)
+                    st.dataframe(data_to_show_substitute[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
 
               
 
