@@ -414,9 +414,10 @@ if user_input_excel is not None:
         
         try :
             df_remain_all = st.session_state.df_remaining_participant.copy().reset_index(drop=True)
-            st.write(df_remain_all)
+            # st.write(df_remain_all)
 
-            # df_remain = df_remain_all.loc[df_remain_all['Company'] == 'LTL'].reset_index(drop=True)
+            df_remain = df_remain_all.loc[df_remain_all['Company'] == 'LTL'].reset_index(drop=True)
+            st.write(df_remain)
             
             # random.seed(st.session_state.user_input_seed)
             
