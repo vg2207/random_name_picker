@@ -502,7 +502,7 @@ if user_input_excel is not None:
                 row_number_to_show_substitute = st.session_state.count_2 - 1
                 st.write(row_number_to_show_substitute)
                 data_to_show_substitute = pd.DataFrame(substitute_winners_name_all)
-                st.write(data_to_show_substitute.iloc[,row_number_to_show_substitute])
+                st.write(data_to_show_substitute.iloc[row_number_to_show_substitute,])
                 # data_to_show_substitute = pd.DataFrame(substitute_winners_name_all[row_number_to_show_substitute]).reset_index(drop=True)
                 # # st.write(substitute_winners_name_all[row_number_to_show_substitute])
                 # data_to_show_substitute.index += 1
