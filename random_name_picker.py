@@ -273,8 +273,10 @@ if user_input_excel is not None:
                     prize_to_choose = st.session_state.df2.copy()
                     prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
                     # st.markdown(f"<h2 style='text-align: center;'>Pemenang Hadiah berupa </h2>", unsafe_allow_html=True)
-                    with st.container() :
-                        st.markdown(f"<h1 style='text-align: center; color: #0349b3;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
+                    col_Y, col_YY, col_YYY = st.columns([1,20,1])
+                    with col_YY:
+                        with st.container() :
+                            st.markdown(f"<h1 style='text-align: center; color: #0349b3;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
                     time.sleep(1)
                     if st.session_state.count <= 14 :
                         with st.empty():
