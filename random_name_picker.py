@@ -497,12 +497,13 @@ if user_input_excel is not None:
                             st.empty()
                     
                     st.write(substitute_winners_name_all)
-                    row_number_to_show_substitute = st.session_state.count_2
+                    row_number_to_show_substitute = st.session_state.count_2 - 1
                     st.write(row_number_to_show_substitute)
                     data_to_show_substitute = substitute_winners_name_all[row_number_to_show_substitute].reset_index(drop=True)
+                    st.write(data_to_show_substitute)
                     data_to_show_substitute.index += 1
                     
-                    st.write(data_to_show_substitute)
+                    # st.write(data_to_show_substitute)
                     
 
                     with st.container():
