@@ -403,14 +403,14 @@ if user_input_excel is not None:
     with tab3 :
     # else :
         
-        if 'count1' not in st.session_state:
-            st.session_state.count1 = 0
+        if 'count_2' not in st.session_state:
+            st.session_state.count_2 = 0
     
         def increment_counter_2():
-            st.session_state.count1 += 1
+            st.session_state.count_2 += 1
     
         def reset_counter_2():
-            st.session_state.count1 -= st.session_state.count1
+            st.session_state.count_2 -= st.session_state.count_2
         
         try :
             df_remain_all = st.session_state.df_remaining_participant.copy().reset_index(drop=True)
@@ -475,7 +475,7 @@ if user_input_excel is not None:
 
             if button_clicked_20: 
     
-                if st.session_state.count1 <= len(substitute_winners_name_all) :                    
+                if st.session_state.count_2 <= len(substitute_winners_name_all) :                    
                     
                     st.markdown("""
                     <style>
@@ -496,8 +496,8 @@ if user_input_excel is not None:
                             t10 -= 1
                             st.empty()
                     
-    
-                    row_number_to_show_substitute = st.session_state.count1
+                    st.write(substitute_winners_name_all)
+                    row_number_to_show_substitute = st.session_state.count_2
                     data_to_show_substitute = substitute_winners_name_all[row_number_to_show_substitute].reset_index(drop=True)
                     data_to_show_substitute.index += 1
                     st.write(row_number_to_show_substitute)
