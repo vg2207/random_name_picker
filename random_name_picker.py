@@ -500,15 +500,15 @@ if user_input_excel is not None:
                     row_number_to_show_substitute = st.session_state.count_2 - 1
                     st.write(row_number_to_show_substitute)
                     st.write(substitute_winners_name_all[row_number_to_show_substitute])
-                    # data_to_show_substitute = substitute_winners_name_all[row_number_to_show_substitute].reset_index(drop=True)
+                    data_to_show_substitute = pd.DataFrame(substitute_winners_name_all[row_number_to_show_substitute]).reset_index(drop=True)
                     # st.write(substitute_winners_name_all[row_number_to_show_substitute])
-                    # data_to_show_substitute.index += 1
+                    data_to_show_substitute.index += 1
                     
-                    # # st.write(data_to_show_substitute)
+                    st.write(data_to_show_substitute)
                     
 
-                    # with st.container():
-                    #     st.dataframe(data_to_show_substitute[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
+                    with st.container():
+                        st.dataframe(data_to_show_substitute[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
     
                   
     
