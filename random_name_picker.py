@@ -473,7 +473,7 @@ if user_input_excel is not None:
             
             
 
-            st.write(substitute_winners_name_all[0])
+            st.write(type(substitute_winners_name_all))
             if button_clicked_20: 
     
                 if st.session_state.count_2 <= len(substitute_winners_name_all) :                    
