@@ -437,38 +437,37 @@ if user_input_excel is not None:
             output_2 = BytesIO()
     
             with pd.ExcelWriter(output_2, engine='xlsxwriter') as writer: 
-                for i in range(len(substitute_winners_name_all)) :
-                    sheetname = 'Hadiah Substitute' + str(int(i+1))
-                    substitute_winners_data = substitute_winners_name_all[i].reset_index(drop=True)
-                    substitute_winners_data.index = substitute_winners_data.index + 1
-                    substitute_winners = substitute_winners_data.to_excel(writer, sheet_name=sheetname)
+                sheetname = 'Hadiah Substitute'
+                substitute_winners_data = substitute_winners_name_all.reset_index(drop=True)
+                substitute_winners_data.index = substitute_winners_data.index + 1
+                substitute_winners = substitute_winners_data.to_excel(writer, sheet_name=sheetname)
     
                     
 
-        #     col_20, col_21, col_22 = st.columns([1,1,1])
-        #     with col_20 :
-        #         with stylable_container(
-        #             "blue",
-        #             css_styles="""
-        #             button {
-        #                 background-color: #0349b3;
-        #                 color: white;
-        #             }""",
-        #         ):
-        #             button_clicked_20 = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter_2)
-        #     with col_21 :
-        #         button_clicked_21 = st.button("Clear", type="secondary", use_container_width=True)
-        #     with col_22 :
-        #         with stylable_container(
-        #             "grey",
-        #             css_styles="""
-        #             button {
-        #                 background-color: #86a3be;
-        #                 color: white;
-        #             }""",
-        #         ):
-        #             button_clicked_22 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter_2)
-        #     button_clicked_23 = st.sidebar.download_button(label=':cloud: Download winners substitute', type="secondary", data=output_2.getvalue(),file_name='winners_substitute.xlsx')
+            col_20, col_21, col_22 = st.columns([1,1,1])
+            with col_20 :
+                with stylable_container(
+                    "blue",
+                    css_styles="""
+                    button {
+                        background-color: #0349b3;
+                        color: white;
+                    }""",
+                ):
+                    button_clicked_20 = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter_2)
+            with col_21 :
+                button_clicked_21 = st.button("Clear", type="secondary", use_container_width=True)
+            with col_22 :
+                with stylable_container(
+                    "grey",
+                    css_styles="""
+                    button {
+                        background-color: #86a3be;
+                        color: white;
+                    }""",
+                ):
+                    button_clicked_22 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter_2)
+            button_clicked_23 = st.sidebar.download_button(label=':cloud: Download winners substitute', type="secondary", data=output_2.getvalue(),file_name='winners_substitute.xlsx')
     
             
 
