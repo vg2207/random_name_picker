@@ -229,7 +229,7 @@ if user_input_excel is not None:
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
                 for i in range(len(df2)) :
                     # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
-                    sheetname = 'Round ' + str(int(i+1))
+                    sheetname = 'Hadiah ' + str(int(i+1))
                     winners_data = winners_name_all[i].reset_index(drop=True)
                     winners_data.index = winners_data.index + 1
                     winners = winners_data.to_excel(writer, sheet_name=sheetname)
@@ -288,7 +288,7 @@ if user_input_excel is not None:
                                         col_Z, col_ZZ, col_ZZZ = st.columns([1,20,1])
                                         with col_ZZ:
                                             st.markdown(f"<h1 style='text-align: center;'><br>{str(name_show['Nama Lengkap'])}</h1>", unsafe_allow_html=True)
-                                    time.sleep(0.1)
+                                    time.sleep(0.15)
                                     t -= 1
                                     st.empty()
                         
