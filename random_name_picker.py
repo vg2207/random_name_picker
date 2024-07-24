@@ -497,7 +497,7 @@ if user_input_excel is not None:
                             st.empty()
                     
     
-                    row_number_to_show_substitute = st.session_state.count1 - 1
+                    row_number_to_show_substitute = st.session_state.count1
                     data_to_show_substitute = substitute_winners_name_all[row_number_to_show_substitute].reset_index(drop=True)
                     data_to_show_substitute.index += 1
 
