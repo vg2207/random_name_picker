@@ -438,7 +438,7 @@ if user_input_excel is not None:
     
             with pd.ExcelWriter(output_2, engine='xlsxwriter') as writer: 
                 sheetname = 'Hadiah Substitute'
-                substitute_winners_data = substitute_winners_name_all.reset_index(drop=True)
+                substitute_winners_data = pd.DataFrame(substitute_winners_name_all).reset_index(drop=True)
                 substitute_winners_data.index = substitute_winners_data.index + 1
                 substitute_winners = substitute_winners_data.to_excel(writer, sheet_name=sheetname)
     
