@@ -419,18 +419,18 @@ if user_input_excel is not None:
             df_remain = df_remain_all.loc[df_remain_all['Company'] == 'LTL'].reset_index(drop=True)
             st.write(df_remain)
             
-
-            substitute_winners_name_all = []
-            
             random.seed(st.session_state.user_input_seed)
-            for i in range(len(df_remain)):
-                df_substitute_winner_row = random.sample(range(len(df_remain)), 1)
-                df_substitute_winner = df_remain.iloc[df_substitute_winner_row].reset_index(drop=True)
-                df_remain = df_remain.drop(df_substitute_winner_row).reset_index(drop=True)
+            substitute_winners_name_all = df_remain.sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
+            
+            
+            # for i in range(len(df_remain)):
+            #     df_substitute_winner_row = random.sample(range(len(df_remain)), 1)
+            #     df_substitute_winner = df_remain.iloc[df_substitute_winner_row].reset_index(drop=True)
+            #     df_remain = df_remain.drop(df_substitute_winner_row).reset_index(drop=True)
 
-                substitute_winners_name_all.append(df_substitute_winner)
+            #     substitute_winners_name_all.append(df_substitute_winner)
     
-            st.write(substitute_winners_name_all)
+            # st.write(substitute_winners_name_all)
 
     
     
@@ -438,7 +438,7 @@ if user_input_excel is not None:
     
             with pd.ExcelWriter(output_2, engine='xlsxwriter') as writer: 
                 sheetname = 'Hadiah Substitute'
-                substitute_winners_data = pd.DataFrame(substitute_winners_name_all).reset_index(drop=True)
+                substitute_winners_data = substitute_winners_name_all.reset_index(drop=True)
                 substitute_winners_data.index = substitute_winners_data.index + 1
                 substitute_winners = substitute_winners_data.to_excel(writer, sheet_name=sheetname)
     
