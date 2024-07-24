@@ -430,7 +430,7 @@ if user_input_excel is not None:
 
             #     substitute_winners_name_all.append(df_substitute_winner)
     
-            # st.write(substitute_winners_name_all)
+            st.write(substitute_winners_name_all)
 
     
     
