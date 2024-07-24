@@ -512,8 +512,8 @@ if user_input_excel is not None:
             
         #         # st.write('Count = ', st.session_state.count)
         #         st.balloons()
-        # except :
-        #     st.error('You need to submit the number of winners and prize')
+        except :
+            st.error('You need to submit the number of winners and prize')
 
 
     
