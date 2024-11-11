@@ -32,7 +32,7 @@ with col_A :
     st.image(logo)
 with col_B:
     with st.container():
-        st.markdown(f"<h1 style='text-align: center;'>Undian Ulang Tahun ke 73<br>PT Lautan Luas Tbk.</h1>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='text-align: center;'>Undian Acara Natal<br>PT Lautan Luas Tbk.</h1>", unsafe_allow_html=True)
 with col_C :
     logo_a = Image.open('assets_logo/anniversary_logo.png')
     st.image(logo_a)
