@@ -327,7 +327,7 @@ if user_input_excel is not None:
 
                     st.title(pd.DataFrame(data_to_show).loc[st.session_state.count,"ID Karyawan"])
                     if st.session_state.count <= 2 :
-                        row1 = st.columns(5)
+                        row1 = st.columns(1)
                         row2 = st.columns(5)
                         row3 = st.columns(5)
                         row4 = st.columns(5)
