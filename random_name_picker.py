@@ -52,21 +52,21 @@ if user_input_excel is not None:
         st.sidebar.success('File Uploaded Successfully!')
         # st.sidebar.write(df)
         lower_col = []
-        upper_col = ['NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)', 'Nama Lengkap']
+        upper_col = ['ID Karyawan (tuliskan dengan lengkap dan kapital, contoh: LTL002965)', 'Nama Lengkap']
         df = lowerify_and_upperify_cols(df, lower_col, upper_col)
-        df = remove_duplicate(df, drop_col='NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)')
-        df = df.loc[(df['Level'] != 'Director') & (df['Level'] != 'BOC')].reset_index(drop=True)
-        df.rename(columns = {"NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)":"NIK"}, inplace = True)
+        df = remove_duplicate(df, drop_col='ID Karyawan (tuliskan dengan lengkap dan kapital, contoh: LTL002965)')
+        df = df.loc[(df['Level'] != 'BOD')].reset_index(drop=True)
+        df.rename(columns = {"ID Karyawan (tuliskan dengan lengkap dan kapital, contoh: LTL002965)":"ID Karyawan"}, inplace = True)
     elif user_input_excel.name.endswith('.xlsx'):
         df=pd.read_excel(user_input_excel)
         st.sidebar.success('File Uploaded Successfully!')
         # st.sidebar.write(df)
         lower_col = []
-        upper_col = ['NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)', 'Nama Lengkap']
+        upper_col = ['ID Karyawan (tuliskan dengan lengkap dan kapital, contoh: LTL002965)', 'Nama Lengkap']
         df = lowerify_and_upperify_cols(df, lower_col, upper_col)
-        df = remove_duplicate(df, drop_col='NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)')
-        df = df.loc[(df['Level'] != 'Director') & (df['Level'] != 'BOC')].reset_index(drop=True)
-        df.rename(columns = {"NIK (tuliskan dengan lengkap dan kapital, contoh: LTL002965)":"NIK"}, inplace = True)
+        df = remove_duplicate(df, drop_col='ID Karyawan (tuliskan dengan lengkap dan kapital, contoh: LTL002965)')
+        df = df.loc[(df['Level'] != 'BOD')].reset_index(drop=True)
+        df.rename(columns = {"ID Karyawan (tuliskan dengan lengkap dan kapital, contoh: LTL002965)":"ID Karyawan"}, inplace = True)
     else:
         st.sidebar.warning('You need to upload a csv or an excel file')
     
@@ -74,7 +74,7 @@ if user_input_excel is not None:
 
     ## --- TAB 
 
-    tab1, tab2, tab3 = st.tabs(["Setting", "Run Apps", "Run Apps Substitute"])
+    tab1, tab2 = st.tabs(["Setting", "Run Apps"])
     with tab1 :
     # if selected_main_menu == "Settings" :
 
@@ -104,25 +104,17 @@ if user_input_excel is not None:
     
         # if button_clicked_5 :
         new_row = pd.DataFrame(
-            {"Number of Winner(s)": [90, 100,
-                                     14, 10,
-                                     20, 5,
-                                     1, 1,
-                                     1, 75,
-                                     50, 30,
-                                     5, 3,
-                                     3, 1,
-                                     1
+            {"Number of Winner(s)": [20, 20,
+                                     20, 20,
+                                     20, 20,
+                                     10, 10,
+                                     2, 1,
                                     ],
-             "Prize": ['Goodiebag Fibercreme dan Rich Creme', 'Voucher Indomaret Rp 50.000', 
-                       'Hydrogen Tumbler by LSA', 'Massage Pillow',
-                       'Blender Juicer', 'Free Scaling Voucher - Audy Dental',
-                       'Container by LNK', 'Cosmos Mixer by LNK',
-                       'Oxone Tools by LNK', 'Voucher Indomaret Rp 100.000',
-                       'Voucher Indomaret Rp 150.000', 'Voucher product Pureve Rp 500.000',
-                       'Xiaomi Smart Band 8', 'Traveloka voucher Rp 500.000',
-                       'Garmin Watch by GE', 'Smart TV 32 inch Xiaomi',
-                       'Air Purifier by LSA'
+             "Prize": ['Voucher Rp 50.000', 'Voucher Rp 50.000', 
+                       'Voucher Rp 50.000', 'Voucher Rp 50.000',
+                       'Voucher Rp 50.000', 'Voucher Rp 100.000',
+                       'Voucher Rp 100.000', 'Voucher Rp 200.000',
+                       'Voucher Rp 500.000', 'Voucher Rp 1.000.000',
                       ]
             })
     
@@ -187,42 +179,51 @@ if user_input_excel is not None:
             # st.write(df_all_participant)
             winners_name_all = []
     
-            df_ltl_only = df_all_participant.loc[df_all_participant['Company'] == 'LTL'].reset_index(drop=True)
-            # st.write(df_ltl_only)
-            df_remaining_non_ltl = df_all_participant.loc[df_all_participant['Company'] != 'LTL'].reset_index(drop=True)
-            # st.write(df_remaining_non_ltl)
+            # df_ltl_only = df_all_participant.loc[df_all_participant['Company'] == 'LTL'].reset_index(drop=True)
+            # # st.write(df_ltl_only)
+            # df_remaining_non_ltl = df_all_participant.loc[df_all_participant['Company'] != 'LTL'].reset_index(drop=True)
+            # # st.write(df_remaining_non_ltl)
             
-            random.seed(st.session_state.user_input_seed)
-            df_ltl_only_winner_row = random.sample(range(len(df_ltl_only)), 190)
-            df_ltl_only_winner = df_ltl_only.iloc[df_ltl_only_winner_row].reset_index(drop=True)
-            # st.write(df_ltl_only_winner)
-            df_remaining_ltl = df_ltl_only.drop(df_ltl_only_winner_row).reset_index(drop=True)
-            # st.write(df_remaining_ltl)
-    
             # random.seed(st.session_state.user_input_seed)
-            df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
-            # st.write(df_remaining_participant)
+            # df_ltl_only_winner_row = random.sample(range(len(df_ltl_only)), 190)
+            # df_ltl_only_winner = df_ltl_only.iloc[df_ltl_only_winner_row].reset_index(drop=True)
+            # # st.write(df_ltl_only_winner)
+            # df_remaining_ltl = df_ltl_only.drop(df_ltl_only_winner_row).reset_index(drop=True)
+            # # st.write(df_remaining_ltl)
+    
+            # # random.seed(st.session_state.user_input_seed)
+            # df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
+            # # st.write(df_remaining_participant)
     
             random.seed(st.session_state.user_input_seed)
             for i in range(len(df2)):
-                if i == 0 or i ==1 or i == 11 :
-                    winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
-                    winners_name = df_remaining_participant.iloc[winners_row]
-                    prize = df2["Prize"][i]
-                    df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
-                    # st.write(df_remaining_participant)
-                    winners_name_all.append(winners_name)
-                else :
-                    winners_row = random.sample(range(len(df_ltl_only_winner)),int(df2["Number of Winner(s)"][i]))
-                    winners_name = df_ltl_only_winner.iloc[winners_row]
-                    prize = df2["Prize"][i]
-                    df_ltl_only_winner = df_ltl_only_winner.drop(winners_row).reset_index(drop=True)
-                    # st.write(df_ltl_only_winner)
-                    winners_name_all.append(winners_name)
+                winners_row = random.sample(range(len(df_all_participant)),int(df2["Number of Winner(s)"][i]))
+                winners_name = df_all_participant.iloc[winners_row]
+                prize = df2["Prize"][i]
+                df_all_participant = df_all_participant.drop(winners_row).reset_index(drop=True)
+                # st.write(df_all_participant)
+                winners_name_all.append(winners_name)
+
+            
+                # if i == 0 or i ==1 or i == 11 :
+                #     winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
+                #     winners_name = df_remaining_participant.iloc[winners_row]
+                #     prize = df2["Prize"][i]
+                #     df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
+                #     # st.write(df_remaining_participant)
+                #     winners_name_all.append(winners_name)
+                # else :
+                #     winners_row = random.sample(range(len(df_ltl_only_winner)),int(df2["Number of Winner(s)"][i]))
+                #     winners_name = df_ltl_only_winner.iloc[winners_row]
+                #     prize = df2["Prize"][i]
+                #     df_ltl_only_winner = df_ltl_only_winner.drop(winners_row).reset_index(drop=True)
+                #     # st.write(df_ltl_only_winner)
+                #     winners_name_all.append(winners_name)
     
             # st.write(df_ltl_only_winner)
             # st.write(df_remaining_participant)
-            st.session_state.df_remaining_participant = df_remaining_participant
+            st.session_state.df_all_participant = df_all_participant
+            # st.session_state.df_remaining_participant = df_remaining_participant
     
     
             output = BytesIO()
@@ -279,7 +280,7 @@ if user_input_excel is not None:
                         with st.container() :
                             st.markdown(f"<h1 style='text-align: center; color: #0349b3;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
                     time.sleep(1)
-                    if st.session_state.count <= 14 :
+                    if st.session_state.count <= 8 :
                         with st.empty():
                             while t :
                                 if t > 0 :
@@ -323,7 +324,7 @@ if user_input_excel is not None:
                     # st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
     
                     with st.container():
-                        st.dataframe(data_to_show[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
+                        st.dataframe(data_to_show[["ID Karyawan", "Nama Lengkap","Company"]], use_container_width=True)
     
                     # for m in range(len(data_to_show)) :
                     #     st.text_area("", 
@@ -400,129 +401,129 @@ if user_input_excel is not None:
 
 
 
-    with tab3 :
-    # else :
+    # with tab3 :
+    # # else :
         
-        if 'count_2' not in st.session_state:
-            st.session_state.count_2 = 0
+    #     if 'count_2' not in st.session_state:
+    #         st.session_state.count_2 = 0
     
-        def increment_counter_2():
-            st.session_state.count_2 += 1
+    #     def increment_counter_2():
+    #         st.session_state.count_2 += 1
     
-        def reset_counter_2():
-            st.session_state.count_2 -= st.session_state.count_2
+    #     def reset_counter_2():
+    #         st.session_state.count_2 -= st.session_state.count_2
         
-        try :
-            df_remain_all = st.session_state.df_remaining_participant
-            # st.write(df_remain_all)
+    #     try :
+    #         df_remain_all = st.session_state.df_remaining_participant
+    #         # st.write(df_remain_all)
     
-            df_remain = df_remain_all.loc[df_remain_all['Company'] == 'LTL'].reset_index(drop=True)
-            # st.write(df_remain)
+    #         df_remain = df_remain_all.loc[df_remain_all['Company'] == 'LTL'].reset_index(drop=True)
+    #         # st.write(df_remain)
             
-            random.seed(st.session_state.user_input_seed)
-            substitute_winners_name_all = df_remain.sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
+    #         random.seed(st.session_state.user_input_seed)
+    #         substitute_winners_name_all = df_remain.sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
             
             
-            # for i in range(len(df_remain)):
-            #     df_substitute_winner_row = random.sample(range(len(df_remain)), 1)
-            #     df_substitute_winner = df_remain.iloc[df_substitute_winner_row].reset_index(drop=True)
-            #     df_remain = df_remain.drop(df_substitute_winner_row).reset_index(drop=True)
+    #         # for i in range(len(df_remain)):
+    #         #     df_substitute_winner_row = random.sample(range(len(df_remain)), 1)
+    #         #     df_substitute_winner = df_remain.iloc[df_substitute_winner_row].reset_index(drop=True)
+    #         #     df_remain = df_remain.drop(df_substitute_winner_row).reset_index(drop=True)
     
-            #     substitute_winners_name_all.append(df_substitute_winner)
+    #         #     substitute_winners_name_all.append(df_substitute_winner)
     
-            # st.write(substitute_winners_name_all)
+    #         # st.write(substitute_winners_name_all)
     
     
     
-            output_2 = BytesIO()
+    #         output_2 = BytesIO()
     
-            with pd.ExcelWriter(output_2, engine='xlsxwriter') as writer: 
-                sheetname = 'Hadiah Substitute'
-                substitute_winners_data = substitute_winners_name_all.reset_index(drop=True)
-                substitute_winners_data.index = substitute_winners_data.index + 1
-                substitute_winners = substitute_winners_data.to_excel(writer, sheet_name=sheetname)
+    #         with pd.ExcelWriter(output_2, engine='xlsxwriter') as writer: 
+    #             sheetname = 'Hadiah Substitute'
+    #             substitute_winners_data = substitute_winners_name_all.reset_index(drop=True)
+    #             substitute_winners_data.index = substitute_winners_data.index + 1
+    #             substitute_winners = substitute_winners_data.to_excel(writer, sheet_name=sheetname)
     
-            button_clicked_23 = st.sidebar.download_button(label=':cloud: Download winners substitute', type="secondary", data=output_2.getvalue(),file_name='winners_substitute.xlsx')
+    #         button_clicked_23 = st.sidebar.download_button(label=':cloud: Download winners substitute', type="secondary", data=output_2.getvalue(),file_name='winners_substitute.xlsx')
     
     
                     
     
-            col_20, col_21, col_22 = st.columns([1,1,1])
-            with col_20 :
-                with stylable_container(
-                    "blue",
-                    css_styles="""
-                    button {
-                        background-color: #0349b3;
-                        color: white;
-                    }""",
-                ):
-                    button_clicked_20 = st.button("Start ", type="primary", use_container_width=True, on_click=increment_counter_2)
-            with col_21 :
-                button_clicked_21 = st.button("Clear ", type="secondary", use_container_width=True)
-            with col_22 :
-                with stylable_container(
-                    "grey",
-                    css_styles="""
-                    button {
-                        background-color: #86a3be;
-                        color: white;
-                    }""",
-                ):
-                    button_clicked_22 = st.button("Reset ", type="secondary", use_container_width=True, on_click=reset_counter_2)
+    #         col_20, col_21, col_22 = st.columns([1,1,1])
+    #         with col_20 :
+    #             with stylable_container(
+    #                 "blue",
+    #                 css_styles="""
+    #                 button {
+    #                     background-color: #0349b3;
+    #                     color: white;
+    #                 }""",
+    #             ):
+    #                 button_clicked_20 = st.button("Start ", type="primary", use_container_width=True, on_click=increment_counter_2)
+    #         with col_21 :
+    #             button_clicked_21 = st.button("Clear ", type="secondary", use_container_width=True)
+    #         with col_22 :
+    #             with stylable_container(
+    #                 "grey",
+    #                 css_styles="""
+    #                 button {
+    #                     background-color: #86a3be;
+    #                     color: white;
+    #                 }""",
+    #             ):
+    #                 button_clicked_22 = st.button("Reset ", type="secondary", use_container_width=True, on_click=reset_counter_2)
             
     
     
     
             
-            if button_clicked_20: 
+    #         if button_clicked_20: 
     
-                if st.session_state.count_2 <= len(substitute_winners_name_all) :                    
+    #             if st.session_state.count_2 <= len(substitute_winners_name_all) :                    
                     
-                    st.markdown("""
-                    <style>
-                    .big-font {
-                        font-size:200px !important;
-                        text-align: center;
-                        }
-                    </style>
-                    """, unsafe_allow_html=True)
-                    t10 = 5
-                    with st.empty():
-                        while t10:
-                            mins, secs = divmod(t10, 60)
-                            timer = t10
-                            with st.container():
-                                st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
-                            time.sleep(1)
-                            t10 -= 1
-                            st.empty()
+    #                 st.markdown("""
+    #                 <style>
+    #                 .big-font {
+    #                     font-size:200px !important;
+    #                     text-align: center;
+    #                     }
+    #                 </style>
+    #                 """, unsafe_allow_html=True)
+    #                 t10 = 5
+    #                 with st.empty():
+    #                     while t10:
+    #                         mins, secs = divmod(t10, 60)
+    #                         timer = t10
+    #                         with st.container():
+    #                             st.markdown(f'<p class="big-font">{timer}</p>', unsafe_allow_html=True)
+    #                         time.sleep(1)
+    #                         t10 -= 1
+    #                         st.empty()
                     
-                    # st.write(substitute_winners_name_all)
-                    row_number_to_show_substitute = st.session_state.count_2 - 1
+    #                 # st.write(substitute_winners_name_all)
+    #                 row_number_to_show_substitute = st.session_state.count_2 - 1
                     
                     
-                    data_to_show_substitute = substitute_winners_name_all.loc[row_number_to_show_substitute]
+    #                 data_to_show_substitute = substitute_winners_name_all.loc[row_number_to_show_substitute]
     
-                    # data_to_show_substitute.index += 1
+    #                 # data_to_show_substitute.index += 1
                     
-                    # st.write(data_to_show_substitute)
+    #                 # st.write(data_to_show_substitute)
                     
     
-                    with st.container():
-                        st.dataframe(data_to_show_substitute[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
+    #                 with st.container():
+    #                     st.dataframe(data_to_show_substitute[["NIK", "Nama Lengkap","Company"]], use_container_width=True)
     
                   
     
-                else :
-                    with st.empty():
-                        st.markdown(f"<h1 style='text-align: center;'>CONGRATS TO ALL THE WINNERS!</h1>", unsafe_allow_html=True)
+    #             else :
+    #                 with st.empty():
+    #                     st.markdown(f"<h1 style='text-align: center;'>CONGRATS TO ALL THE WINNERS!</h1>", unsafe_allow_html=True)
     
             
-                # st.write('Count = ', st.session_state.count)
-                st.balloons()
-        except :
-            st.error('You need to submit the number of winners and prize')
+    #             # st.write('Count = ', st.session_state.count)
+    #             st.balloons()
+    #     except :
+    #         st.error('You need to submit the number of winners and prize')
 
 
     
