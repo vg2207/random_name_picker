@@ -334,19 +334,19 @@ if user_input_excel is not None:
 
                         m=0
                         for col in row1:
-                            tile = col.container(border=True)
+                            tile = col.container()
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
                         for col in row2:
-                            tile = col.container(border=True)
+                            tile = col.container()
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
                         for col in row3:
-                            tile = col.container(border=True)
+                            tile = col.container()
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
                         for col in row4:
-                            tile = col.container(border=True)
+                            tile = col.container()
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
 
