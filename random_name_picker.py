@@ -325,7 +325,7 @@ if user_input_excel is not None:
                     # st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
 
 
-                    st.title(data_to_show)
+                    st.title(data_to_show["ID Karyawan])
                     # if st.session_state.count <= 2 :
                     #     row1 = st.columns(5)
                     #     row2 = st.columns(5)
