@@ -326,66 +326,66 @@ if user_input_excel is not None:
 
 
     
-                    # if st.session_state.count <= 2 :
-                    #     row1 = st.columns(5)
-                    #     row2 = st.columns(5)
-                    #     row3 = st.columns(5)
-                    #     row4 = st.columns(5)
+                    if st.session_state.count <= 2 :
+                        row1 = st.columns(5)
+                        row2 = st.columns(5)
+                        row3 = st.columns(5)
+                        row4 = st.columns(5)
 
-                    #     m=0
-                    #     for col in row1:
-                    #         tile = col.container()
-                    #         tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
-                    #         m+=1
-                    #     for col in row2:
-                    #         tile = col.container()
-                    #         tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
-                    #         m+=1
-                    #     for col in row3:
-                    #         tile = col.container()
-                    #         tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
-                    #         m+=1
-                    #     for col in row4:
-                    #         tile = col.container()
-                    #         tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
-                    #         m+=1
+                        m=0
+                        for col in row1:
+                            tile = col.container()
+                            tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
+                            m+=1
+                        for col in row2:
+                            tile = col.container()
+                            tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
+                            m+=1
+                        for col in row3:
+                            tile = col.container()
+                            tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
+                            m+=1
+                        for col in row4:
+                            tile = col.container()
+                            tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
+                            m+=1
 
-                    # elif st.session_state.count <= 4 :
-                    #     row1 = st.columns(5)
-                    #     row2 = st.columns(5)
-
-
-                    #     m=0
-                    #     for col in row1:
-                    #         tile = col.container()
-                    #         tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
-                    #         m+=1
-                    #     for col in row2:
-                    #         tile = col.container()
-                    #         tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
-                    #         m+=1
+                    elif st.session_state.count <= 4 :
+                        row1 = st.columns(5)
+                        row2 = st.columns(5)
 
 
-                    # elif st.session_state.count == 5 :
-                    #     row1 = st.columns(2)
+                        m=0
+                        for col in row1:
+                            tile = col.container()
+                            tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
+                            m+=1
+                        for col in row2:
+                            tile = col.container()
+                            tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
+                            m+=1
 
 
-                    #     m=0
-                    #     for col in row1:
-                    #         tile = col.container()
-                    #         tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
-                    #         m+=1
+                    elif st.session_state.count == 5 :
+                        row1 = st.columns(2)
 
 
-                    # elif st.session_state.count == 6 :
-                    #     row1 = st.columns(1)
+                        m=0
+                        for col in row1:
+                            tile = col.container()
+                            tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
+                            m+=1
 
 
-                    #     m=0
-                    #     for col in row1:
-                    #         tile = col.container()
-                    #         tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
-                    #         m+=1
+                    elif st.session_state.count == 6 :
+                        row1 = st.columns(1)
+
+
+                        m=0
+                        for col in row1:
+                            tile = col.container()
+                            tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
+                            m+=1
 
 
 
