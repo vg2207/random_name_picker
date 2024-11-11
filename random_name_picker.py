@@ -325,7 +325,7 @@ if user_input_excel is not None:
                     # st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
 
 
-                    st.title(pd.DataFrame(data_to_show).loc[st.session_state.count,"ID Karyawan"])
+    
                     if st.session_state.count <= 2 :
                         row1 = st.columns(5)
                         row2 = st.columns(5)
@@ -334,7 +334,7 @@ if user_input_excel is not None:
 
                         m=0
                         for col in row1:
-                            tile = col.container(height=120)
+                            tile = col.container()
                             tile.markdown(f"<h3 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}</h3>", unsafe_allow_html=True)
                             m+=1
 
