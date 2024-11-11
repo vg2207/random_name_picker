@@ -25,17 +25,16 @@ def remove_duplicate(data, drop_col) :
 
 st.set_page_config(layout="wide")
 
-col_A, col_B, col_C = st.columns([1, 3, 1])
-
-with col_C :
-    with st.container(height=200):
+with st.container(height=200):
+    col_A, col_B, col_C = st.columns([1, 3, 1])
+    
+    with col_C :
         logo = Image.open('assets_logo/Logo Lautan Luas.png')
         st.image(logo)
-with col_B:
-    with st.container(height=200):
-        st.markdown(f"<h1 style='text-align: center;'>Undian Acara Natal<br>PT Lautan Luas Tbk.</h1>", unsafe_allow_html=True)
-with col_A :
-    with st.container(height=200):
+    with col_B:
+        with st.container():
+            st.markdown(f"<h1 style='text-align: center;'>Undian Acara Natal<br>PT Lautan Luas Tbk.</h1>", unsafe_allow_html=True)
+    with col_A :
         logo_a = Image.open('assets_logo/christmas_logo.png')
         st.image(logo_a)
         
