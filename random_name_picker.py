@@ -34,7 +34,7 @@ with col_B:
     with st.container():
         st.markdown(f"<h1 style='text-align: center;'>Undian Acara Natal<br>PT Lautan Luas Tbk.</h1>", unsafe_allow_html=True)
 with col_A :
-    logo_a = Image.open('assets_logo/christmas_logo.png')
+    logo_a = Image.open('assets_logo/christmas_thumbnail.png')
     st.image(logo_a)
         
 # logo = Image.open('assets_logo/LOGO_FIXED.png')
