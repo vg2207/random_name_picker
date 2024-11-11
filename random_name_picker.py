@@ -324,6 +324,8 @@ if user_input_excel is not None:
                     # prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
                     # st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
 
+
+                    print(data_to_show)
                     if st.session_state.count <= 2 :
                         row1 = st.columns(5)
                         row2 = st.columns(5)
@@ -332,9 +334,7 @@ if user_input_excel is not None:
                         
                         for col in row1:
                             tile = col.container(height=120)
-                            tile.markdown(f"<h3 style='text-align: center;'>{str(data_to_show[["ID Karyawan"]])}<br>
-                            {str(data_to_show[["Nama Lengkap"]][st.session_state.count])}<br>
-                            {str(data_to_show[["Company"]][st.session_state.count])}<br></h3>", unsafe_allow_html=True)
+                            tile.markdown(f"<h3 style='text-align: center;'>{str(data_to_show[["ID Karyawan"]])}</h3>", unsafe_allow_html=True)
 
                     # elif st.session_state.count <= 4 :
 
