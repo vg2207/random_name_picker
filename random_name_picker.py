@@ -326,15 +326,15 @@ if user_input_excel is not None:
 
 
                     st.title(pd.DataFrame(data_to_show).loc[st.session_state.count,"ID Karyawan"])
-                    # if st.session_state.count <= 2 :
-                    #     row1 = st.columns(5)
-                    #     row2 = st.columns(5)
-                    #     row3 = st.columns(5)
-                    #     row4 = st.columns(5)
+                    if st.session_state.count <= 2 :
+                        row1 = st.columns(5)
+                        row2 = st.columns(5)
+                        row3 = st.columns(5)
+                        row4 = st.columns(5)
                         
-                    #     for col in row1:
-                    #         tile = col.container(height=120)
-                    #         tile.markdown(f"<h3 style='text-align: center;'>{str(data_to_show[["ID Karyawan"]])}</h3>", unsafe_allow_html=True)
+                        for col in row1:
+                            tile = col.container(height=120)
+                            tile.markdown(f"<h3 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*col,"ID Karyawan"])}</h3>", unsafe_allow_html=True)
 
                     # elif st.session_state.count <= 4 :
 
