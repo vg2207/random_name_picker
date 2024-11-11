@@ -333,6 +333,7 @@ if user_input_excel is not None:
                         row4 = st.columns(5)
                         
                         for col in row1:
+                            st.title(col)
                             st.title(pd.DataFrame(data_to_show).loc[st.session_state.count*col,"ID Karyawan"])
                             # tile = col.container(height=120)
                             # tile.markdown(f"<h3 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*col,'ID Karyawan'])}</h3>", unsafe_allow_html=True)
