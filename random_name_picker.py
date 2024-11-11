@@ -345,7 +345,7 @@ if user_input_excel is not None:
                                 margin-bottom: 20px;
                                 }""",
                             ):
-                                tile.markdown(f"<h3 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h3>", unsafe_allow_html=True)
+                                tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
 
                     # elif st.session_state.count <= 4 :
