@@ -391,8 +391,8 @@ if user_input_excel is not None:
 
 
                         
-                    with st.container():
-                        st.dataframe(data_to_show[["ID Karyawan", "Nama Lengkap","Company"]], use_container_width=True)
+                    # with st.container():
+                    #     st.dataframe(data_to_show[["ID Karyawan", "Nama Lengkap","Company"]], use_container_width=True)
     
                     # for m in range(len(data_to_show)) :
                     #     st.text_area("", 
