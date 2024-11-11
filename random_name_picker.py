@@ -323,9 +323,30 @@ if user_input_excel is not None:
                     # prize_to_choose = st.session_state.df2.copy()
                     # prize_to_show = prize_to_choose.loc[st.session_state.count-1, 'Prize']
                     # st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
-    
-                    with st.container():
-                        st.dataframe(data_to_show[["ID Karyawan", "Nama Lengkap","Company"]], use_container_width=True)
+
+                    if st.session_state.count <= 2 :
+                        row1 = st.columns(5)
+                        row2 = st.columns(5)
+                        row3 = st.columns(5)
+                        row4 = st.columns(5)
+                        
+                        for col in row1:
+                            tile = col.container(height=120)
+                            tile.markdown(f"<h3 style='text-align: center;'>{str(data_to_show[["ID Karyawan"]][st.session_state.count])}<br>
+                            {str(data_to_show[["Nama Lengkap"]][st.session_state.count])}<br>
+                            {str(data_to_show[["Company"]][st.session_state.count])}<br></h3>", unsafe_allow_html=True)
+
+                    # elif st.session_state.count <= 4 :
+
+                    # elif st.session_state.count == 5 :
+
+                    # elif st.session_state.count == 6 :
+
+
+
+                        
+                    # with st.container():
+                    #     st.dataframe(data_to_show[["ID Karyawan", "Nama Lengkap","Company"]], use_container_width=True)
     
                     # for m in range(len(data_to_show)) :
                     #     st.text_area("", 
