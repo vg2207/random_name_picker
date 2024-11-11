@@ -334,7 +334,7 @@ if user_input_excel is not None:
                         
                         for col in row1:
                             tile = col.container(height=120)
-                            tile.markdown(f"<h3 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*col,"ID Karyawan"])}</h3>", unsafe_allow_html=True)
+                            tile.markdown(f"<h3 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*col,'ID Karyawan'])}</h3>", unsafe_allow_html=True)
 
                     # elif st.session_state.count <= 4 :
 
