@@ -105,14 +105,14 @@ if user_input_excel is not None:
         # if button_clicked_5 :
         new_row = pd.DataFrame(
             {"Number of Winner(s)": [20, 20,
-                                     20, 20,
-                                     20, 20,
+                                     # 20, 20,
+                                     # 20, 20,
                                      10, 10,
                                      2, 1,
                                     ],
              "Prize": ['Voucher Rp 50.000', 'Voucher Rp 50.000', 
-                       'Voucher Rp 50.000', 'Voucher Rp 50.000',
-                       'Voucher Rp 50.000', 'Voucher Rp 100.000',
+                       # 'Voucher Rp 50.000', 'Voucher Rp 50.000',
+                       # 'Voucher Rp 50.000', 'Voucher Rp 100.000',
                        'Voucher Rp 100.000', 'Voucher Rp 200.000',
                        'Voucher Rp 500.000', 'Voucher Rp 1.000.000',
                       ]
