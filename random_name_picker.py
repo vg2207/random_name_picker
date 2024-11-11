@@ -325,16 +325,16 @@ if user_input_excel is not None:
                     # st.markdown(f"<h1 style='text-align: center;'>Pemenang Hadiah berupa {str(prize_to_show)} adalah</h1>", unsafe_allow_html=True)
 
 
-                    print(data_to_show)
-                    if st.session_state.count <= 2 :
-                        row1 = st.columns(5)
-                        row2 = st.columns(5)
-                        row3 = st.columns(5)
-                        row4 = st.columns(5)
+                    st.title(data_to_show)
+                    # if st.session_state.count <= 2 :
+                    #     row1 = st.columns(5)
+                    #     row2 = st.columns(5)
+                    #     row3 = st.columns(5)
+                    #     row4 = st.columns(5)
                         
-                        for col in row1:
-                            tile = col.container(height=120)
-                            tile.markdown(f"<h3 style='text-align: center;'>{str(data_to_show[["ID Karyawan"]])}</h3>", unsafe_allow_html=True)
+                    #     for col in row1:
+                    #         tile = col.container(height=120)
+                    #         tile.markdown(f"<h3 style='text-align: center;'>{str(data_to_show[["ID Karyawan"]])}</h3>", unsafe_allow_html=True)
 
                     # elif st.session_state.count <= 4 :
 
@@ -345,8 +345,8 @@ if user_input_excel is not None:
 
 
                         
-                    # with st.container():
-                    #     st.dataframe(data_to_show[["ID Karyawan", "Nama Lengkap","Company"]], use_container_width=True)
+                    with st.container():
+                        st.dataframe(data_to_show[["ID Karyawan", "Nama Lengkap","Company"]], use_container_width=True)
     
                     # for m in range(len(data_to_show)) :
                     #     st.text_area("", 
