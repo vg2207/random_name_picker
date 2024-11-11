@@ -334,18 +334,8 @@ if user_input_excel is not None:
 
                         m=0
                         for col in row1:
-                            tile = col.container()
-                            with stylable_container(
-                                "border",
-                                css_styles="""
-                                .container1 {
-                                border: 2px solid #3498db;
-                                border-radius: 8px;
-                                padding: 10px;
-                                margin-bottom: 20px;
-                                }""",
-                            ):
-                                tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
+                            tile = col.container(border=True)
+                            tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
 
                     # elif st.session_state.count <= 4 :
