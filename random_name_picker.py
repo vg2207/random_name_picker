@@ -331,10 +331,11 @@ if user_input_excel is not None:
                         row2 = st.columns(5)
                         row3 = st.columns(5)
                         row4 = st.columns(5)
-                        
+
+                        m=0
                         for col in row1:
-                            st.title(col)
-                            st.title(pd.DataFrame(data_to_show).loc[st.session_state.count*col,"ID Karyawan"])
+                            st.title(pd.DataFrame(data_to_show).loc[st.session_state.count*(m+1),"ID Karyawan"])
+                            m+=1
                             # tile = col.container(height=120)
                             # tile.markdown(f"<h3 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[st.session_state.count*col,'ID Karyawan'])}</h3>", unsafe_allow_html=True)
 
