@@ -111,10 +111,10 @@ if user_input_excel is not None:
                                      10, 10,
                                      2, 1,
                                     ],
-             "Prize": ['Voucher Rp 50.000', 'Voucher Rp 50.000', 
-                       'Voucher Rp 50.000', 'Voucher Rp 50.000',
-                       'Voucher Rp 50.000', 'Voucher Rp 100.000',
-                       'Voucher Rp 100.000', 'Voucher Rp 200.000',
+             "Prize": ['Voucher Rp 50.000 (1-20)', 'Voucher Rp 50.000 (21-40)', 
+                       'Voucher Rp 50.000 (41-60)', 'Voucher Rp 50.000 (61-80)',
+                       'Voucher Rp 50.000 (81-100)', 'Voucher Rp 100.000 (1-20)',
+                       'Voucher Rp 100.000 (21-30)', 'Voucher Rp 200.000',
                        'Voucher Rp 500.000', 'Voucher Rp 1.000.000',
                       ]
             })
