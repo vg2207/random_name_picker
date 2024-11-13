@@ -335,10 +335,7 @@ if user_input_excel is not None:
                         m=0
                         for col in row1:
                             tile = col.container(border=True)
-                            tile.markdown(f"<h5 style='text-align: center;'>{str(
-                                pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(
-                                pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}<br>{str(
-                                pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
+                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><br><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><br><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
                             m+=1
                         for col in row2:
                             tile = col.container(border=True)
