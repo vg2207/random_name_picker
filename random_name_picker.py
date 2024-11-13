@@ -33,7 +33,7 @@ with col_C :
     st.image(logo)
 with col_B:
     with st.container():
-        st.markdown(f"<h1 style='text-align: center;'>Undian Acara Natal<br>PT Lautan Luas Tbk.</h1>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='text-align: center;'>Doorprize Christmas<br>PT Lautan Luas Tbk.</h1>", unsafe_allow_html=True)
 with col_A :
     logo_a = Image.open('assets_logo/christmas_logo.png')
     st.image(logo_a)
@@ -334,6 +334,16 @@ if user_input_excel is not None:
 
                         m=0
                         for col in row1:
+                            container_style = """
+                            <style>
+                                .container {
+                                    border: 2px solid #3498db;
+                                    border-radius: 8px;
+                                    padding: 10px;
+                                    margin-bottom: 20px;
+                                }
+                            </style>
+                            """
                             tile = col.container()
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
