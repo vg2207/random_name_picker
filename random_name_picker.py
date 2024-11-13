@@ -334,29 +334,19 @@ if user_input_excel is not None:
 
                         m=0
                         for col in row1:
-                            # container_style = """
-                            # <style>
-                            #     .container {
-                            #         border: 2px solid #3498db;
-                            #         border-radius: 8px;
-                            #         padding: 10px;
-                            #         margin-bottom: 20px;
-                            #     }
-                            # </style>
-                            # """
                             tile = col.container(border=True)
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
                         for col in row2:
-                            tile = col.container()
+                            tile = col.container(border=True)
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
                         for col in row3:
-                            tile = col.container()
+                            tile = col.container(border=True)
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
                         for col in row4:
-                            tile = col.container()
+                            tile = col.container(border=True)
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
 
@@ -367,11 +357,11 @@ if user_input_excel is not None:
 
                         m=0
                         for col in row1:
-                            tile = col.container()
+                            tile = col.container(border=True)
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
                         for col in row2:
-                            tile = col.container()
+                            tile = col.container(border=True)
                             tile.markdown(f"<h4 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h4>", unsafe_allow_html=True)
                             m+=1
 
@@ -382,7 +372,7 @@ if user_input_excel is not None:
 
                         m=0
                         for col in row1:
-                            tile = col.container()
+                            tile = col.container(border=True)
                             tile.markdown(f"<h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h2>", unsafe_allow_html=True)
                             m+=1
 
@@ -393,7 +383,7 @@ if user_input_excel is not None:
 
                         m=0
                         for col in row1:
-                            tile = col.container()
+                            tile = col.container(border=True)
                             tile.markdown(f"<h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}<br>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h1>", unsafe_allow_html=True)
                             m+=1
 
