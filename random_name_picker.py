@@ -326,7 +326,7 @@ if user_input_excel is not None:
 
 
     
-                    if st.session_state.count <= 2 :
+                    if st.session_state.count <= 6 :
                         row1 = st.columns(5)
                         row2 = st.columns(5)
                         row3 = st.columns(5)
@@ -350,7 +350,7 @@ if user_input_excel is not None:
                             tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
                             m+=1
 
-                    elif st.session_state.count <= 4 :
+                    elif st.session_state.count <= 8 :
                         row1 = st.columns(5)
                         row2 = st.columns(5)
 
@@ -366,7 +366,7 @@ if user_input_excel is not None:
                             m+=1
 
 
-                    elif st.session_state.count == 5 :
+                    elif st.session_state.count == 9 :
                         row1 = st.columns(2)
 
 
@@ -377,7 +377,7 @@ if user_input_excel is not None:
                             m+=1
 
 
-                    elif st.session_state.count == 6 :
+                    elif st.session_state.count == 10 :
                         row1 = st.columns(1)
 
 
