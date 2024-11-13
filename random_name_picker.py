@@ -335,19 +335,19 @@ if user_input_excel is not None:
                         m=0
                         for col in row1:
                             tile = col.container(border=True)
-                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><br><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><br><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
+                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
                             m+=1
                         for col in row2:
                             tile = col.container(border=True)
-                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><br><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><br><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
+                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
                             m+=1
                         for col in row3:
                             tile = col.container(border=True)
-                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><br><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><br><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
+                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
                             m+=1
                         for col in row4:
                             tile = col.container(border=True)
-                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><br><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><br><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
+                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
                             m+=1
 
                     elif st.session_state.count <= 4 :
@@ -358,11 +358,11 @@ if user_input_excel is not None:
                         m=0
                         for col in row1:
                             tile = col.container(border=True)
-                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><br><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><br><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
+                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
                             m+=1
                         for col in row2:
                             tile = col.container(border=True)
-                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><br><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><br><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
+                            tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
                             m+=1
 
 
@@ -373,7 +373,7 @@ if user_input_excel is not None:
                         m=0
                         for col in row1:
                             tile = col.container(border=True)
-                            tile.markdown(f"<h2 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><br><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><br><h2 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h2>", unsafe_allow_html=True)
+                            tile.markdown(f"<h2 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h2>", unsafe_allow_html=True)
                             m+=1
 
 
@@ -384,7 +384,7 @@ if user_input_excel is not None:
                         m=0
                         for col in row1:
                             tile = col.container(border=True)
-                            tile.markdown(f"<h1 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><br><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><br><h1 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h1>", unsafe_allow_html=True)
+                            tile.markdown(f"<h1 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h1>", unsafe_allow_html=True)
                             m+=1
 
 
