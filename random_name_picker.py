@@ -75,8 +75,8 @@ if user_input_excel is not None:
 
     ## --- TAB 
 
-    # tab1, tab2 = st.tabs(["Setting", "Run Apps"])
-    tab1, tab2, tab3 = st.tabs(["Setting", "Run Apps", "Run Apps Substitute"])
+    tab1, tab2 = st.tabs(["Setting", "Run Apps"])
+    # tab1, tab2, tab3 = st.tabs(["Setting", "Run Apps", "Run Apps Substitute"])
     with tab1 :
     # if selected_main_menu == "Settings" :
 
