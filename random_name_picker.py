@@ -640,7 +640,7 @@ def remove_duplicate(data, drop_col) :
 
 
 
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 
 col_A, col_B, col_C = st.columns([1, 3, 1])
 
