@@ -625,6 +625,7 @@ import xlsxwriter
 from PIL import Image
 from streamlit_extras.stylable_container import stylable_container
 
+st.set_page_config(layout="wide")
 
 
 def lowerify_and_upperify_cols(data, lower, upper) :
@@ -640,7 +641,7 @@ def remove_duplicate(data, drop_col) :
 
 
 
-# st.set_page_config(layout="wide")
+
 
 col_A, col_B, col_C = st.columns([1, 3, 1])
 
