@@ -120,7 +120,6 @@ if user_input_excel is not None:
     
         df1 = pd.DataFrame(data)
     
-        st.write(df1)
         # st.write(st.session_state.df1)
     
         # st.session_state.df1 = pd.DataFrame(data)
