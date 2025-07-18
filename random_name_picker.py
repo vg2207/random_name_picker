@@ -71,14 +71,14 @@ if user_input_excel is not None:
     else:
         st.sidebar.warning('You need to upload a csv or an excel file')
     
-    # st.sidebar.write(df)
+    st.sidebar.write(df)
 
     ## --- TAB 
 
     tab1, tab2 = st.tabs(["Setting", "Run Apps"])
-    # tab1, tab2, tab3 = st.tabs(["Setting", "Run Apps", "Run Apps Substitute"])
+    
     with tab1 :
-    # if selected_main_menu == "Settings" :
+
 
         with st.container():
             
@@ -86,18 +86,10 @@ if user_input_excel is not None:
             user_input_seed = st.number_input("Pick random seed number", 1)
 
     
-        
-    
-    
-        # col_5, col_6, col_7 = st.columns(3)
-        # with col_5 :
-        #     button_clicked_5 = st.button("Save", type="secondary", use_container_width=True)
-        # with col_6 :
-        #     button_clicked_6 = st.button("Resets", type="secondary", use_container_width=True)
-        # with col_7 :
+
         button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
     
-        # if button_clicked_5 :
+
         new_row = pd.DataFrame(
             {"Number of Winner(s)": [20, 20,
                                      # 20, 20,
