@@ -174,22 +174,22 @@ if user_input_excel is not None:
             random.seed(st.session_state.user_input_seed)
             df_ltl_only_winner_row = random.sample(range(len(df_ltl_only)), 41)
             df_ltl_only_winner = df_ltl_only.iloc[df_ltl_only_winner_row].reset_index(drop=True)
-            # st.write(df_ltl_only_winner)
+            st.write(df_ltl_only_winner)
             df_remaining_ltl = df_ltl_only.drop(df_ltl_only_winner_row).reset_index(drop=True)
-            # st.write(df_remaining_ltl)
+            st.write(df_remaining_ltl)
     
             # random.seed(st.session_state.user_input_seed)
             df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
-            # st.write(df_remaining_participant)
+            st.write(df_remaining_participant)
     
             random.seed(st.session_state.user_input_seed)
             for i in range(len(df2)):
-                winners_row = random.sample(range(len(df_all_participant)),int(df2["Number of Winner(s)"][i]))
-                winners_name = df_all_participant.iloc[winners_row]
-                prize = df2["Prize"][i]
-                df_all_participant = df_all_participant.drop(winners_row).reset_index(drop=True)
-                # st.write(df_all_participant)
-                winners_name_all.append(winners_name)
+                # winners_row = random.sample(range(len(df_all_participant)),int(df2["Number of Winner(s)"][i]))
+                # winners_name = df_all_participant.iloc[winners_row]
+                # prize = df2["Prize"][i]
+                # df_all_participant = df_all_participant.drop(winners_row).reset_index(drop=True)
+                # # st.write(df_all_participant)
+                # winners_name_all.append(winners_name)
 
             
                 if i == 0 or i ==1 or i == 7 :
