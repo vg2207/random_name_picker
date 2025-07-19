@@ -243,16 +243,7 @@ if user_input_excel is not None:
             #         color: white;
             #     }""",
             # ):
-                button1_color = "#283281"
-                button_style = f"""
-                    <style>
-                        div[data-baseweb="button"] div:nth-child(1) button {{
-                            background-color: {button1_color} !important;
-                            color: white !important;
-                        }}
-                    </style>"""
-                button_clicked = st.button("Start", key="button1", use_container_width=True, on_click=increment_counter)
-                st.markdown(button_style, unsafe_allow_html=True)
+                button_clicked = st.button("Start", type="secondary", use_container_width=True, on_click=increment_counter)
             
         with col_9 :
             button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
