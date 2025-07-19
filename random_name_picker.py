@@ -234,8 +234,9 @@ if user_input_excel is not None:
             
                     
 
-            col_3, col_9, col_4 = st.columns([1,1,1])
+            # col_3, col_9, col_4 = st.columns([1,1,1])
             # col_3, col_4 = st.columns([1,1])
+            col_3 = st.columns(1)
             with col_3 :
                 with stylable_container(
                     "green",
@@ -246,18 +247,18 @@ if user_input_excel is not None:
                     }""",
                 ):
                     button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
-            with col_9 :
-                button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
-            with col_4 :
-                with stylable_container(
-                    "red",
-                    css_styles="""
-                    button {
-                        background-color: #a60000;
-                        color: white;
-                    }""",
-                ):
-                    button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
+            # with col_9 :
+            #     button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
+            # with col_4 :
+            #     with stylable_container(
+            #         "red",
+            #         css_styles="""
+            #         button {
+            #             background-color: #a60000;
+            #             color: white;
+            #         }""",
+            #     ):
+            #         button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
             # with col_8 :
             #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
             
