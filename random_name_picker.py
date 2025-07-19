@@ -71,7 +71,7 @@ if user_input_excel is not None:
     else:
         st.sidebar.warning('You need to upload a csv or an excel file')
     
-    st.sidebar.write(df)
+    # st.sidebar.write(df)
 
     ## --- TAB 
 
@@ -176,10 +176,11 @@ if user_input_excel is not None:
             df_ltl_only_winner = df_ltl_only.iloc[df_ltl_only_winner_row].reset_index(drop=True)
             st.write(df_ltl_only_winner)
             df_remaining_ltl = df_ltl_only.drop(df_ltl_only_winner_row).reset_index(drop=True)
-            # st.write(df_remaining_ltl)
+            st.write(df_remaining_ltl)
     
             # random.seed(st.session_state.user_input_seed)
-            df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0)#.sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
+            df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0)
+            # df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
             st.write(df_remaining_participant)
     
             random.seed(st.session_state.user_input_seed)
