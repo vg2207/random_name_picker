@@ -179,7 +179,7 @@ if user_input_excel is not None:
             # st.write(df_remaining_ltl)
     
             # random.seed(st.session_state.user_input_seed)
-            df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
+            df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=1).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
             st.write(df_remaining_participant)
     
             random.seed(st.session_state.user_input_seed)
