@@ -249,7 +249,7 @@ if user_input_excel is not None:
                             background-color: {#283281} !important;
                             color: white !important;
                         }}
-                    </style>
+                    </style>"""
                 button_clicked = st.button("Start", key="button1", use_container_width=True, on_click=increment_counter)
             
         with col_9 :
