@@ -155,7 +155,7 @@ if user_input_excel is not None:
             st.session_state.count += 1
 
         def decrement_counter():
-            st.session_state.count -= 2
+            st.session_state.count -= 1
     
         def reset_counter():
             st.session_state.count -= st.session_state.count
