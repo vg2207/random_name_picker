@@ -153,6 +153,9 @@ if user_input_excel is not None:
     
         def increment_counter():
             st.session_state.count += 1
+
+        def decrement_counter():
+            st.session_state.count += 1
     
         def reset_counter():
             st.session_state.count -= st.session_state.count
@@ -229,7 +232,7 @@ if user_input_excel is not None:
         
                 
 
-        col_3, col_9, col_4 = st.columns([1,1,1])
+        col_3, col_9, col_10, col_4 = st.columns([1,1,1,1])
 
         with col_3 :
             # with stylable_container(
@@ -244,6 +247,17 @@ if user_input_excel is not None:
             
         with col_9 :
             button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
+
+        with col_10 :
+            # with stylable_container(
+            #     "red",
+            #     css_styles="""
+            #     button {
+            #         background-color: #a60000;
+            #         color: white;
+            #     }""",
+            # ):
+                button_clicked_20 = st.button("Previous", type="secondary", use_container_width=True, on_click=decrement_counter)
         
         with col_4 :
             # with stylable_container(
