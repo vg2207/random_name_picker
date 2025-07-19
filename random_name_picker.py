@@ -244,25 +244,23 @@ if user_input_excel is not None:
                 ):
                     button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
                 
-            # with col_9 :
-            #     button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
-            # with col_4 :
-            #     with stylable_container(
-            #         "red",
-            #         css_styles="""
-            #         button {
-            #             background-color: #a60000;
-            #             color: white;
-            #         }""",
-            #     ):
-            #         button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
-            # with col_8 :
-            #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
+            with col_9 :
+                button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
+            with col_4 :
+                with stylable_container(
+                    "red",
+                    css_styles="""
+                    button {
+                        background-color: #a60000;
+                        color: white;
+                    }""",
+                ):
+                    button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
             
     
             
-            # if button_cliked_9 :
-            #     st.empty()
+            if button_cliked_9 :
+                st.empty()
             if button_clicked: 
     
                 if st.session_state.count <= len(df2) :
