@@ -160,7 +160,7 @@ if user_input_excel is not None:
         try :
 
             df2 = st.session_state.df2
-            # st.write(df2)
+            st.write(df2)
             t = 40
             df_all_participant = df.copy()
             # st.write(df_all_participant)
