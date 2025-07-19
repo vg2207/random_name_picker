@@ -243,10 +243,11 @@ if user_input_excel is not None:
             #         color: white;
             #     }""",
             # ):
+                button1_color = "#283281"
                 button_style = f"""
                     <style>
                         div[data-baseweb="button"] div:nth-child(1) button {{
-                            background-color: {#283281} !important;
+                            background-color: {button1_color} !important;
                             color: white !important;
                         }}
                     </style>"""
