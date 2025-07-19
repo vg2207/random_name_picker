@@ -229,7 +229,7 @@ if user_input_excel is not None:
             
                     
 
-            col_3, col_9, col_4 = st.columns(3)
+            col_3, col_9, col_4 = st.columns([1,1,1])
             # col_3, col_4 = st.columns([1,1])
             # col_3 = st.columns(3)
             with col_3 :
