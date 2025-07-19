@@ -234,6 +234,7 @@ if user_input_excel is not None:
             # col_3, col_4 = st.columns([1,1])
             col_3 = st.columns(1)
             with col_3 :
+                button_clicked = st.button("Start", type="primary", use_container_width=True)
                 # with stylable_container(
                 #     "green",
                 #     css_styles="""
@@ -242,7 +243,8 @@ if user_input_excel is not None:
                 #         color: white;
                 #     }""",
                 # ):
-                button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
+                #     button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
+                
             # with col_9 :
             #     button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
             # with col_4 :
