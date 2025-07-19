@@ -29,7 +29,7 @@ st.set_page_config(layout="wide")
 col_A, col_B, col_C = st.columns([1, 2, 1])
 
 with col_C :
-    logo = Image.open('assets_logo/Logo Lautan Luas.png')
+    logo = Image.open('assets_logo/cropped-Logo-Landscape-Biru.png')
     st.image(logo)
 with col_B:
     with st.container():
