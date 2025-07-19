@@ -223,24 +223,24 @@ if user_input_excel is not None:
                 #     # st.write(df_ltl_only_winner)
                 #     winners_name_all.append(winners_name)
     
-            st.write(df_ltl_only_winner)
+            # st.write(df_ltl_only_winner)
             # st.write(winners_name_all)
-            st.write(df_remaining_participant)
+            # st.write(df_remaining_participant)
             # st.session_state.df_all_participant = df_all_participant
             # st.session_state.df_remaining_participant = df_remaining_participant
     
-    
-            output = BytesIO()
-    
-            with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
-                for i in range(len(df2)) :
-                    print(i)
-                    # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
-                    sheetname = 'Hadiah ' + str(int(i+1))
-                    print(sheetname)
-                    winners_data = winners_name_all[i].reset_index(drop=True)
-                    winners_data.index = winners_data.index + 1
-                    winners = winners_data.to_excel(writer, sheet_name=sheetname)
+            try :
+                output = BytesIO()
+        
+                with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
+                    for i in range(len(df2)) :
+                        print(i)
+                        # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
+                        sheetname = 'Hadiah ' + str(int(i+1))
+                        print(sheetname)
+                        winners_data = winners_name_all[i].reset_index(drop=True)
+                        winners_data.index = winners_data.index + 1
+                        winners = winners_data.to_excel(writer, sheet_name=sheetname)
             
                     
 
