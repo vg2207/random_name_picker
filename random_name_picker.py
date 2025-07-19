@@ -210,8 +210,8 @@ if user_input_excel is not None:
 
     
             # st.write(df_ltl_only_winner)
-            for i in range(len(df2)):
-                st.write(pd.DataFrame(winners_name_all[i]))
+            # for i in range(len(df2)):
+            #     st.write(pd.DataFrame(winners_name_all[i]))
             # st.write(df_remaining_participant)
             # st.session_state.df_all_participant = df_all_participant
             # st.session_state.df_remaining_participant = df_remaining_participant
@@ -220,12 +220,13 @@ if user_input_excel is not None:
         
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
                 for i in range(len(df2)) :
-                    print(i)
+                    st.write(i)
                     # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
                     sheetname = 'Hadiah ' + str(int(i+1))
-                    print(sheetname)
+                    st.write(sheetname)
                     winners_data = winners_name_all[i].reset_index(drop=True)
                     winners_data.index = winners_data.index + 1
+                    st.write(winners_data)
                     winners = winners_data.to_excel(writer, sheet_name=sheetname)
 
 
