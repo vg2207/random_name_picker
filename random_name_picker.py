@@ -210,7 +210,8 @@ if user_input_excel is not None:
 
     
             # st.write(df_ltl_only_winner)
-            st.write(pd.DataFrame(winners_name_all))
+            for i in range(len(df2)):
+                st.write(pd.DataFrame(winners_name_all[i]))
             # st.write(df_remaining_participant)
             # st.session_state.df_all_participant = df_all_participant
             # st.session_state.df_remaining_participant = df_remaining_participant
