@@ -240,7 +240,6 @@ if user_input_excel is not None:
                         print(sheetname)
                         winners_data = winners_name_all[i].reset_index(drop=True)
                         winners_data.index = winners_data.index + 1
-                        print(winners_data)
                         winners = winners_data.to_excel(writer, sheet_name=sheetname)
             except Exception as e:
                 st.error(f"An error occurred: {e}")
