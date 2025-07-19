@@ -229,6 +229,7 @@ if user_input_excel is not None:
                     st.write(winners_data)
                     winners = winners_data.to_excel(writer, sheet_name=sheetname)
 
+            button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
 
             
                     
@@ -259,7 +260,7 @@ if user_input_excel is not None:
                     button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
             # with col_8 :
             #     button_clicked_8 = st.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
-            button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
+            
     
             
             # if button_cliked_9 :
