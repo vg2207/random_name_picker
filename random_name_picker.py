@@ -220,13 +220,9 @@ if user_input_excel is not None:
         
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
                 for i in range(len(df2)) :
-                    st.write(i)
-                    # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
                     sheetname = 'Hadiah ' + str(int(i+1))
-                    st.write(sheetname)
                     winners_data = winners_name_all[i].reset_index(drop=True)
                     winners_data.index = winners_data.index + 1
-                    st.write(winners_data)
                     winners = winners_data.to_excel(writer, sheet_name=sheetname)
 
             button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
@@ -238,14 +234,14 @@ if user_input_excel is not None:
             # col_3, col_4 = st.columns([1,1])
             col_3 = st.columns(1)
             with col_3 :
-                with stylable_container(
-                    "green",
-                    css_styles="""
-                    button {
-                        background-color: #628a33;
-                        color: white;
-                    }""",
-                ):
+                # with stylable_container(
+                #     "green",
+                #     css_styles="""
+                #     button {
+                #         background-color: #628a33;
+                #         color: white;
+                #     }""",
+                # ):
                     button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
             # with col_9 :
             #     button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
