@@ -196,7 +196,7 @@ if user_input_excel is not None:
                     winners_name = df_ltl_only_winner.iloc[winners_row]
                     prize = df2["Prize"][i]
                     df_ltl_only_winner = df_ltl_only_winner.drop(winners_row).reset_index(drop=True)
-                    # st.write(df_ltl_only_winner)
+                    st.write(winners_name)
                     winners_name_all.append(winners_name)
                 else :
                     winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
@@ -205,6 +205,7 @@ if user_input_excel is not None:
                     prize = df2["Prize"][i]
                     df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
                     # st.write(df_remaining_participant)
+                    st.write(winners_name)
                     winners_name_all.append(winners_name)
             
                 # if i == 2 or i == 3 or i == 4 or i == 5 or i == 6 :
