@@ -252,6 +252,7 @@ if user_input_excel is not None:
                         }}
                     </style>"""
                 button_clicked = st.button("Start", key="button1", use_container_width=True, on_click=increment_counter)
+                st.markdown(button_style, unsafe_allow_html=True)
             
         with col_9 :
             button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
