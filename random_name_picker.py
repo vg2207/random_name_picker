@@ -242,7 +242,7 @@ if user_input_excel is not None:
                 #         color: white;
                 #     }""",
                 # ):
-                    button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
+                button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
             # with col_9 :
             #     button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
             # with col_4 :
