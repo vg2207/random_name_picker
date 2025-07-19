@@ -224,6 +224,7 @@ if user_input_excel is not None:
                 #     winners_name_all.append(winners_name)
     
             # st.write(df_ltl_only_winner)
+            st.write(winners_name_all)
             # st.write(df_remaining_participant)
             st.session_state.df_all_participant = df_all_participant
             # st.session_state.df_remaining_participant = df_remaining_participant
