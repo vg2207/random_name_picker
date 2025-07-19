@@ -201,7 +201,6 @@ if user_input_excel is not None:
                 else :
                     winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
                     winners_name = df_remaining_participant.iloc[winners_row]
-                    print(winners_name)
                     prize = df2["Prize"][i]
                     df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
                     # st.write(winners_name)
@@ -230,20 +229,20 @@ if user_input_excel is not None:
             
                     
 
-            # col_3, col_9, col_4 = st.columns([1,1,1])
+            col_3, col_9, col_4 = st.columns(3)
             # col_3, col_4 = st.columns([1,1])
-            col_3 = st.columns(1)
+            # col_3 = st.columns(3)
             with col_3 :
-                button_clicked = st.button("Start", type="primary", use_container_width=True)
-                # with stylable_container(
-                #     "green",
-                #     css_styles="""
-                #     button {
-                #         background-color: #628a33;
-                #         color: white;
-                #     }""",
-                # ):
-                #     button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
+                # button_clicked = st.button("Start", type="primary", use_container_width=True)
+                with stylable_container(
+                    "green",
+                    css_styles="""
+                    button {
+                        background-color: #628a33;
+                        color: white;
+                    }""",
+                ):
+                    button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
                 
             # with col_9 :
             #     button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
