@@ -192,7 +192,7 @@ if user_input_excel is not None:
                 # winners_name_all.append(winners_name)
 
             
-                if i == 0 or i ==1 or i == 7 :
+                if i == 2 or i == 3 or i == 4 or i == 5 or i == 6 :
                     winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
                     winners_name = df_remaining_participant.iloc[winners_row]
                     print(winners_name)
