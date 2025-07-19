@@ -234,6 +234,7 @@ if user_input_excel is not None:
     
             with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
                 for i in range(len(df2)) :
+                    print(i)
                     # sheetname = 'Round ' + str(int(i+1)) + ' - Winner ' + str(df2.loc[i, 'Prize'])
                     sheetname = 'Hadiah ' + str(int(i+1))
                     print(sheetname)
