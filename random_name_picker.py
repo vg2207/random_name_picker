@@ -235,15 +235,22 @@ if user_input_excel is not None:
         col_3, col_9, col_10, col_4 = st.columns([1,1,1,1])
 
         with col_3 :
-            with stylable_container(
-                "green",
-                css_styles="""
-                button {
-                    background-color: #283281;
-                    color: white;
-                }""",
-            ):
-                button_clicked = st.button("Start", type="primary", use_container_width=True, on_click=increment_counter)
+            # with stylable_container(
+            #     "green",
+            #     css_styles="""
+            #     button {
+            #         background-color: #283281;
+            #         color: white;
+            #     }""",
+            # ):
+                button_style = f"""
+                    <style>
+                        div[data-baseweb="button"] div:nth-child(1) button {{
+                            background-color: {#283281} !important;
+                            color: white !important;
+                        }}
+                    </style>
+                button_clicked = st.button("Start", key="button1", use_container_width=True, on_click=increment_counter)
             
         with col_9 :
             button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
