@@ -167,9 +167,9 @@ if user_input_excel is not None:
             winners_name_all = []
     
             df_ltl_only = df_all_participant.loc[df_all_participant['Perusahaan'] == 'LTL'].reset_index(drop=True)
-            st.write(df_ltl_only)
+            # st.write(df_ltl_only)
             df_remaining_non_ltl = df_all_participant.loc[df_all_participant['Perusahaan'] != 'LTL'].reset_index(drop=True)
-            st.write(df_remaining_non_ltl)
+            # st.write(df_remaining_non_ltl)
             
             random.seed(st.session_state.user_input_seed)
             df_ltl_only_winner_row = random.sample(range(len(df_ltl_only)), 41)
@@ -180,7 +180,7 @@ if user_input_excel is not None:
     
             # random.seed(st.session_state.user_input_seed)
             df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
-            st.write(df_remaining_participant)
+            # st.write(df_remaining_participant)
     
             random.seed(st.session_state.user_input_seed)
             for i in range(len(df2)):
@@ -191,8 +191,14 @@ if user_input_excel is not None:
                 # # st.write(df_all_participant)
                 # winners_name_all.append(winners_name)
 
-            
-                if i == 2 or i == 3 or i == 4 or i == 5 or i == 6 :
+                if i == 0 or i == 1 or i == 7 :
+                    winners_row = random.sample(range(len(df_ltl_only_winner)),int(df2["Number of Winner(s)"][i]))
+                    winners_name = df_ltl_only_winner.iloc[winners_row]
+                    prize = df2["Prize"][i]
+                    df_ltl_only_winner = df_ltl_only_winner.drop(winners_row).reset_index(drop=True)
+                    # st.write(df_ltl_only_winner)
+                    winners_name_all.append(winners_name)
+                else :
                     winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
                     winners_name = df_remaining_participant.iloc[winners_row]
                     print(winners_name)
@@ -200,16 +206,25 @@ if user_input_excel is not None:
                     df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
                     # st.write(df_remaining_participant)
                     winners_name_all.append(winners_name)
-                else :
-                    winners_row = random.sample(range(len(df_ltl_only_winner)),int(df2["Number of Winner(s)"][i]))
-                    winners_name = df_ltl_only_winner.iloc[winners_row]
-                    prize = df2["Prize"][i]
-                    df_ltl_only_winner = df_ltl_only_winner.drop(winners_row).reset_index(drop=True)
-                    # st.write(df_ltl_only_winner)
-                    winners_name_all.append(winners_name)
+            
+                # if i == 2 or i == 3 or i == 4 or i == 5 or i == 6 :
+                #     winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
+                #     winners_name = df_remaining_participant.iloc[winners_row]
+                #     print(winners_name)
+                #     prize = df2["Prize"][i]
+                #     df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
+                #     # st.write(df_remaining_participant)
+                #     winners_name_all.append(winners_name)
+                # else :
+                #     winners_row = random.sample(range(len(df_ltl_only_winner)),int(df2["Number of Winner(s)"][i]))
+                #     winners_name = df_ltl_only_winner.iloc[winners_row]
+                #     prize = df2["Prize"][i]
+                #     df_ltl_only_winner = df_ltl_only_winner.drop(winners_row).reset_index(drop=True)
+                #     # st.write(df_ltl_only_winner)
+                #     winners_name_all.append(winners_name)
     
-            st.write(df_ltl_only_winner)
-            st.write(df_remaining_participant)
+            # st.write(df_ltl_only_winner)
+            # st.write(df_remaining_participant)
             st.session_state.df_all_participant = df_all_participant
             # st.session_state.df_remaining_participant = df_remaining_participant
     
