@@ -160,10 +160,10 @@ if user_input_excel is not None:
         try :
 
             df2 = st.session_state.df2
-            st.write(df2)
+            # st.write(df2)
             t = 40
             df_all_participant = df.copy()
-            # st.write(df_all_participant)
+            st.write(df_all_participant)
             winners_name_all = []
     
             df_ltl_only = df_all_participant.loc[df_all_participant['Perusahaan'] == 'LTL'].reset_index(drop=True)
