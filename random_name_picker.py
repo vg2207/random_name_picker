@@ -226,7 +226,7 @@ if user_input_excel is not None:
             # st.write(df_ltl_only_winner)
             # st.write(winners_name_all)
             # st.write(df_remaining_participant)
-            st.session_state.df_all_participant = df_all_participant
+            # st.session_state.df_all_participant = df_all_participant
             # st.session_state.df_remaining_participant = df_remaining_participant
     
     
@@ -286,7 +286,7 @@ if user_input_excel is not None:
                         with st.container() :
                             st.markdown(f"<h1 style='text-align: center; color: #0349b3;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
                     time.sleep(1)
-                    if st.session_state.count <= 8 :
+                    if st.session_state.count <= 6 :
                         with st.empty():
                             while t :
                                 if t > 0 :
@@ -331,7 +331,7 @@ if user_input_excel is not None:
 
 
     
-                    if st.session_state.count <= 6 :
+                    if st.session_state.count <= 4 :
                         row1 = st.columns(5)
                         row2 = st.columns(5)
                         row3 = st.columns(5)
@@ -355,7 +355,7 @@ if user_input_excel is not None:
                             tile.markdown(f"<h5 style='text-align: center; color: #a60000'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #628a33'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Company'])}</h5>", unsafe_allow_html=True)
                             m+=1
 
-                    elif st.session_state.count <= 8 :
+                    elif st.session_state.count <= 6 :
                         row1 = st.columns(5)
                         row2 = st.columns(5)
 
@@ -371,7 +371,7 @@ if user_input_excel is not None:
                             m+=1
 
 
-                    elif st.session_state.count == 9 :
+                    elif st.session_state.count == 7 :
                         row1 = st.columns(2)
 
 
@@ -382,7 +382,7 @@ if user_input_excel is not None:
                             m+=1
 
 
-                    elif st.session_state.count == 10 :
+                    elif st.session_state.count == 8 :
                         row1 = st.columns(1)
 
 
