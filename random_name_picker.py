@@ -537,9 +537,9 @@ if user_input_excel is not None:
                         tile = col.container(border=True)
                         tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
                         m+=1
-
-
-                 elif st.session_state.count == 11 :
+                
+                
+                elif st.session_state.count == 11 :
                     row1 = st.columns(2)
 
 
@@ -548,7 +548,8 @@ if user_input_excel is not None:
                         tile = col.container(border=True)
                         tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
                         m+=1
-
+                
+                
                 elif st.session_state.count == 12 :
                     row1 = st.columns(1)
 
@@ -558,8 +559,7 @@ if user_input_excel is not None:
                         tile = col.container(border=True)
                         tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
                         m+=1
-
-
+                
                 elif st.session_state.count == 13 :
                     row1 = st.columns(3)
 
@@ -569,8 +569,8 @@ if user_input_excel is not None:
                         tile = col.container(border=True)
                         tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
                         m+=1
-
-
+                
+                
                 elif st.session_state.count == 14 :
                     row1 = st.columns(1)
 
@@ -580,8 +580,8 @@ if user_input_excel is not None:
                         tile = col.container(border=True)
                         tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
                         m+=1
-
-
+                
+                
                 elif st.session_state.count == 15 :
                     row1 = st.columns(5)
                     row2 = st.columns(5)
@@ -605,9 +605,8 @@ if user_input_excel is not None:
                         tile = col.container(border=True)
                         tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
-
                 
-
+                
                 elif st.session_state.count == 16 :
                     row1 = st.columns(1)
 
@@ -617,8 +616,8 @@ if user_input_excel is not None:
                         tile = col.container(border=True)
                         tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
                         m+=1
-
-
+                
+                
                 elif st.session_state.count == 17 :
                     row1 = st.columns(1)
 
