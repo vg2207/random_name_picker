@@ -100,14 +100,14 @@ if user_input_excel is not None:
                                      3, 1,
                                      20, 1,
                                      1],
-             "Prize": ['Voucher OVO/GOPAY Rp 100.000', 'Voucher Tokopedia Rp 150.000', 
-                       'Voucher OVO/GOPAY Rp 50.000', 'Wireless Headset',
-                       'Smartband Watch', 'Tumbler dari LAI',
-                       'Goodiebag LNK FiberCreme', 'Goodiebag LNK RichCreme',
-                       'Voucher 1-Day Leave', 'Ice Cube Set',
-                       'Diffuser', 'Paulo Milan (Exclusive Set Book, Tumbler, Pen)',
-                       'Speaker', 'Pulpen Parker',
-                       'Prodia Package', 'Air Fryer',
+             "Prize": ['Voucher OVO/GOPAY Rp 100.000 (15 pcs)', 'Voucher Tokopedia Rp 150.000 (10 pcs)', 
+                       'Voucher OVO/GOPAY Rp 50.000 (20 pcs)', 'Wireless Headset (5 pcs)',
+                       'Smartband Watch (2 pcs)', 'Tumbler dari LAI (50 pcs)',
+                       'Goodiebag LNK FiberCreme (15 pcs)', 'Goodiebag LNK RichCreme (16 pcs)',
+                       'Voucher 1-Day Leave (3 pcs)', 'Ice Cube Set (3 pcs)',
+                       'Diffuser (2 pcs)', 'Paulo Milan (Exclusive Set Book, Tumbler, Pen)',
+                       'Speaker (3 pcs)', 'Pulpen Parker',
+                       'Prodia Package (20 pcs)', 'Air Fryer',
                        'Sepeda Statis']
             })
     
