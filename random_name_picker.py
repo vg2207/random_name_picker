@@ -91,24 +91,24 @@ if user_input_excel is not None:
     
 
         new_row = pd.DataFrame(
-            {"Number of Winner(s)": [15, 1,
-                                    20, 5,
+            {"Number of Winner(s)": [15, 20,
+                                    1, 5,
                                     3, 3,
-                                    15, 2,
-                                    15, 1,
-                                    20, 2,
+                                    15, 15,
+                                    2, 20,
+                                    1, 2,
                                     3, 50,
-                                    1, 10,
+                                    10, 1,
                                     1, 1,
                                     1],
-             "Prize": ['Goodiebag LNK RichCreme (15 pcs)', 'Paulo Milan (Exclusive Set Book, Tumbler, Pen)',
-                       'Voucher OVO/GOPAY Rp 50.000 (20 pcs)', 'Wireless Headset (5 pcs)',
+             "Prize": ['Goodiebag LNK RichCreme (15 pcs)', 'Voucher OVO/GOPAY Rp 50.000 (20 pcs)',
+                       'Paulo Milan (Exclusive Set Book, Tumbler, Pen)', 'Wireless Headset (5 pcs)',
                        'Ice Cube Set (3 pcs)', 'Speaker (3 pcs)',
-                       'Goodiebag LNK FiberCreme (15 pcs)', 'Diffuser (2 pcs)',
-                       'Voucher OVO/GOPAY Rp 100.000 (15 pcs)', 'Air Fryer',
-                       'Prodia Package (20 pcs)', 'Smartband Watch (2 pcs)',
+                       'Goodiebag LNK FiberCreme (15 pcs)', 'Voucher OVO/GOPAY Rp 100.000 (15 pcs)',
+                       'Diffuser (2 pcs)', 'Prodia Package (20 pcs)',
+                       'Air Fryer', 'Smartband Watch (2 pcs)',
                        'Voucher 1-Day Leave (3 pcs)', 'Tumbler dari LAI (50 pcs)',
-                       'Pulpen Parker', 'Voucher Tokopedia Rp 150.000 (10 pcs)', 
+                       'Voucher Tokopedia Rp 150.000 (10 pcs)', 'Pulpen Parker', 
                        'Smartwatch dari Sequis Life', 'TV dari Sequis Life',
                        'Sepeda Statis']
             })
@@ -202,7 +202,7 @@ if user_input_excel is not None:
                 # # st.write(df_all_participant)
                 # winners_name_all.append(winners_name)
     
-                if i == 2 or i == 3 or i == 4 or i == 5 or i == 8 or i == 9 or i == 11 or i == 12 or i == 15 or i == 16 or i == 17 or i == 18 :
+                if i == 1 or i == 3 or i == 4 or i == 5 or i == 7 or i == 10 or i == 11 or i == 12 or i == 14 or i == 16 or i == 17 or i == 18 :
                     winners_row = random.sample(range(len(df_ltl_only_winner)),int(df2["Number of Winner(s)"][i]))
                     winners_name = df_ltl_only_winner.iloc[winners_row]
                     prize = df2["Prize"][i]
@@ -359,17 +359,6 @@ if user_input_excel is not None:
 
 
                     elif st.session_state.count == 2 :
-                        row1 = st.columns(1)
-    
-    
-                        m=0
-                        for col in row1:
-                            tile = col.container(border=True)
-                            tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
-                            m+=1
-
-
-                    elif st.session_state.count == 3 :
                         row1 = st.columns(5)
                         row2 = st.columns(5)
                         row3 = st.columns(5)
@@ -392,8 +381,20 @@ if user_input_excel is not None:
                             tile = col.container(border=True)
                             tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                             m+=1
-    
+
                     
+                    elif st.session_state.count == 3 :
+                        row1 = st.columns(1)
+    
+    
+                        m=0
+                        for col in row1:
+                            tile = col.container(border=True)
+                            tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
+                            m+=1
+
+
+
                     elif st.session_state.count == 4 :
                         row1 = st.columns(5)
     
@@ -447,17 +448,6 @@ if user_input_excel is not None:
 
 
                     elif st.session_state.count == 8 :
-                        row1 = st.columns(2)
-    
-    
-                        m=0
-                        for col in row1:
-                            tile = col.container(border=True)
-                            tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
-                            m+=1
-
-                    
-                    elif st.session_state.count == 9 :
                         row1 = st.columns(5)
                         row2 = st.columns(5)
                         row3 = st.columns(5)
@@ -477,18 +467,19 @@ if user_input_excel is not None:
                             m+=1
 
 
-                    elif st.session_state.count == 10 :
-                        row1 = st.columns(1)
+
+                    elif st.session_state.count == 9 :
+                        row1 = st.columns(2)
     
     
                         m=0
                         for col in row1:
                             tile = col.container(border=True)
-                            tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
+                            tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
                             m+=1
 
 
-                    elif st.session_state.count == 11 :
+                    elif st.session_state.count == 10 :
                         row1 = st.columns(5)
                         row2 = st.columns(5)
                         row3 = st.columns(5)
@@ -510,6 +501,17 @@ if user_input_excel is not None:
                         for col in row4:
                             tile = col.container(border=True)
                             tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                            m+=1
+
+
+                    elif st.session_state.count == 11 :
+                        row1 = st.columns(1)
+    
+    
+                        m=0
+                        for col in row1:
+                            tile = col.container(border=True)
+                            tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
                             m+=1
 
 
@@ -590,17 +592,6 @@ if user_input_excel is not None:
 
 
                     elif st.session_state.count == 15 :
-                        row1 = st.columns(1)
-    
-    
-                        m=0
-                        for col in row1:
-                            tile = col.container(border=True)
-                            tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
-                            m+=1
-    
-    
-                    elif st.session_state.count == 16 :
                         row1 = st.columns(5)
                         row2 = st.columns(5)
     
@@ -615,6 +606,18 @@ if user_input_excel is not None:
                             m+=1
 
 
+
+                    elif st.session_state.count == 16 :
+                        row1 = st.columns(1)
+    
+    
+                        m=0
+                        for col in row1:
+                            tile = col.container(border=True)
+                            tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
+                            m+=1
+    
+    
                     elif st.session_state.count == 17 :
                         row1 = st.columns(1)
     
