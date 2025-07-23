@@ -91,7 +91,7 @@ if user_input_excel is not None:
     
 
         new_row = pd.DataFrame(
-            {"Number of Winner(s)": [16, 1,
+            {"Number of Winner(s)": [15, 1,
                                     20, 5,
                                     3, 3,
                                     15, 2,
@@ -101,7 +101,7 @@ if user_input_excel is not None:
                                     1, 10,
                                     1, 1,
                                     1],
-             "Prize": ['Goodiebag LNK RichCreme (16 pcs)', 'Paulo Milan (Exclusive Set Book, Tumbler, Pen)',
+             "Prize": ['Goodiebag LNK RichCreme (15 pcs)', 'Paulo Milan (Exclusive Set Book, Tumbler, Pen)',
                        'Voucher OVO/GOPAY Rp 50.000 (20 pcs)', 'Wireless Headset (5 pcs)',
                        'Ice Cube Set (3 pcs)', 'Speaker (3 pcs)',
                        'Goodiebag LNK FiberCreme (15 pcs)', 'Diffuser (2 pcs)',
@@ -339,10 +339,9 @@ if user_input_excel is not None:
     
     
                     if st.session_state.count == 1 :
-                        row1 = st.columns(4)
-                        row2 = st.columns(4)
-                        row3 = st.columns(4)
-                        row4 = st.columns(4)
+                        row1 = st.columns(5)
+                        row2 = st.columns(5)
+                        row3 = st.columns(5)
     
                         m=0
                         for col in row1:
@@ -354,10 +353,6 @@ if user_input_excel is not None:
                             tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                             m+=1
                         for col in row3:
-                            tile = col.container(border=True)
-                            tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                            m+=1
-                        for col in row4:
                             tile = col.container(border=True)
                             tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                             m+=1
