@@ -36,7 +36,7 @@ with col_B:
         st.markdown(f"<h1 style='text-align: center;'>Doorprize Ulang Tahun ke-74<br>Lautan Luas</h1>", unsafe_allow_html=True)
 with col_A :
     logo_a = Image.open('assets_logo/logo ltls 75.png')
-    st.image(logo_a)
+    st.image(logo_a, width="content")
         
 # logo = Image.open('assets_logo/LOGO_FIXED.png')
 # with st.container():
