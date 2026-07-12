@@ -352,6 +352,8 @@ if user_input_excel is not None:
                     row1 = st.columns(5)
                     row2 = st.columns(5)
                     row3 = st.columns(5)
+                    row4 = st.columns(5)
+                    row5 = st.columns(5)
 
                     m=0
                     for col in row1:
@@ -363,6 +365,14 @@ if user_input_excel is not None:
                         tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
                     for col in row3:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row4:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row5:
                         tile = col.container(border=True)
                         tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
@@ -374,7 +384,6 @@ if user_input_excel is not None:
                     row3 = st.columns(5)
                     row4 = st.columns(5)
                     row5 = st.columns(5)
-                    row6 = st.columns(5)
 
                     m=0
                     for col in row1:
@@ -397,60 +406,15 @@ if user_input_excel is not None:
                         tile = col.container(border=True)
                         tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
-                    for col in row6:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
+
 
                 
                 elif st.session_state.count == 3 :
-                    row1 = st.columns(1)
-
-
-                    m=0
-                    for col in row1:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
-                        m+=1
-
-
-
-                elif st.session_state.count == 4 :
-                    row1 = st.columns(5)
-
-                    m=0
-                    for col in row1:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
-
-
-                elif st.session_state.count == 5 :
-                    row1 = st.columns(3)
-
-
-                    m=0
-                    for col in row1:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
-                        m+=1
-
-                
-                elif st.session_state.count == 6 :
-                    row1 = st.columns(3)
-
-
-                    m=0
-                    for col in row1:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
-                        m+=1
-
-
-                elif st.session_state.count == 7 :
                     row1 = st.columns(5)
                     row2 = st.columns(5)
                     row3 = st.columns(5)
+                    row4 = st.columns(5)
+                    row5 = st.columns(5)
 
                     m=0
                     for col in row1:
@@ -462,6 +426,135 @@ if user_input_excel is not None:
                         tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
                     for col in row3:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row4:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row5:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+
+
+
+                elif st.session_state.count == 4 :
+                    row1 = st.columns(5)
+                    row2 = st.columns(5)
+                    row3 = st.columns(5)
+                    row4 = st.columns(5)
+                    row5 = st.columns(5)
+
+                    m=0
+                    for col in row1:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row2:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row3:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row4:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row5:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+
+
+                elif st.session_state.count == 5 :
+                    row1 = st.columns(5)
+                    row2 = st.columns(5)
+                    row3 = st.columns(5)
+                    row4 = st.columns(5)
+                    row5 = st.columns(5)
+
+                    m=0
+                    for col in row1:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row2:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row3:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row4:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row5:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                        
+                
+                elif st.session_state.count == 6 :
+                    row1 = st.columns(5)
+                    row2 = st.columns(5)
+                    row3 = st.columns(5)
+                    row4 = st.columns(5)
+                    row5 = st.columns(5)
+
+                    m=0
+                    for col in row1:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row2:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row3:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row4:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row5:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+
+
+                elif st.session_state.count == 7 :
+                    row1 = st.columns(5)
+                    row2 = st.columns(5)
+                    row3 = st.columns(5)
+                    row4 = st.columns(5)
+                    row5 = st.columns(5)
+
+                    m=0
+                    for col in row1:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row2:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row3:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row4:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row5:
                         tile = col.container(border=True)
                         tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
@@ -473,7 +566,39 @@ if user_input_excel is not None:
                     row3 = st.columns(5)
                     row4 = st.columns(5)
                     row5 = st.columns(5)
+
+                    m=0
+                    for col in row1:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row2:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row3:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row4:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row5:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+
+
+                elif st.session_state.count == 9 :
+                    row1 = st.columns(5)
+                    row2 = st.columns(5)
+                    row3 = st.columns(5)
+                    row4 = st.columns(5)
+                    row5 = st.columns(5)
                     row6 = st.columns(5)
+
+
 
                     m=0
                     for col in row1:
@@ -501,17 +626,6 @@ if user_input_excel is not None:
                         tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
 
-
-
-                elif st.session_state.count == 9 :
-                    row1 = st.columns(2)
-
-
-                    m=0
-                    for col in row1:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
-                        m+=1
 
 
                 elif st.session_state.count == 10 :
@@ -540,47 +654,67 @@ if user_input_excel is not None:
 
 
                 elif st.session_state.count == 11 :
-                    row1 = st.columns(1)
-
+                    row1 = st.columns(5)
+                    row2 = st.columns(5)
+                    row3 = st.columns(5)
 
                     m=0
                     for col in row1:
                         tile = col.container(border=True)
-                        tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row2:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row3:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
 
 
                 elif st.session_state.count == 12 :
-                    row1 = st.columns(2)
+                    row1 = st.columns(4)
+                    row2 = st.columns(4)
+
 
                     m=0
                     for col in row1:
                         tile = col.container(border=True)
-                        tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
-                        m+=1 
-
-
-                elif st.session_state.count == 13 :
-                    row1 = st.columns(3)
-
-                    m=0
-                    for col in row1:
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row2:
                         tile = col.container(border=True)
-                        tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
 
 
+
+                elif st.session_state.count == 13 :
+                    row1 = st.columns(2)
+                    row2 = st.columns(2)
+                    row3 = st.columns(1)
+
+                    m=0
+                    for col in row1:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row2:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row3:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+
+
+
                 elif st.session_state.count == 14 :
-                    row1 = st.columns(5)
-                    row2 = st.columns(5)
-                    row3 = st.columns(5)
-                    row4 = st.columns(5)
-                    row5 = st.columns(5)
-                    row6 = st.columns(5)
-                    row7 = st.columns(5)
-                    row8 = st.columns(5)
-                    row9 = st.columns(5)
-                    row10 = st.columns(5)
+                    row1 = st.columns(2)
+                    row2 = st.columns(2)
+                    row3 = st.columns(1)
 
 
                     m=0
@@ -596,43 +730,32 @@ if user_input_excel is not None:
                         tile = col.container(border=True)
                         tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
-                    for col in row4:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
-                    for col in row5:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
-                    for col in row6:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
-                    for col in row7:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
-                    for col in row8:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
-                    for col in row9:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
-                    for col in row10:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
+
 
 
                 elif st.session_state.count == 15 :
                     row1 = st.columns(5)
                     row2 = st.columns(5)
-                    row3 = st.columns(5)
-                    row4 = st.columns(5)
-                    row5 = st.columns(5)
-                    row6 = st.columns(5)
+ 
+
+                    m=0
+                    for col in row1:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row2:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+
+
+
+
+                elif st.session_state.count == 16 :
+                    row1 = st.columns(2)
+                    row2 = st.columns(2)
+                    row3 = st.columns(1)
+
 
                     m=0
                     for col in row1:
@@ -647,45 +770,31 @@ if user_input_excel is not None:
                         tile = col.container(border=True)
                         tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
-                    for col in row4:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
-                    for col in row5:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
-                    for col in row6:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
-                        m+=1
-
-
-
-                elif st.session_state.count == 16 :
-                    row1 = st.columns(1)
-
-
-                    m=0
-                    for col in row1:
-                        tile = col.container(border=True)
-                        tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
-                        m+=1
 
 
                 elif st.session_state.count == 17 :
                     row1 = st.columns(2)
+                    row2 = st.columns(2)
+                    row3 = st.columns(1)
 
 
                     m=0
                     for col in row1:
                         tile = col.container(border=True)
-                        tile.markdown(f"<h2 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h2><h2 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h2><h2 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h2>", unsafe_allow_html=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row2:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
+                        m+=1
+                    for col in row3:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h5><h5 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h5>", unsafe_allow_html=True)
                         m+=1
 
 
                 elif st.session_state.count == 18 :
-                    row1 = st.columns(1)
+                    row1 = st.columns(3)
 
 
                     m=0
@@ -705,6 +814,40 @@ if user_input_excel is not None:
                         tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
                         m+=1
 
+
+                elif st.session_state.count == 20 :
+                    row1 = st.columns(1)
+
+
+                    m=0
+                    for col in row1:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
+                        m+=1
+
+
+                elif st.session_state.count == 21 :
+                    row1 = st.columns(2)
+
+
+                    m=0
+                    for col in row1:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
+                        m+=1
+
+
+
+
+                elif st.session_state.count == 22 :
+                    row1 = st.columns(1)
+
+
+                    m=0
+                    for col in row1:
+                        tile = col.container(border=True)
+                        tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'ID Karyawan'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Nama Lengkap'])}</h1><h1 style='text-align: center; color: #00bf62'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Perusahaan'])}</h1>", unsafe_allow_html=True)
+                        m+=1
                     
 
             else :
