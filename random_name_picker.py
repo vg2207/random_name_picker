@@ -84,7 +84,7 @@ with tab1 :
                                 30, 
                                 
                                 20, 15, 
-                                8, 5, 
+                                10, 5, 
                                 5, 10, 
                                 
                                 5, 5,
@@ -99,14 +99,14 @@ with tab1 :
                    'Voucher 3 (30 pcs)', 
                    
                    'Doorprize 1 (20 pcs)', 'Doorprize 2 (15 pcs)',
-                   'Doorprize 3 (8 pcs)', 'Doorprize 4 (5 pcs)',
+                   'Doorprize 3 (10 pcs)', 'Doorprize 4 (5 pcs)',
                    'Doorprize 5 (5 pcs)', 'Doorprize 6 (10 pcs)',
                    
                    'Doorprize 7 (5 pcs)', 'Doorprize 8 (5 pcs)',
-                   'Doorprize 9 (3 pcs)', 'Doorprize 10 (1 pc)',
-                   'Doorprize 11 (1 pc)', 
+                   'Doorprize 9 (3 pcs)', 'Grand Prize 4 (1 pc)',
+                   'Grand Prize 3 (1 pc)', 
                    
-                   'Grand Prize 1 (2 pcs)', 'Grand Prize 2 (1 pc)']
+                   'Grand Prize 2 (2 pcs)', 'Grand Prize 1 (1 pc)']
         })
 
     data = {
@@ -146,6 +146,8 @@ with tab1 :
         else :
             st.write('Apps ready to run')
 
+    else :
+            st.write('Isi bagian "Pick Random Seed Number')
     
 
 
@@ -660,8 +662,8 @@ with tab2 :
 
 
             elif st.session_state.count == 12 :
-                row1 = st.columns(4)
-                row2 = st.columns(4)
+                row1 = st.columns(5)
+                row2 = st.columns(5)
 
 
                 m=0
