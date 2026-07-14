@@ -71,8 +71,7 @@ with tab1 :
 
 
 
-        with stylable_container(
-                    key='blue_button',
+        with stylable_container(key="blue_button",
                     css_styles="""
                     button {
                         background-color: #0349b3;
