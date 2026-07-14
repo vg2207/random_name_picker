@@ -71,14 +71,14 @@ with tab1 :
 
 
 
-        with stylable_container(key="blue_button",
+            with stylable_container(key="blue_button",
                     css_styles="""
                     button {
                         background-color: #0349b3;
                         color: white;
                     }""",
                 ):
-            button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
+                button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
 
 
     new_row = pd.DataFrame(
