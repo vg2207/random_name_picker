@@ -46,11 +46,9 @@ with col_A :
 
 
 df=pd.read_excel('asset/Data Karyawan Doorprize.xlsx', sheet_name='All')
-data_all = df.copy()
+
 df_resign=pd.read_excel('asset/Data Karyawan Doorprize.xlsx', sheet_name='Resign')
-data_resign = df_resign.copy()
-st.write(data_all)
-st.write(data_resign)
+
 # lower_col = []
 # upper_col = ['Nomer Karyawan Perusahaan', 'Nama Lengkap']
 # df = lowerify_and_upperify_cols(df, lower_col, upper_col)
@@ -170,26 +168,37 @@ with tab2 :
 
     df2 = st.session_state.df2
     # st.write(df2)
-    t = 40
+    t = 30
     df_all_participant = df.copy()
-    # st.write(df_all_participant)
+    st.write(df_all_participant)
     winners_name_all = []
 
-    df_ltl_only = df_all_participant.loc[df_all_participant['Perusahaan'] == 'LTL'].reset_index(drop=True)
-    # st.write(df_ltl_only)
-    df_remaining_non_ltl = df_all_participant.loc[df_all_participant['Perusahaan'] != 'LTL'].reset_index(drop=True)
-    # st.write(df_remaining_non_ltl)
-    
-    random.seed(st.session_state.user_input_seed)
-    df_ltl_only_winner_row = random.sample(range(len(df_ltl_only)), 111)
-    df_ltl_only_winner = df_ltl_only.iloc[df_ltl_only_winner_row].reset_index(drop=True)
-    # st.write(df_ltl_only_winner)
-    df_remaining_ltl = df_ltl_only.drop(df_ltl_only_winner_row).reset_index(drop=True)
-    # st.write(df_remaining_ltl)
+    df_for_grandprize = df_all_participant[~df_all_participant['Employee Id'].isin(df_resign['Employee Id'])].loc[
+    df_all_participant['Years'] >= 10].loc[
+    df_all_participant['Employment Type'] >= 'Permanent'].loc[
+    df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
 
+    st.write(df_for_grandprize)
+
+
+    random.seed(st.session_state.user_input_seed)
+    df_grandprize_winner_row = random.sample(range(len(df_ltl_only)), 308)
+
+    # df_ltl_only = df_all_participant.loc[df_all_participant['Perusahaan'] == 'LTL'].reset_index(drop=True)
+    # # st.write(df_ltl_only)
+    # df_remaining_non_ltl = df_all_participant.loc[df_all_participant['Perusahaan'] != 'LTL'].reset_index(drop=True)
+    # # st.write(df_remaining_non_ltl)
+    
     # random.seed(st.session_state.user_input_seed)
-    df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
-    # st.write(df_remaining_participant)
+    # df_ltl_only_winner_row = random.sample(range(len(df_ltl_only)), 111)
+    # df_ltl_only_winner = df_ltl_only.iloc[df_ltl_only_winner_row].reset_index(drop=True)
+    # # st.write(df_ltl_only_winner)
+    # df_remaining_ltl = df_ltl_only.drop(df_ltl_only_winner_row).reset_index(drop=True)
+    # # st.write(df_remaining_ltl)
+
+    # # random.seed(st.session_state.user_input_seed)
+    # df_remaining_participant = pd.concat([df_remaining_ltl, df_remaining_non_ltl], axis=0).sample(frac=1, random_state=st.session_state.user_input_seed).reset_index(drop=True)
+    # # st.write(df_remaining_participant)
 
     random.seed(st.session_state.user_input_seed)
     for i in range(len(df2)):
@@ -200,7 +209,7 @@ with tab2 :
         # # st.write(df_all_participant)
         # winners_name_all.append(winners_name)
 
-        if i == 1 or i == 3 or i == 4 or i == 5 or i == 7 or i == 10 or i == 11 or i == 12 or i == 14 or i == 16 or i == 17 or i == 18 :
+        if i <= 18 :
             winners_row = random.sample(range(len(df_ltl_only_winner)),int(df2["Number of Winner(s)"][i]))
             winners_name = df_ltl_only_winner.iloc[winners_row]
             prize = df2["Prize"][i]
