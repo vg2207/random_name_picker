@@ -182,7 +182,13 @@ with tab2 :
 
 
     random.seed(st.session_state.user_input_seed)
-    df_grandprize_winner_row = random.sample(range(len(df_ltl_only)), 308)
+    df_grandprize_winner_row = random.sample(range(len(df_for_grandprize)), 4)
+    df_grandprize_winner = df_for_grandprize.iloc[df_grandprize_winner_row].reset_index(drop=True)
+
+    st.write(df_grandprize_winner)
+
+    df_remaining_participant = df_all_participant[~df_all_participant['Employee Id'].isin(df_grandprize_winner['Employee Id'])].reset_index(drop=True)
+    st.write(df_remaining_participant)
 
     # df_ltl_only = df_all_participant.loc[df_all_participant['Perusahaan'] == 'LTL'].reset_index(drop=True)
     # # st.write(df_ltl_only)
