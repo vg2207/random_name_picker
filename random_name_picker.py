@@ -165,7 +165,7 @@ with tab2 :
     # st.write(df2)
     t = 30
     df_all_participant = df.copy()
-    st.write(df_all_participant)
+    # st.write(df_all_participant)
     winners_name_all = []
 
     df_for_grandprize = df_all_participant[~df_all_participant['Employee Id'].isin(df_resign['Employee Id'])].loc[
