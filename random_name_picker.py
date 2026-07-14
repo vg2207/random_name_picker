@@ -197,7 +197,7 @@ with tab2 :
 
         if i <= 18 :
             winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
-            winners_name = df_ltl_only_winner.iloc[winners_row]
+            winners_name = df_remaining_participant.iloc[winners_row]
             prize = df2["Prize"][i]
             df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
             # st.write(winners_name)
