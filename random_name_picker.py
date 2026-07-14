@@ -46,8 +46,9 @@ with col_A :
 
 
 df=pd.read_excel('asset/Data Karyawan Doorprize.xlsx', sheet_name='All')
-
-st.sidebar.write(df)
+df_resign=pd.read_excel('asset/Data Karyawan Doorprize.xlsx', sheet_name='Resign')
+st.write(df)
+st.write(df_resign)
 # lower_col = []
 # upper_col = ['Nomer Karyawan Perusahaan', 'Nama Lengkap']
 # df = lowerify_and_upperify_cols(df, lower_col, upper_col)
