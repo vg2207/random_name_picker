@@ -140,7 +140,7 @@ with tab1 :
             st.write('Apps ready to run')
 
     else :
-            st.warning('Isi bagian "Pick Random Seed Number')
+            st.warning('Isi bagian "Pick Random Seed Number"')
     
 
 
