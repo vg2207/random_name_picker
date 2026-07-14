@@ -70,23 +70,8 @@ with tab1 :
         user_input_seed = st.number_input("Pick random seed number", 1)
         
         
-        with stylable_container(
-                    key="comic_sans_button",
-                    css_styles=["""
-                     button {
-                        background-color: green;
-                        color: white;
-                        border-radius: 5px;
-                     }
-                     """,
-                     """
-                     button > div > p {
-                         font-family: "Comic Sans MS", "Comic Sans", cursive;
-                     }
-                     """
-                     ],
-            ):
-            button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
+
+        button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
 
 
     new_row = pd.DataFrame(
