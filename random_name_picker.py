@@ -45,7 +45,7 @@ with col_A :
 
 
 
-df=pd.read_excel('asset/Data Karyawan Doorprize.xlsx', sheet_name='All')
+# df=pd.read_excel('asset/Data Karyawan Doorprize.xlsx', sheet_name='All')
 
 st.sidebar.write(df)
 # lower_col = []
