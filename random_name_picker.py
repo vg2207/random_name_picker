@@ -71,21 +71,21 @@ with tab1 :
         
         
         with stylable_container(
-                key="comic_sans_button",
-                css_styles=["""
-                 button {
-                    background-color: green;
-                    color: white;
-                    border-radius: 5px;
-                 }
-                 """,
-                 """
-                 button > div > p {
-                     font-family: "Comic Sans MS", "Comic Sans", cursive;
-                 }
-                 """
-                 ],
-        ):
+                    key="comic_sans_button",
+                    css_styles=["""
+                     button {
+                        background-color: green;
+                        color: white;
+                        border-radius: 5px;
+                     }
+                     """,
+                     """
+                     button > div > p {
+                         font-family: "Comic Sans MS", "Comic Sans", cursive;
+                     }
+                     """
+                     ],
+            ):
             button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
 
 
