@@ -187,7 +187,7 @@ with tab2 :
 
     st.write(df_grandprize_winner)
 
-    df_remaining_participant = df_all_participant[~df_all_participant['Employee Id'].isin(df_grandprize_winner['Employee Id'])].reset_index(drop=True)
+    df_remaining_participant = df_all_participant[~df_all_participant['Employee Id'].isin(df_grandprize_winner['Employee Id'])].loc[df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
     st.write(df_remaining_participant)
 
     
