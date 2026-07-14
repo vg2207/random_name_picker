@@ -70,15 +70,15 @@ with tab1 :
         user_input_seed = st.number_input("Pick random seed number", 1)
 
 
-    with stylable_container(
-                    "grey",
-                    css_styles="""
-                    button {
-                        background-color: #86a3be;
-                        color: white;
-                    }""",
-                ):
-        button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
+        with stylable_container(
+                        "grey",
+                        css_styles="""
+                        button {
+                            background-color: #86a3be;
+                            color: white;
+                        }""",
+                    ):
+            button_clicked_7 = st.button("Submit", type="primary", use_container_width=True)
 
 
     new_row = pd.DataFrame(
