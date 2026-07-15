@@ -178,8 +178,10 @@ with tab2 :
 
     # st.write(df_for_grandprize)
 
-
-    random.seed(st.session_state.user_input_seed)
+    try :
+        random.seed(st.session_state.user_input_seed)
+    except :
+        st.warning('Isi bagian "Pick Random Seed Number"')
     df_grandprize_winner_row = random.sample(range(len(df_for_grandprize)), 4)
     df_grandprize_winner = df_for_grandprize.iloc[df_grandprize_winner_row].reset_index(drop=True)
 
