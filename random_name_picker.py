@@ -70,17 +70,7 @@ with tab1 :
         user_input_seed = st.number_input("Pick random seed number", 1)
         
         
-        from streamlit_extras.stylable_container import stylable_container
-
-        with stylable_container(
-            key="blue",
-            css_styles="""
-            {
-                background-color: blue;
-            }
-            """
-        ):
-            button_clicked_7 = st.button("Submit")
+        button_clicked_7 = st.button("Submit")
 
 
     new_row = pd.DataFrame(
