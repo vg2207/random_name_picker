@@ -159,81 +159,77 @@ with tab2 :
     def reset_counter():
         st.session_state.count -= st.session_state.count
     
-    # try :
-
     try :
+
         df2 = st.session_state.df2
-    except :
-        st.warning('Isi bagian "Pick Random Seed Number"')
-    # st.write(df2)
-    t = 30
-    df_all_participant = df.copy()
-    # st.write(df_all_participant)
-    winners_name_all = []
-
-    df_for_grandprize = df_all_participant[~df_all_participant['Employee Id'].isin(df_resign['Employee Id'])].loc[
-    df_all_participant['Years'] >= 10].loc[
-    df_all_participant['Employment Type'] >= 'Permanent'].loc[
-    df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
-
-    # st.write(df_for_grandprize)
-
-    try :
-        random.seed(st.session_state.user_input_seed)
-    except :
-        st.warning('Isi bagian "Pick Random Seed Number"')
-    df_grandprize_winner_row = random.sample(range(len(df_for_grandprize)), 4)
-    df_grandprize_winner = df_for_grandprize.iloc[df_grandprize_winner_row].reset_index(drop=True)
-
-    # st.write(df_grandprize_winner)
-
-    df_remaining_participant = df_all_participant[~df_all_participant['Employee Id'].isin(df_grandprize_winner['Employee Id'])].loc[df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
-    # st.write(df_remaining_participant)
-
-    
-
-    try :
-        random.seed(st.session_state.user_input_seed)
-    except :
-        st.warning('Isi bagian "Pick Random Seed Number"')
         
-    for i in range(len(df2)):
-
-        if i <= 12 :
-            winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
-            winners_name = df_remaining_participant.iloc[winners_row]
-            prize = df2["Prize"][i]
-            df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
-            # st.write(winners_name)
-            winners_name_all.append(winners_name)
-        else :
-            winners_row = random.sample(range(len(df_grandprize_winner)),int(df2["Number of Winner(s)"][i]))
-            winners_name = df_grandprize_winner.iloc[winners_row]
-            prize = df2["Prize"][i]
-            df_grandprize_winner = df_grandprize_winner.drop(winners_row).reset_index(drop=True)
-            # st.write(winners_name)
-            winners_name_all.append(winners_name)
+        # st.write(df2)
+        t = 30
+        df_all_participant = df.copy()
+        # st.write(df_all_participant)
+        winners_name_all = []
     
+        df_for_grandprize = df_all_participant[~df_all_participant['Employee Id'].isin(df_resign['Employee Id'])].loc[
+        df_all_participant['Years'] >= 10].loc[
+        df_all_participant['Employment Type'] >= 'Permanent'].loc[
+        df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
+    
+        # st.write(df_for_grandprize)
+    
+        random.seed(st.session_state.user_input_seed)
+        
+        df_grandprize_winner_row = random.sample(range(len(df_for_grandprize)), 4)
+        df_grandprize_winner = df_for_grandprize.iloc[df_grandprize_winner_row].reset_index(drop=True)
+    
+        # st.write(df_grandprize_winner)
+    
+        df_remaining_participant = df_all_participant[~df_all_participant['Employee Id'].isin(df_grandprize_winner['Employee Id'])].loc[df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
+        # st.write(df_remaining_participant)
+    
+        
+    
+        random.seed(st.session_state.user_input_seed)
+        
+            
+        for i in range(len(df2)):
+    
+            if i <= 12 :
+                winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
+                winners_name = df_remaining_participant.iloc[winners_row]
+                prize = df2["Prize"][i]
+                df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
+                # st.write(winners_name)
+                winners_name_all.append(winners_name)
+            else :
+                winners_row = random.sample(range(len(df_grandprize_winner)),int(df2["Number of Winner(s)"][i]))
+                winners_name = df_grandprize_winner.iloc[winners_row]
+                prize = df2["Prize"][i]
+                df_grandprize_winner = df_grandprize_winner.drop(winners_row).reset_index(drop=True)
+                # st.write(winners_name)
+                winners_name_all.append(winners_name)
+        
+    
+    
+        # st.write(df_ltl_only_winner)
+        # for i in range(len(df2)):
+        #     st.write(pd.DataFrame(winners_name_all[i]))
+        # st.write(df_remaining_participant)
+        # st.session_state.df_all_participant = df_all_participant
+        # st.session_state.df_remaining_participant = df_remaining_participant
+    
+        output = BytesIO()
+    
+        with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
+            for i in range(len(df2)) :
+                sheetname = 'Hadiah ' + str(int(i+1))
+                winners_data = winners_name_all[i].reset_index(drop=True)
+                winners_data.index = winners_data.index + 1
+                winners = winners_data.to_excel(writer, sheet_name=sheetname)
+    
+        button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
 
-
-    # st.write(df_ltl_only_winner)
-    # for i in range(len(df2)):
-    #     st.write(pd.DataFrame(winners_name_all[i]))
-    # st.write(df_remaining_participant)
-    # st.session_state.df_all_participant = df_all_participant
-    # st.session_state.df_remaining_participant = df_remaining_participant
-
-    output = BytesIO()
-
-    with pd.ExcelWriter(output, engine='xlsxwriter') as writer: 
-        for i in range(len(df2)) :
-            sheetname = 'Hadiah ' + str(int(i+1))
-            winners_data = winners_name_all[i].reset_index(drop=True)
-            winners_data.index = winners_data.index + 1
-            winners = winners_data.to_excel(writer, sheet_name=sheetname)
-
-    button_clicked_8 = st.sidebar.download_button(label=':cloud: Download winners', type="secondary", data=output.getvalue(),file_name='winners.xlsx')
-
+    except :
+        st.warning('Isi bagian "Pick Random Seed Number"')
     
             
 
