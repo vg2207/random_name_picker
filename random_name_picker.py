@@ -275,7 +275,7 @@ with tab2 :
                 with st.container() :
                     st.markdown(f"<h1 style='text-align: center; color: #283281;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
             time.sleep(1)
-            if st.session_state.count <= 15 :
+            if st.session_state.count <= 12 :
                 with st.empty():
                     while t :
                         if t > 0 :
@@ -634,44 +634,25 @@ with tab2 :
 
 
             elif st.session_state.count == 7 :
-                row1 = st.columns(2)
-                row2 = st.columns(2)
-                row3 = st.columns(1)
+                row1 = st.columns(5)
 
                 m=0
                 for col in row1:
                     tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
-                    m+=1
-                for col in row2:
-                    tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
-                    m+=1
-                for col in row3:
-                    tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
+                    tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h5>", unsafe_allow_html=True)
                     m+=1
 
 
 
             elif st.session_state.count == 8 :
-                row1 = st.columns(2)
-                row2 = st.columns(2)
-                row3 = st.columns(1)
+                row1 = st.columns(5)
+               
 
 
                 m=0
                 for col in row1:
                     tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
-                    m+=1
-                for col in row2:
-                    tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
-                    m+=1
-                for col in row3:
-                    tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
+                    tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h5>", unsafe_allow_html=True)
                     m+=1
 
 
@@ -695,44 +676,26 @@ with tab2 :
 
 
             elif st.session_state.count == 10 :
-                row1 = st.columns(2)
-                row2 = st.columns(2)
-                row3 = st.columns(1)
+                row1 = st.columns(5)
+               
 
 
                 m=0
                 for col in row1:
                     tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
-                    m+=1
-                for col in row2:
-                    tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
-                    m+=1
-                for col in row3:
-                    tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
+                    tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h5>", unsafe_allow_html=True)
                     m+=1
 
 
             elif st.session_state.count == 11 :
-                row1 = st.columns(2)
-                row2 = st.columns(2)
-                row3 = st.columns(1)
+                row1 = st.columns(5)
+            
 
 
                 m=0
                 for col in row1:
                     tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
-                    m+=1
-                for col in row2:
-                    tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
-                    m+=1
-                for col in row3:
-                    tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
+                    tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h5>", unsafe_allow_html=True)
                     m+=1
 
 
@@ -743,7 +706,7 @@ with tab2 :
                 m=0
                 for col in row1:
                     tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
+                    tile.markdown(f"<h3 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h3><h3 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h3>", unsafe_allow_html=True)
                     m+=1
 
             
