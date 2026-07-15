@@ -136,7 +136,7 @@ with tab1 :
         elif len(df) == st.session_state.df2['Number of Winner(s)'].sum() :
             st.write('Jumlah peserta sama dengan jumlah hadiah')
         else :
-            st.write('Apps ready to run')
+            st.success('Apps ready to run')
 
     else :
             st.warning('Isi bagian "Pick Random Seed Number"')
