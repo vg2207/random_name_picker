@@ -10,16 +10,16 @@ from streamlit_extras.stylable_container import stylable_container
 
 
 
-def lowerify_and_upperify_cols(data, lower, upper) :
-    lowerify_cols = [col for col in data if col in lower]
-    upperify_cols = [col for col in data if col in upper]
-    data[lowerify_cols] = data[lowerify_cols].apply(lambda x: x.astype(str).str.lower())
-    data[upperify_cols] = data[upperify_cols].apply(lambda x: x.astype(str).str.upper())
-    return data
+# def lowerify_and_upperify_cols(data, lower, upper) :
+#     lowerify_cols = [col for col in data if col in lower]
+#     upperify_cols = [col for col in data if col in upper]
+#     data[lowerify_cols] = data[lowerify_cols].apply(lambda x: x.astype(str).str.lower())
+#     data[upperify_cols] = data[upperify_cols].apply(lambda x: x.astype(str).str.upper())
+#     return data
 
-def remove_duplicate(data, drop_col) :
-    data = data.drop_duplicates(subset=[drop_col], keep="last")
-    return data
+# def remove_duplicate(data, drop_col) :
+#     data = data.drop_duplicates(subset=[drop_col], keep="last")
+#     return data
 
 
 
@@ -70,7 +70,7 @@ with tab1 :
         user_input_seed = st.number_input("Pick random seed number", 1)
         
         
-        with stylable_container("blue",
+        with stylable_container(key="blue",
                                 css_styles="""
                                 button {
                                 background-color: #0349b3;
