@@ -70,13 +70,7 @@ with tab1 :
         user_input_seed = st.number_input("Pick random seed number", 1)
         
         
-        with stylable_container(key="blue",
-                                css_styles="""
-                                button {
-                                background-color: #0349b3;
-                                color: white;
-                                }""",
-                               ):
+        with stylable_container(key="blue",css_styles="""button {background-color: #0349b3;color: white;}""",):
             button_clicked_7 = st.button("Submit")
 
 
