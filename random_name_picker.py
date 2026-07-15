@@ -70,7 +70,16 @@ with tab1 :
         user_input_seed = st.number_input("Pick random seed number", 1)
         
         
-        with stylable_container(key='blue_button_1',css_styles="""button {background-color: #0349b3;color: white;}""",):
+        from streamlit_extras.stylable_container import stylable_container
+
+        with stylable_container(
+            key="blue",
+            css_styles="""
+            {
+                background-color: blue;
+            }
+            """
+        ):
             button_clicked_7 = st.button("Submit")
 
 
