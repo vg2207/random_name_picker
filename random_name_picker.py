@@ -192,7 +192,11 @@ with tab2 :
 
     
 
-    random.seed(st.session_state.user_input_seed)
+    try :
+        random.seed(st.session_state.user_input_seed)
+    except :
+        st.warning('Isi bagian "Pick Random Seed Number"')
+        
     for i in range(len(df2)):
 
         if i <= 12 :
