@@ -161,7 +161,10 @@ with tab2 :
     
     # try :
 
-    df2 = st.session_state.df2
+    try :
+        df2 = st.session_state.df2
+    except :
+        st.warning('Isi bagian "Pick Random Seed Number"')
     # st.write(df2)
     t = 30
     df_all_participant = df.copy()
