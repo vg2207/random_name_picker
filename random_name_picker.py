@@ -242,7 +242,14 @@ with tab2 :
     col_3, col_9, col_10, col_4 = st.columns([1,1,1,1])
 
     with col_3 :
-        
+        with stylable_container(
+                    "blue",
+                    css_styles="""
+                    button {
+                        background-color: #0349b3;
+                        color: white;
+                    }""",
+                ):
             button_clicked = st.button("Start", type="secondary", use_container_width=True, on_click=increment_counter)
         
     with col_9 :
