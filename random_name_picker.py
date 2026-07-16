@@ -89,7 +89,8 @@ with tab1 :
                                 5, 10, 
                                 
                                 5, 5,
-                                3, 1, 
+                                3, 2,
+                                1, 1, 
                                 1,
                                 
                                 2, 1],
@@ -102,7 +103,8 @@ with tab1 :
                    'Doorprize 5 (5 pcs)', 'Doorprize 6 (10 pcs)',
                    
                    'Doorprize 7 (5 pcs)', 'Doorprize 8 (5 pcs)',
-                   'Doorprize 9 (3 pcs)', 'Grand Prize 4 (1 pc)',
+                   'Doorprize 9 (3 pcs)', 'Doorprize 10 (2 pcs)',
+                   'Doorprize 11 (1 pcs)', 'Grand Prize 4 (1 pc)',
                    'Grand Prize 3 (1 pc)', 
                    
                    'Grand Prize 2 (2 pcs)', 'Grand Prize 1 (1 pc)']
@@ -172,7 +174,7 @@ with tab2 :
         # st.write(df2)
         t = 30
         df_all_participant = df.copy()
-        st.write(df_all_participant)
+        # st.write(df_all_participant)
         winners_name_all = []
     
         df_for_grandprize = df_all_participant[~df_all_participant['Employee Id'].isin(df_resign['Employee Id'])].loc[
@@ -180,7 +182,7 @@ with tab2 :
         df_all_participant['Employment Type'] >= 'Permanent'].loc[
         df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
     
-        st.write(df_for_grandprize)
+        # st.write(df_for_grandprize)
     
         random.seed(st.session_state.user_input_seed)
         
@@ -190,7 +192,7 @@ with tab2 :
         # st.write(df_grandprize_winner)
     
         df_remaining_participant = df_all_participant[~df_all_participant['Employee Id'].isin(df_grandprize_winner['Employee Id'])].loc[df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
-        st.write(df_remaining_participant)
+        # st.write(df_remaining_participant)
     
         
     
@@ -199,7 +201,7 @@ with tab2 :
             
         for i in range(len(df2)):
     
-            if i <= 12 :
+            if i <= 14 :
                 winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
                 winners_name = df_remaining_participant.iloc[winners_row]
                 prize = df2["Prize"][i]
@@ -293,7 +295,7 @@ with tab2 :
                 with st.container() :
                     st.markdown(f"<h1 style='text-align: center; color: #283281;'>{str(prize_to_show)}</h1>", unsafe_allow_html=True)
             time.sleep(1)
-            if st.session_state.count <= 12 :
+            if st.session_state.count <= 14 :
                 with st.empty():
                     while t :
                         if t > 0 :
@@ -729,28 +731,6 @@ with tab2 :
 
             
             elif st.session_state.count == 13 :
-                row1 = st.columns(1)
-
-
-                m=0
-                for col in row1:
-                    tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
-                    m+=1
-
-
-            elif st.session_state.count == 14 :
-                row1 = st.columns(1)
-
-
-                m=0
-                for col in row1:
-                    tile = col.container(border=True)
-                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
-                    m+=1
-
-
-            elif st.session_state.count == 15 :
                 row1 = st.columns(2)
 
 
@@ -763,7 +743,53 @@ with tab2 :
 
 
 
+            elif st.session_state.count == 14 :
+                row1 = st.columns(1)
+
+
+                m=0
+                for col in row1:
+                    tile = col.container(border=True)
+                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
+                    m+=1
+
+            
+            elif st.session_state.count == 15 :
+                row1 = st.columns(1)
+
+
+                m=0
+                for col in row1:
+                    tile = col.container(border=True)
+                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
+                    m+=1
+
+
             elif st.session_state.count == 16 :
+                row1 = st.columns(1)
+
+
+                m=0
+                for col in row1:
+                    tile = col.container(border=True)
+                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
+                    m+=1
+
+
+            elif st.session_state.count == 17 :
+                row1 = st.columns(2)
+
+
+                m=0
+                for col in row1:
+                    tile = col.container(border=True)
+                    tile.markdown(f"<h1 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h1><h1 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h1>", unsafe_allow_html=True)
+                    m+=1
+
+
+
+
+            elif st.session_state.count == 18 :
                 row1 = st.columns(1)
 
 
