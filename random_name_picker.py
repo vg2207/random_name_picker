@@ -257,21 +257,22 @@ with tab2 :
         
     with col_9 :
         with stylable_container(
-                    "orange",
-                    css_styles="""
-                    button {
-                        background-color: #f4661a;
-                        color: white;
-                    }""",
-                ):
-            button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
-
-    with col_10 :
-        with stylable_container(
                     "ijo",
                     css_styles="""
                     button {
                         background-color: #46b4ae;
+                        color: white;
+                    }""",
+                ):
+                    
+            button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
+
+    with col_10 :
+        with stylable_container(
+                    "orange",
+                    css_styles="""
+                    button {
+                        background-color: #f4661a;
                         color: white;
                     }""",
                 ):
