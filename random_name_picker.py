@@ -186,7 +186,7 @@ with tab2 :
     
         random.seed(st.session_state.user_input_seed)
         
-        df_grandprize_winner_row = random.sample(range(len(df_for_grandprize)), 4)
+        df_grandprize_winner_row = random.sample(range(len(df_for_grandprize)), 5)
         df_grandprize_winner = df_for_grandprize.iloc[df_grandprize_winner_row].reset_index(drop=True)
     
         st.write(df_grandprize_winner)
