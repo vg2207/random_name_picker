@@ -182,7 +182,7 @@ with tab2 :
         df_all_participant['Employment Type'] >= 'Permanent'].loc[
         df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
     
-        # st.write(df_for_grandprize)
+        st.write(df_for_grandprize)
     
         random.seed(st.session_state.user_input_seed)
         
