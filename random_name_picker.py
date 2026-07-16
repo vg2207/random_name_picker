@@ -182,14 +182,14 @@ with tab2 :
         df_all_participant['Employment Type'] >= 'Permanent'].loc[
         df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
     
-        st.write(df_for_grandprize)
+        # st.write(df_for_grandprize)
     
         random.seed(st.session_state.user_input_seed)
         
         df_grandprize_winner_row = random.sample(range(len(df_for_grandprize)), 5)
         df_grandprize_winner = df_for_grandprize.iloc[df_grandprize_winner_row].reset_index(drop=True)
     
-        st.write(df_grandprize_winner)
+        # st.write(df_grandprize_winner)
     
         df_remaining_participant = df_all_participant[~df_all_participant['Employee Id'].isin(df_grandprize_winner['Employee Id'])].loc[df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
         # st.write(df_remaining_participant)
@@ -198,23 +198,23 @@ with tab2 :
     
         random.seed(st.session_state.user_input_seed)
 
-        st.write(len(df2))
+        # st.write(len(df2))
             
         for i in range(len(df2)):
-            st.write(i)
+            # st.write(i)
             if i <= 13 :
                 winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
                 winners_name = df_remaining_participant.iloc[winners_row]
                 prize = df2["Prize"][i]
                 df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
-                st.write(winners_name)
+                # st.write(winners_name)
                 winners_name_all.append(winners_name)
             else :
                 winners_row = random.sample(range(len(df_grandprize_winner)),int(df2["Number of Winner(s)"][i]))
                 winners_name = df_grandprize_winner.iloc[winners_row]
                 prize = df2["Prize"][i]
                 df_grandprize_winner = df_grandprize_winner.drop(winners_row).reset_index(drop=True)
-                st.write(winners_name)
+                # st.write(winners_name)
                 winners_name_all.append(winners_name)
         
     
