@@ -206,14 +206,14 @@ with tab2 :
                 winners_name = df_remaining_participant.iloc[winners_row]
                 prize = df2["Prize"][i]
                 df_remaining_participant = df_remaining_participant.drop(winners_row).reset_index(drop=True)
-                # st.write(winners_name)
+                st.write(winners_name)
                 winners_name_all.append(winners_name)
             else :
                 winners_row = random.sample(range(len(df_grandprize_winner)),int(df2["Number of Winner(s)"][i]))
                 winners_name = df_grandprize_winner.iloc[winners_row]
                 prize = df2["Prize"][i]
                 df_grandprize_winner = df_grandprize_winner.drop(winners_row).reset_index(drop=True)
-                # st.write(winners_name)
+                st.write(winners_name)
                 winners_name_all.append(winners_name)
         
     
