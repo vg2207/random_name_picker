@@ -189,7 +189,7 @@ with tab2 :
         df_grandprize_winner_row = random.sample(range(len(df_for_grandprize)), 4)
         df_grandprize_winner = df_for_grandprize.iloc[df_grandprize_winner_row].reset_index(drop=True)
     
-        # st.write(df_grandprize_winner)
+        st.write(df_grandprize_winner)
     
         df_remaining_participant = df_all_participant[~df_all_participant['Employee Id'].isin(df_grandprize_winner['Employee Id'])].loc[df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
         # st.write(df_remaining_participant)
