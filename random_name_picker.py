@@ -203,7 +203,7 @@ with tab2 :
         for i in range(len(df2)):
     
             if i <= 14 :
-                st.write(len(i))
+                st.write(i)
                 winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
                 winners_name = df_remaining_participant.iloc[winners_row]
                 prize = df2["Prize"][i]
