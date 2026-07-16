@@ -197,11 +197,13 @@ with tab2 :
         
     
         random.seed(st.session_state.user_input_seed)
-        
+
+        st.write(len(df2))
             
         for i in range(len(df2)):
     
             if i <= 14 :
+                st.write(len(i))
                 winners_row = random.sample(range(len(df_remaining_participant)),int(df2["Number of Winner(s)"][i]))
                 winners_name = df_remaining_participant.iloc[winners_row]
                 prize = df2["Prize"][i]
