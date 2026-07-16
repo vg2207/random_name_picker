@@ -375,7 +375,7 @@ with tab2 :
                 m=0
                 for col in row1:
                     tile = col.container(border=True)
-                    tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h5><h5 style='text-align: center;'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h5>", unsafe_allow_html=True)
+                    tile.markdown(f"<h5 style='text-align: center; color: #fe914e'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Id'])}</h5><h5 style='text-align: center; color: #46b4ae'>{str(pd.DataFrame(data_to_show).loc[(m+1),'Employee Name'])}</h5>", unsafe_allow_html=True)
                     m+=1
                 for col in row2:
                     tile = col.container(border=True)
