@@ -172,7 +172,7 @@ with tab2 :
         # st.write(df2)
         t = 30
         df_all_participant = df.copy()
-        # st.write(df_all_participant)
+        st.write(df_all_participant)
         winners_name_all = []
     
         df_for_grandprize = df_all_participant[~df_all_participant['Employee Id'].isin(df_resign['Employee Id'])].loc[
@@ -180,7 +180,7 @@ with tab2 :
         df_all_participant['Employment Type'] >= 'Permanent'].loc[
         df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
     
-        # st.write(df_for_grandprize)
+        st.write(df_for_grandprize)
     
         random.seed(st.session_state.user_input_seed)
         
@@ -190,7 +190,7 @@ with tab2 :
         # st.write(df_grandprize_winner)
     
         df_remaining_participant = df_all_participant[~df_all_participant['Employee Id'].isin(df_grandprize_winner['Employee Id'])].loc[df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
-        # st.write(df_remaining_participant)
+        st.write(df_remaining_participant)
     
         
     
