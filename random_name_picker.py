@@ -256,28 +256,36 @@ with tab2 :
             button_clicked = st.button("Start", type="secondary", use_container_width=True, on_click=increment_counter)
         
     with col_9 :
-        button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
+        with stylable_container(
+                    "orange",
+                    css_styles="""
+                    button {
+                        background-color: #f4661a;
+                        color: white;
+                    }""",
+                ):
+            button_clicked_9 = st.button("Clear", type="secondary", use_container_width=True)
 
     with col_10 :
-        # with stylable_container(
-        #     "red",
-        #     css_styles="""
-        #     button {
-        #         background-color: #a60000;
-        #         color: white;
-        #     }""",
-        # ):
+        with stylable_container(
+                    "ijo",
+                    css_styles="""
+                    button {
+                        background-color: #46b4ae;
+                        color: white;
+                    }""",
+                ):
             button_clicked_20 = st.button("Previous", type="secondary", use_container_width=True, on_click=decrement_counter)
     
     with col_4 :
-        # with stylable_container(
-        #     "red",
-        #     css_styles="""
-        #     button {
-        #         background-color: #a60000;
-        #         color: white;
-        #     }""",
-        # ):
+        with stylable_container(
+                    "kuning",
+                    css_styles="""
+                    button {
+                        background-color: #f9dc1e;
+                        color: white;
+                    }""",
+                ):
             button_clicked_2 = st.button("Reset", type="secondary", use_container_width=True, on_click=reset_counter)
     
 
