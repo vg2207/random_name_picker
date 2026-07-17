@@ -107,7 +107,7 @@ with tab1 :
                    'Pureve Air Purifier dari LSA (1 pcs)', 'Sepeda Statis & Alat Kesehatan dari Prodia (1 pc)',
                    'Portable Treadmill dari Sequis (1 pc)', 
                    
-                   'Grand Prize 2 (2 pcs)', 'Grand Prize 1 (1 pc)']
+                   'Motor Listrik Polytron (2 unit)', 'Mobil BYD Atto 1 (1 unit)']
         })
 
     data = {
