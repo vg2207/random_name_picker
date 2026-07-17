@@ -47,7 +47,7 @@ with col_A :
 
 df=pd.read_excel('asset/Data Karyawan Doorprize.xlsx', sheet_name='All')
 
-df_resign=pd.read_excel('asset/Data Karyawan Doorprize.xlsx', sheet_name='Resign')
+# df_resign=pd.read_excel('asset/Data Karyawan Doorprize.xlsx', sheet_name='Resign')
 
 # lower_col = []
 # upper_col = ['Nomer Karyawan Perusahaan', 'Nama Lengkap']
@@ -95,17 +95,17 @@ with tab1 :
                                 
                                 2, 1],
          
-         "Prize": ['Voucher 1 (100 pcs)', 'Voucher 2 (100 pcs)',
-                   'Voucher 3 (30 pcs)', 
+         "Prize": ['Voucher Belanja Rp 100.000 (100 pcs)', 'Voucher Belanja Rp 150.000 (100 pcs)',
+                   'Voucher Belanja Rp 200.000(30 pcs)', 
                    
-                   'Doorprize 1 (20 pcs)', 'Doorprize 2 (15 pcs)',
-                   'Doorprize 3 (10 pcs)', 'Doorprize 4 (5 pcs)',
-                   'Doorprize 5 (5 pcs)', 'Doorprize 6 (10 pcs)',
+                   'Tyeso Tumbler 710mL Botol Minum Sports Portable Mug Vacuum (20 pcs)', 'Cosmos Air Fryer (15 pcs)',
+                   'Philips Over-ear Wireless Headphones (10 pcs)', 'Xiaomi Redmi Tv Soundbar (5 pcs)',
+                   'Magsafe Powerbank Philips (5 pcs)', 'SHARP R220 Microwave 20 Liter (10 pcs)',
                    
-                   'Doorprize 7 (5 pcs)', 'Doorprize 8 (5 pcs)',
-                   'Doorprize 9 (3 pcs)', 'Doorprize 10 (2 pcs)',
-                   'Doorprize 11 (1 pcs)', 'Grand Prize 4 (1 pc)',
-                   'Grand Prize 3 (1 pc)', 
+                   'SMARTWATCH Samsung Fit 3 (5 pcs)', 'Smart TV Polytron 32 (5 pcs)',
+                   'Handphone Samsung Galaxy A05s/A14/A14 5G (3 pcs)', 'Scitus Water Purifier dari LSA (2 pcs)',
+                   'Pureve Air Purifier dari LSA (1 pcs)', 'Sepeda Statis & Alat Kesehatan dari Prodia (1 pc)',
+                   'Portable Treadmill dari Sequis (1 pc)', 
                    
                    'Grand Prize 2 (2 pcs)', 'Grand Prize 1 (1 pc)']
         })
@@ -177,10 +177,14 @@ with tab2 :
         # st.write(df_all_participant)
         winners_name_all = []
     
-        df_for_grandprize = df_all_participant[~df_all_participant['Employee Id'].isin(df_resign['Employee Id'])].loc[
+        # df_for_grandprize = df_all_participant[~df_all_participant['Employee Id'].isin(df_resign['Employee Id'])].loc[
+        # df_all_participant['Years'] >= 10].loc[
+        # df_all_participant['Employment Type'] >= 'Permanent'].loc[
+        # df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
+
+        df_for_grandprize = df_all_participant.loc[
         df_all_participant['Years'] >= 10].loc[
-        df_all_participant['Employment Type'] >= 'Permanent'].loc[
-        df_all_participant['Employee Category'] != 'Director'].reset_index(drop=True)
+        df_all_participant['Employment Type'] >= 'Permanent'].reset_index(drop=True)
     
         # st.write(df_for_grandprize)
     
